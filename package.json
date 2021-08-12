@@ -3,8 +3,10 @@
   "version": "4.0.0",
   "description": "Gogo - React Bootstrap 4 Admin Dashboard Template",
   "private": true,
+  "engines": {
+    "node": "14.x"
+  },
   "dependencies": {
-    "node-pre-gyp": "1.24",
 
     "availity-reactstrap-validation": "^2.0.4",
     "axios": "^0.18.0",
