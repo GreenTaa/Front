@@ -8,7 +8,7 @@ import FooterData from '../components/Footer/FooterData';
 
 export const Home = () => (
     <div className="body_wrapper">
-        <CustomNavbar cClass="custom_container p0" hbtnClass="new_btn"/>
+            <CustomNavbar mClass="menu_four" cClass="custom_container p0" nClass="pl_120 mr-auto ml-auto" hbtnClass="menu_cus"/>
         <DesignBanner/>
         <Service/>
         <Subscribe FooterData={FooterData}/>

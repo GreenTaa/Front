@@ -1,59 +1,203 @@
-import React from 'react';
+import React, {useState} from 'react';
+import {queryServerApi} from "../utils/queryServerApi";
+import {useFormik} from "formik";
+import * as Yup from "yup";
+import MuiAlert from "@material-ui/lab/Alert";
+import {useHistory} from "react-router-dom";
+import {FormHelperText} from "@material-ui/core";
 
 
-const SignInFrom =()=>{
+
+
+
+
+const SignIn =()=>{
+    const [error,setError] = useState({visible: false,message: "",subscription:false,id:"",severity:""});
+    const history = useHistory();
+    const [singUp,setsingUp] = useState(false);
+
+    const UpgradeSubscription = () => {
+        history.push("/Pricing/"+error.id);
+    }
+
+
+
+    const formik = useFormik({
+        initialValues:{
+            username: "",
+            password: "",
+        },validationSchema: YupSchema,
+        onSubmit: async (values) => {
+            console.log("Values",values);
+            const [user, err] = await queryServerApi(values, null, "GET", false);
+            if(user === "UserNotFound"){
+                setError({
+                    visible: true,
+                    message:`Username or Email doesn't exist  if you registred recently please activate your account`,
+                    severity: "error"
+                });
+            }
+            else if (user === "WrongPassword"){
+                setError({
+                    visible: true,
+                    message: "Incorrect Password",
+                    severity: "error"
+                });
+
+            }
+            else {
+                console.log(user[0]);
+
+                if(user[0].Role === "Admin")
+                {
+                    localStorage.setItem('username', user[0].Username);
+                    localStorage.setItem('role', user[0].Role);
+                    localStorage.setItem('id', user[0].Id);
+                    localStorage.setItem('email', user[0].Email);
+                    localStorage.setItem('img', user[0].img);
+                    history.push("/AdminDashborad");
+                    history.go(0);
+                }
+                else if (user[0].Role === "Company")
+                {
+                    const [company, err] = await queryServerApi("entreprises/"+user[0].Id, null, "GET", false);
+                    if(company.Subscribed){
+                        localStorage.setItem('username', user[0].Username);
+                        localStorage.setItem('role', user[0].Role);
+                        localStorage.setItem('id', user[0].Id);
+                        localStorage.setItem('email', user[0].Email);
+                        localStorage.setItem('img', user[0].img);
+                        history.push("/");
+                    }
+                    else
+                    {
+                        setError({
+                            visible: true,
+                            message: "You are not Subscribed Please Update your subscription",
+                            subscription: true,
+                            id:user[0].Id,
+                            severity: 'warning'
+
+                        });
+
+                    }
+                }
+                else {
+                    localStorage.setItem('username', user[0].Username);
+                    localStorage.setItem('role', user[0].Role);
+                    localStorage.setItem('id', user[0].Id);
+                    localStorage.setItem('email', user[0].Email);
+                    localStorage.setItem('img', user[0].img);
+
+                    history.push("/");
+
+                }
+            }
+
+
+        },
+    });
+
+    const SingUp = () => {
+        setsingUp(!singUp);
+    }
+
+    const singUpAsCustomer = () => {
+        history.push("SignUpCustomer")
+    }
+    const singUpAsDriver = () => {
+        history.push("P_deliveryform")
+    }
+    const singUpAsCompany = () => {
+        history.push("SignUpEntreprise")
+    }
     return(
         <section className="sign_in_area bg_color sec_pad">
             <div className="container">
-                <div className="sign_info">
+
+                <div className="sign_info" >
                     <div className="row">
                         <div className="col-lg-5">
                             <div className="sign_info_content">
-                                <h3 className="f_p f_600 f_size_24 t_color3 mb_40">First time here?</h3>
-                                <h2 className="f_p f_400 f_size_30 mb-30">Join now and get<br/> <span className="f_700">20% OFF</span> for all <br/> products</h2>
-                                <ul className="list-unstyled mb-0">
-                                    <li><i className="ti-check"></i> Premium Access to all Products</li>
-                                    <li><i className="ti-check"></i> Free Testing Tools</li>
-                                    <li><i className="ti-check"></i> Unlimited User Accounts</li>
-                                </ul>
-                                <button type="submit" className="btn_three sign_btn_transparent">Sign Up</button>
+                                <h3 className="f_p f_600 f_size_24 t_color3 mb_40">First time here? <br/>
+                                    <button className="btn_three" onClick={SingUp}>
+                                        {singUp ? <>Sing In</> : <>Sign Up</> }
+
+                                    </button>
+                                </h3>
+
+                                <h2 className="f_p f_400 f_size_30 mb-30">You are a customer?<br/> <span className="f_700">Use your face to sign in</span> , it's an easy and fast way! <br/> Sign in with
+                                <br/>
+                                  
+                                </h2>
+
                             </div>
                         </div>
                         <div className="col-lg-7">
                             <div className="login_info">
                                 <h2 className="f_p f_600 f_size_24 t_color3 mb_40">Sign In</h2>
-                                <form action="/#" className="login-form sign-in-form">
-                                    <div className="form-group text_box">
-                                        <label className="f_p text_c f_400">Email or Name</label>
-                                        <input type="text" placeholder="saasland@gmail.com"/>
-                                    </div>
-                                    <div className="form-group text_box">
-                                        <label className="f_p text_c f_400">Password</label>
-                                        <input type="password" placeholder="******"/>
-                                    </div>
-                                    <div className="extra mb_20">
-                                        <div className="checkbox remember">
-                                            <label>
-                                                <input type="checkbox"/> Keep me Signed in
-                                            </label>
-                                        </div>
-                                       
-                                        <div className="forgotten-password">
-                                            <a href="/#">Forgot Password?</a>
-                                        </div>
-                                    </div>
-                                    <div className="d-flex justify-content-between align-items-center">
-                                        <button type="submit" className="btn_three">Sign in</button>
-                                        <div className="social_text d-flex ">
-                                            <div className="lead-text">Don't have an account?</div>
-                                            <ul className="list-unstyled social_tag mb-0">
-                                                <li><a href="/#"><i className="ti-facebook"></i></a></li>
-                                                <li><a href="/#"><i className="ti-twitter-alt"></i></a></li>
-                                                <li><a href="/#"><i className="ti-google"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </form>
+
+                             
+
+                                                <form onSubmit={formik.handleSubmit}>
+
+                                                    {error.visible &&
+                                                    <MuiAlert className="mb-4" severity={error.severity}>
+                                                        <div className="d-flex align-items-center align-content-center">
+                                         <span>
+                                         <strong className="d-block">Danger!</strong> {error.message}
+                                         </span>
+                                                        </div>
+                                                    </MuiAlert>}
+                                                    {error.subscription && (
+                                                        <button  onClick={UpgradeSubscription} className="btn_three">Subscribe or Upgrade your subcsription</button>
+                                                    )}
+
+
+                                                    <div className="form-group text_box">
+                                                        <label className="f_p text_c f_400">Email or Username</label>
+                                                        <input  id="username" type="text" placeholder="saasland@gmail.com"
+                                                                value={formik.values.username}
+                                                                onChange={formik.handleChange}/>
+                                                        {formik.errors.username && formik.touched.username && (
+                                                            <FormHelperText error={formik.errors.username}>{formik.errors.username}</FormHelperText>
+                                                        )}
+                                                    </div>
+
+
+                                                    <div className="form-group text_box">
+                                                        <label className="f_p text_c f_400">Password</label>
+                                                        <input id="password" type="password" placeholder="******"
+                                                               value={formik.values.password}
+                                                               onChange={formik.handleChange}/>
+                                                        {formik.errors.password && formik.touched.password && (
+                                                            <FormHelperText error={formik.errors.password}>{formik.errors.password}</FormHelperText>
+                                                        )}
+                                                    </div>
+
+                                                    <div className="extra mb_20">
+                                                        <div className="checkbox remember">
+                                                            <label>
+                                                                <input type="checkbox"/> Keep me Signed in
+                                                            </label>
+                                                        </div>
+
+                                                        <div className="forgotten-password">
+                                                            <a href="/ResetPassword">Forgot Password?</a>
+                                                        </div>
+                                                    </div>
+                                                    <div className="d-flex justify-content-between align-items-center">
+                                                        <button type="submit" className="btn_three">Sign in</button>
+                                                        <div className="social_text d-flex ">
+                                                            <div className="lead-text"> Sign in with </div>
+                                                            <ul className="list-unstyled social_tag mb-0">
+                                                                
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                           
+
                             </div>
                         </div>
                     </div>
@@ -62,4 +206,15 @@ const SignInFrom =()=>{
         </section>
     )
 }
-export default SignInFrom;
+
+
+const YupSchema = Yup.object ({
+    password: Yup.string()
+        .min(8 | " your password should be 8 characters at least")
+        .max(15 | " longer than 15 characters")
+        .required("password is Required"),
+    username: Yup.string()
+        .required("username is Required"),
+
+});
+export default SignIn;
