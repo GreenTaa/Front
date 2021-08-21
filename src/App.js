@@ -50,6 +50,8 @@ import ServiceDetails from "./Pages/ServiceDetails";
 import SignIn from "./Pages/SignIn";
 import SignUp from "./Pages/SignUp";
 import BlogGridPage from "./Pages/BlogGridPage";
+import { Provider } from 'react-redux'
+import store from './components/redux/store'
 
 
 const AuthRoute = ({ component: Component, authUser, ...rest }) => (
@@ -76,6 +78,8 @@ class App extends Component {
     const currentAppLocale = AppLocale[locale];
 
     return (
+      <div>
+        <Provider store={store}>
       <div className="h-100">
         <IntlProvider
           locale={currentAppLocale.locale}
@@ -149,7 +153,9 @@ class App extends Component {
           </React.Fragment>
         </IntlProvider>
       </div>
-    );
+      </Provider>
+      </div>
+      );
   }
 }
 

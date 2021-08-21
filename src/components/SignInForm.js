@@ -119,7 +119,7 @@ const SignIn =()=>{
                     <div className="row">
                         <div className="col-lg-5">
                             <div className="sign_info_content">
-                                <h3 className="f_p f_600 f_size_24 t_color3 mb_40">First time here? <br/>
+                                <h3 className="f_p f_600 f_size_24 t_color3 mb_40">First time heresss? <br/>
                                     <button className="btn_three" onClick={SingUp}>
                                         {singUp ? <>Sing In</> : <>Sign Up</> }
 
