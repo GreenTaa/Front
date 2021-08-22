@@ -50,6 +50,7 @@ import ServiceDetails from "./Pages/ServiceDetails";
 import SignIn from "./Pages/SignIn";
 import SignUp from "./Pages/SignUp";
 import SignUpTeam from "./Pages/SignUpTeam";
+import SignUpCenter from "./Pages/SignUpCenter"
 import BlogGridPage from "./Pages/BlogGridPage";
 import { Provider } from 'react-redux'
 import store from './components/redux/store'
@@ -148,6 +149,7 @@ class App extends Component {
           <ScrollToTopRoute path="/SignIn" component={SignIn} />
           <ScrollToTopRoute path="/SignUp" component={SignUp} />
           <ScrollToTopRoute path="/SignUpTeam" component={SignUpTeam} />
+          <ScrollToTopRoute path="/SignUpCenter" component={SignUpCenter} />
           <Redirect to="/error" />
 
               </Switch>
