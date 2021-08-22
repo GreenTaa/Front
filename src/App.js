@@ -52,21 +52,26 @@ import SignUp from "./Pages/SignUp";
 import SignUpTeam from "./Pages/SignUpTeam";
 import SignUpCenter from "./Pages/SignUpCenter"
 import BlogGridPage from "./Pages/BlogGridPage";
+<<<<<<< Updated upstream
 import { Provider } from 'react-redux'
 import store from './components/redux/store'
 
+=======
+import login from "./views/user/login";
+import { useHistory } from "react-router-dom";
+import ResetNewPassword from "./Pages/ResetNewPassword";
+>>>>>>> Stashed changes
 
 const AuthRoute = ({ component: Component, authUser, ...rest }) => (
   <Route
     {...rest}
     render={props =>
-      authUser ? (
+      localStorage.Role ? (
         <Component {...props} />
       ) : (
         <Redirect
           to={{
-            pathname: "/user/login",
-            state: { from: props.location }
+            pathname: "/signin"
           }}
         />
       )
@@ -94,7 +99,9 @@ class App extends Component {
               <Switch>
                 <AuthRoute path="/app" authUser={loginUser} component={app} />
                 <Route path="/error" exact component={error} />
-                <Route path="/" exact component={main} />
+                <Route path="/log" exact component={login} />
+
+                <AuthRoute path="/" exact component={main} />
 
           <ScrollToTopRoute
             path="/Digital-marketing"
@@ -105,6 +112,8 @@ class App extends Component {
             component={PaymentProcessing}
           />
                     <ScrollToTopRoute path="/home" component={Home} />
+                    ResetNewPassword
+                    <ScrollToTopRoute path="/ResetNewPassword/:id" component={ResetNewPassword} />
 
           <ScrollToTopRoute path="/HR-Management" component={HRManagement} />
           <ScrollToTopRoute path="/Startup" component={Startup} />
@@ -148,9 +157,12 @@ class App extends Component {
           <ScrollToTopRoute path="/ServiceDetails" component={ServiceDetails} />
           <ScrollToTopRoute path="/SignIn" component={SignIn} />
           <ScrollToTopRoute path="/SignUp" component={SignUp} />
+<<<<<<< Updated upstream
           <ScrollToTopRoute path="/SignUpTeam" component={SignUpTeam} />
           <ScrollToTopRoute path="/SignUpCenter" component={SignUpCenter} />
           <Redirect to="/error" />
+=======
+>>>>>>> Stashed changes
 
               </Switch>
             </Router>
