@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import { useDispatch } from 'react-redux';
-import {AddSupporter} from './redux/supporters/suppActions'
+import {AddTeam} from './redux/teams/teamActions'
 
 const SignUpForm =()=>{
     const dispatch = useDispatch()
-    const [user, setUser] = useState({Role : "Supporter", Active : 1})
+    const [team, setTeam] = useState({Role : "Team", Active : 1})
     const [fileInputState, setFileInputState] = useState('')
     const [previewSource, setPreviewSource] = useState('')
     
@@ -24,17 +24,17 @@ const SignUpForm =()=>{
 
     const uploadImage = async (base64EncodedImage) => {
         console.log(base64EncodedImage)
-        user.Avatar = base64EncodedImage
+        team.Logo = base64EncodedImage
     }
 
 
     const onAdd = (e) => {
         e.preventDefault()
-        console.log("submitting : ", user)
+        console.log("submitting : ", team)
         if (!previewSource) return
         uploadImage(previewSource)
         console.log("entred")
-        dispatch(AddSupporter(user))
+        dispatch(AddTeam(team))
         console.log("passed")
     }
     
@@ -60,47 +60,38 @@ const SignUpForm =()=>{
                                 <h2 className="f_p f_600 f_size_24 t_color3 mb_40">Sign Up</h2>
                                 <form action="#" className="login-form sign-in-form" onSubmit={(e) => { onAdd(e) }}>
                                     <div className="form-group text_box">
-                                        <label className="f_p text_c f_400">First Name</label>
-                                        <input type="text" placeholder="First Name"
+                                        <label className="f_p text_c f_400">Name</label>
+                                        <input type="text" placeholder="Name"
                                         onChange={e => {
-                                            const newUserObj = { ...user, Firstname: e.target.value }
-                                            setUser(newUserObj);
+                                            const newUserObj = { ...team, Name: e.target.value }
+                                            setTeam(newUserObj);
                                         }
                                         }/>
                                     </div>
                                     <div className="form-group text_box">
-                                        <label className="f_p text_c f_400">Last Name</label>
-                                        <input type="text" placeholder="Last Name"
+                                        <label className="f_p text_c f_400">Sname</label>
+                                        <input type="text" placeholder="Sname"
                                         onChange={e => {
-                                            const newUserObj = { ...user, Lastname: e.target.value }
-                                            setUser(newUserObj);
+                                            const newUserObj = { ...team, Sname: e.target.value }
+                                            setTeam(newUserObj);
                                         }
                                         }/>
                                     </div>
                                     <div className="form-group text_box">
-                                        <label className="f_p text_c f_400">Phone Number</label>
-                                        <input type="text" placeholder="Phone Number"
+                                        <label className="f_p text_c f_400">Region</label>
+                                        <input type="text" placeholder="Region"
                                         onChange={e => {
-                                            const newUserObj = { ...user, Phone: e.target.value }
-                                            setUser(newUserObj);
+                                            const newUserObj = { ...team, Region: e.target.value }
+                                            setTeam(newUserObj);
                                         }
                                         }/>
                                     </div>
                                     <div className="form-group text_box">
-                                        <label className="f_p text_c f_400">Team</label>
-                                        <input type="text" placeholder="Team"
+                                        <label className="f_p text_c f_400">Phone</label>
+                                        <input type="text" placeholder="Phone"
                                         onChange={e => {
-                                            const newUserObj = { ...user, Team: e.target.value }
-                                            setUser(newUserObj);
-                                        }
-                                        }/>
-                                    </div>
-                                    <div className="form-group text_box">
-                                        <label className="f_p text_c f_400">Date of birth</label>
-                                        <input type="text" placeholder="2010-05-19"
-                                        onChange={e => {
-                                            const newUserObj = { ...user, Date_birth: e.target.value }
-                                            setUser(newUserObj);
+                                            const newUserObj = { ...team, Phone: e.target.value }
+                                            setTeam(newUserObj);
                                         }
                                         }/>
                                     </div>
@@ -108,16 +99,16 @@ const SignUpForm =()=>{
                                         <label className="f_p text_c f_400">Address</label>
                                         <input type="text" placeholder="Address"
                                         onChange={e => {
-                                            const newUserObj = { ...user, Address: e.target.value }
-                                            setUser(newUserObj);
+                                            const newUserObj = { ...team, Address: e.target.value }
+                                            setTeam(newUserObj);
                                         }
                                         }/>
                                     </div>
                                     <div className="form-group text_box">
-                                        <label className="f_p text_c f_400">Image</label>
+                                        <label className="f_p text_c f_400">Logo</label>
                                         <input type="file"
                                             className="form-input"
-                                            name="Avatar"
+                                            name="Logo"
                                             value={fileInputState}
                                             onChange={onFileChange}
                                         />
@@ -129,8 +120,8 @@ const SignUpForm =()=>{
                                         <label className="f_p text_c f_400">Email Address</label>
                                         <input type="text" placeholder="saasland@gmail.com"
                                         onChange={e => {
-                                            const newUserObj = { ...user, Email: e.target.value }
-                                            setUser(newUserObj);
+                                            const newUserObj = { ...team, Email: e.target.value }
+                                            setTeam(newUserObj);
                                         }
                                         }/>
                                     </div>
@@ -138,8 +129,8 @@ const SignUpForm =()=>{
                                         <label className="f_p text_c f_400">Password</label>
                                         <input type="password" placeholder="******"
                                         onChange={e => {
-                                            const newUserObj = { ...user, Password: e.target.value }
-                                            setUser(newUserObj);
+                                            const newUserObj = { ...team, Password: e.target.value }
+                                            setTeam(newUserObj);
                                         }
                                         }/>
                                     </div>
