@@ -1,12 +1,17 @@
-import React, {useState} from 'react';
-import { useDispatch } from 'react-redux';
+import React, {useState, useEffect} from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import {AddSupporter} from './redux/supporters/suppActions'
+import {fetchTeams} from './redux/teams/teamActions'
+import DatePicker from 'react-datepicker'
+import 'react-datepicker/dist/react-datepicker.css'
+import moment from 'moment';
 
 const SignUpForm =()=>{
     const dispatch = useDispatch()
     const [user, setUser] = useState({Role : "Supporter", Active : 1})
     const [fileInputState, setFileInputState] = useState('')
     const [previewSource, setPreviewSource] = useState('')
+    const teamsData = useSelector((state) => state.teams)
     
     const onFileChange = event => {
         // Update the state 
@@ -27,6 +32,13 @@ const SignUpForm =()=>{
         user.Avatar = base64EncodedImage
     }
 
+    useEffect(() => {
+          dispatch(fetchTeams())
+          console.log("Teams : ", teamsData)}
+    
+      , [])
+
+    var teams = teamsData.teams.map(team => team.Sname)
 
     const onAdd = (e) => {
         e.preventDefault()
@@ -88,21 +100,32 @@ const SignUpForm =()=>{
                                     </div>
                                     <div className="form-group text_box">
                                         <label className="f_p text_c f_400">Team</label>
-                                        <input type="text" placeholder="Team"
-                                        onChange={e => {
+                                        <select className="custom-select" id="team-select" 
+                                         onChange={e => {
                                             const newUserObj = { ...user, Team: e.target.value }
                                             setUser(newUserObj);
-                                        }
-                                        }/>
+                                        }}>
+                                        <option value="team">--Please choose your team --</option>
+                                        {teams.map((option, index) => { 
+                                            return  (<option  value={option} key={index}>{option} </option> )   
+                                        })}
+                                        </select>
                                     </div>
                                     <div className="form-group text_box">
                                         <label className="f_p text_c f_400">Date of birth</label>
-                                        <input type="text" placeholder="2010-05-19"
-                                        onChange={e => {
-                                            const newUserObj = { ...user, Date_birth: e.target.value }
-                                            setUser(newUserObj);
-                                        }
-                                        }/>
+                                        <DatePicker 
+                                        selected = {user.Date_birth? new Date(user.Date_birth) : user.Date_birth}
+                                        onChange = { date => {
+                                            setUser({
+                                                ...user,
+                                                Date_birth : moment(date).format("YYYY-MM-DD")
+                                            })
+                                        }}  
+                                        dateFormat= 'yyyy/MM/dd'
+                                        isClearable
+                                        showYearDropdown
+                                        scrollableMonthYearDropdown
+                                        maxDate={new Date()}/>
                                     </div>
                                     <div className="form-group text_box">
                                         <label className="f_p text_c f_400">Address</label>
@@ -115,12 +138,13 @@ const SignUpForm =()=>{
                                     </div>
                                     <div className="form-group text_box">
                                         <label className="f_p text_c f_400">Image</label>
+                                        <div>
                                         <input type="file"
                                             className="form-input"
                                             name="Avatar"
                                             value={fileInputState}
                                             onChange={onFileChange}
-                                        />
+                                        /></div>
                                     </div>
                                     <div>
                                         {previewSource && (<img src={previewSource} alt="chosen" style={{height:'300px'}}/>)}

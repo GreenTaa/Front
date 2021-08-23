@@ -26,7 +26,9 @@ const SignUpForm =()=>{
         console.log(base64EncodedImage)
         team.Logo = base64EncodedImage
     }
+    
 
+    var Region = ["Tunis", "Ariana", "Ben Arous", "Mannouba", "Bizerte", "Nabeul", "Béja", "Jendouba", "Zaghouan", "Siliana", "Le Kef", "Sousse", "Monastir", "Mahdia", "Kasserine", "Sidi Bouzid", "Kairouan", "Gafsa", "Sfax", "Gabès", "Médenine", "Tozeur", "Kebili", "Ttataouine"]
 
     const onAdd = (e) => {
         e.preventDefault()
@@ -69,19 +71,10 @@ const SignUpForm =()=>{
                                         }/>
                                     </div>
                                     <div className="form-group text_box">
-                                        <label className="f_p text_c f_400">Sname</label>
+                                        <label className="f_p text_c f_400">Acronym</label>
                                         <input type="text" placeholder="Sname"
                                         onChange={e => {
                                             const newUserObj = { ...team, Sname: e.target.value }
-                                            setTeam(newUserObj);
-                                        }
-                                        }/>
-                                    </div>
-                                    <div className="form-group text_box">
-                                        <label className="f_p text_c f_400">Region</label>
-                                        <input type="text" placeholder="Region"
-                                        onChange={e => {
-                                            const newUserObj = { ...team, Region: e.target.value }
                                             setTeam(newUserObj);
                                         }
                                         }/>
@@ -96,6 +89,19 @@ const SignUpForm =()=>{
                                         }/>
                                     </div>
                                     <div className="form-group text_box">
+                                        <label className="f_p text_c f_400">Region</label>
+                                        <select className="custom-select" id="Region-select" 
+                                         onChange={e => {
+                                            const newUserObj = { ...team, Region: e.target.value }
+                                            setTeam(newUserObj);
+                                        }}>
+                                        <option value="Region">--Please select your Region --</option>
+                                        {Region.map((option, index) => { 
+                                            return  (<option  value={option} key={index}>{option} </option> )   
+                                        })}
+                                        </select>
+                                    </div>
+                                    <div className="form-group text_box">
                                         <label className="f_p text_c f_400">Address</label>
                                         <input type="text" placeholder="Address"
                                         onChange={e => {
@@ -106,12 +112,13 @@ const SignUpForm =()=>{
                                     </div>
                                     <div className="form-group text_box">
                                         <label className="f_p text_c f_400">Logo</label>
+                                        <div>
                                         <input type="file"
                                             className="form-input"
                                             name="Logo"
                                             value={fileInputState}
                                             onChange={onFileChange}
-                                        />
+                                        /></div>
                                     </div>
                                     <div>
                                         {previewSource && (<img src={previewSource} alt="chosen" style={{height:'300px'}}/>)}

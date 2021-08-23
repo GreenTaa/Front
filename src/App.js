@@ -50,9 +50,14 @@ import ServiceDetails from "./Pages/ServiceDetails";
 import SignIn from "./Pages/SignIn";
 import SignUp from "./Pages/SignUp";
 import BlogGridPage from "./Pages/BlogGridPage";
+import { Provider } from 'react-redux'
+import store from './components/redux/store'
+import test from './views/app/index'
 import login from "./views/user/login";
 import { useHistory } from "react-router-dom";
 import ResetNewPassword from "./Pages/ResetNewPassword";
+import SignUpTeam from "./Pages/SignUpTeam";
+import SignUpCenter from "./Pages/SignUpCenter"
 
 const AuthRoute = ({ component: Component, authUser, ...rest }) => (
   <Route
@@ -77,6 +82,7 @@ class App extends Component {
     const currentAppLocale = AppLocale[locale];
 
     return (
+      <div>
       <div className="h-100">
         <IntlProvider
           locale={currentAppLocale.locale}
@@ -90,6 +96,7 @@ class App extends Component {
                 <AuthRoute path="/app" authUser={loginUser} component={app} />
                 <Route path="/error" exact component={error} />
                 <Route path="/log" exact component={login} />
+                <Route path="/test" exact component={test} />
 
                 <AuthRoute path="/" exact component={main} />
 
@@ -147,13 +154,17 @@ class App extends Component {
           <ScrollToTopRoute path="/ServiceDetails" component={ServiceDetails} />
           <ScrollToTopRoute path="/SignIn" component={SignIn} />
           <ScrollToTopRoute path="/SignUp" component={SignUp} />
+          <ScrollToTopRoute path="/SignUpTeam" component={SignUpTeam} />
+          <ScrollToTopRoute path="/SignUpCenter" component={SignUpCenter} />
+          <Redirect to="/error" />
 
               </Switch>
             </Router>
           </React.Fragment>
         </IntlProvider>
       </div>
-    );
+      </div>
+      );
   }
 }
 
