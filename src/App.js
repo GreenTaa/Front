@@ -24,6 +24,9 @@ import Startup from "./Pages/Startup";
 import About from "./Pages/About";
 import Service from "./Pages/Service";
 import Process from "./Pages/Process";
+import ServiceSupporter from "./Pages/ServiceSupporter";
+import ServiceTeam from "./Pages/ServiceTeam";
+import ServiceCenter from "./Pages/ServiceCenter";
 import Team from "./Pages/Team";
 import Portfolio2col from "./Pages/Portfolio-2col";
 import Portfolio3col from "./Pages/Portfolio-3col";
@@ -156,6 +159,9 @@ class App extends Component {
           <ScrollToTopRoute path="/SignUp" component={SignUp} />
           <ScrollToTopRoute path="/SignUpTeam" component={SignUpTeam} />
           <ScrollToTopRoute path="/SignUpCenter" component={SignUpCenter} />
+          <ScrollToTopRoute path="/Service-Supporter" component={ServiceSupporter} />
+          <ScrollToTopRoute path="/Service-Team" component={ServiceTeam} />
+          <ScrollToTopRoute path="/Service-Center" component={ServiceCenter} />
           <Redirect to="/error" />
 
               </Switch>

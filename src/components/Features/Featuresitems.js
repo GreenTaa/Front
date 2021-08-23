@@ -19,7 +19,7 @@ class Featuresitems extends Component{
                         <img className="number" src={require ("../../img/home4/" + iImg)} alt=""/>
                         <h3>{ftitle}</h3>
                         <p>{descriptions}</p>
-                        <a href=".#" className="icon mt_30"><i className="ti-arrow-right"></i></a>
+                        {/* <a href=".#" className="icon mt_30"><i className="ti-arrow-right"></i></a> */}
                     </Reveal>
                     </div>
                 </div>

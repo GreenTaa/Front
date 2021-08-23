@@ -9,7 +9,7 @@ const CloudServiceTab =()=>{
                 <Sectitle Title="Seamlessly go from deploying to scaling." TitleP="Tickety-boo cheers plastered twit chimney pot off his nut hotpot spend a penny have it, so I said squiffy A bit of how's your father."
                  sClass="sec_title text-center mb_70"/>
                 <div className="row">
-                    <div className="col-lg-3 col-md-3">
+{/*                     <div className="col-lg-3 col-md-3">
                         <ul className="nav nav-tabs software_service_tab" id="myTab" role="tablist">
                             <li className="nav-item">
                                 <a className="nav-link active" id="de-tab" data-toggle="tab" href="#de" role="tab" aria-controls="de" aria-selected="true">Deploy</a>
@@ -30,14 +30,14 @@ const CloudServiceTab =()=>{
                                 <a className="nav-link" id="monitor-tab" data-toggle="tab" href="#monitor" role="tab" aria-controls="monitor" aria-selected="false">Monitor</a>
                             </li>
                         </ul>
-                    </div>
+                    </div> */}
                     <div className="col-lg-9 col-md-9">
                         <div className="tab-content software_service_tab_content">
                             <div className="tab-pane fade show active" id="de" role="tabpanel" aria-labelledby="de-tab">
                                 <div className="row">
-                                    <Tabitem ticon="ti-user" text="Team Management" description="Crikey blow off chap knackered gosh bobby geeza gormless well, Charles cheeky bugger I cor blimey guvnor hanky panky jolly good."/>
-                                    <Tabitem colClass="offset-lg-2" ticon="ti-basketball" text="Global Availability" description="Crikey blow off chap knackered gosh bobby geeza gormless well, Charles cheeky bugger I cor blimey guvnor hanky panky jolly good."/>
-                                    <Tabitem ticon="ti-face-smile" text="Cluster Deployments" description="Crikey blow off chap knackered gosh bobby geeza gormless well, Charles cheeky bugger I cor blimey guvnor hanky panky jolly good."/>
+                                    <Tabitem ticon="ti-user" text="Manage Store" description="Crikey blow off chap knackered gosh bobby geeza gormless well, Charles cheeky bugger I cor blimey guvnor hanky panky jolly good."/>
+                                    <Tabitem colClass="offset-lg-2" ticon="ti-basketball" text="Manage Blog" description="Crikey blow off chap knackered gosh bobby geeza gormless well, Charles cheeky bugger I cor blimey guvnor hanky panky jolly good."/>
+                                    <Tabitem ticon="ti-face-smile" text="Statistics" description="Crikey blow off chap knackered gosh bobby geeza gormless well, Charles cheeky bugger I cor blimey guvnor hanky panky jolly good."/>
                                     <Tabitem colClass="offset-lg-2" ticon="ti-harddrives" text="Backups & Snapshots" description="Crikey blow off chap knackered gosh bobby geeza gormless well, Charles cheeky bugger I cor blimey guvnor hanky panky jolly good."/>
                                 </div>
                             </div>
