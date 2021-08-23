@@ -6,6 +6,9 @@ import todoApp from './todo/reducer';
 import chatApp from './chat/reducer';
 import surveyListApp from './surveyList/reducer';
 import surveyDetailApp from './surveyDetail/reducer';
+import SupporterReducer from '../components/redux/supporters/suppReducers'
+import TeamReducer from '../components/redux/teams/teamReducers'
+import CenterReducer from '../components/redux/collectCenters/centerReducers'
 
 const reducers = combineReducers({
   menu,
@@ -14,7 +17,10 @@ const reducers = combineReducers({
   todoApp,
   chatApp,
   surveyListApp,
-  surveyDetailApp
+  surveyDetailApp,
+  supporters : SupporterReducer,
+  teams: TeamReducer,
+  centers: CenterReducer
 });
 
 export default reducers;

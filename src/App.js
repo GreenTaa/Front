@@ -52,15 +52,12 @@ import SignUp from "./Pages/SignUp";
 import SignUpTeam from "./Pages/SignUpTeam";
 import SignUpCenter from "./Pages/SignUpCenter"
 import BlogGridPage from "./Pages/BlogGridPage";
-<<<<<<< Updated upstream
 import { Provider } from 'react-redux'
 import store from './components/redux/store'
-
-=======
+import test from './views/app/index'
 import login from "./views/user/login";
 import { useHistory } from "react-router-dom";
 import ResetNewPassword from "./Pages/ResetNewPassword";
->>>>>>> Stashed changes
 
 const AuthRoute = ({ component: Component, authUser, ...rest }) => (
   <Route
@@ -86,7 +83,6 @@ class App extends Component {
 
     return (
       <div>
-        <Provider store={store}>
       <div className="h-100">
         <IntlProvider
           locale={currentAppLocale.locale}
@@ -100,6 +96,7 @@ class App extends Component {
                 <AuthRoute path="/app" authUser={loginUser} component={app} />
                 <Route path="/error" exact component={error} />
                 <Route path="/log" exact component={login} />
+                <Route path="/test" exact component={test} />
 
                 <AuthRoute path="/" exact component={main} />
 
@@ -157,19 +154,15 @@ class App extends Component {
           <ScrollToTopRoute path="/ServiceDetails" component={ServiceDetails} />
           <ScrollToTopRoute path="/SignIn" component={SignIn} />
           <ScrollToTopRoute path="/SignUp" component={SignUp} />
-<<<<<<< Updated upstream
           <ScrollToTopRoute path="/SignUpTeam" component={SignUpTeam} />
           <ScrollToTopRoute path="/SignUpCenter" component={SignUpCenter} />
           <Redirect to="/error" />
-=======
->>>>>>> Stashed changes
 
               </Switch>
             </Router>
           </React.Fragment>
         </IntlProvider>
       </div>
-      </Provider>
       </div>
       );
   }

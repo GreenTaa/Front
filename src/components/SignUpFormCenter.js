@@ -6,6 +6,7 @@ const SignUpForm =()=>{
     const dispatch = useDispatch()
     const [center, setCenter] = useState({Role : "Center", Active : 1})
 
+    var Region = ["Tunis", "Ariana", "Ben Arous", "Mannouba", "Bizerte", "Nabeul", "Béja", "Jendouba", "Zaghouan", "Siliana", "Le Kef", "Sousse", "Monastir", "Mahdia", "Kasserine", "Sidi Bouzid", "Kairouan", "Gafsa", "Sfax", "Gabès", "Médenine", "Tozeur", "Kebili", "Ttataouine"]
 
 
     const onAdd = (e) => {
@@ -47,15 +48,6 @@ const SignUpForm =()=>{
                                         }/>
                                     </div>
                                     <div className="form-group text_box">
-                                        <label className="f_p text_c f_400">Region</label>
-                                        <input type="text" placeholder="Region"
-                                        onChange={e => {
-                                            const newUserObj = { ...center, Region: e.target.value }
-                                            setCenter(newUserObj);
-                                        }
-                                        }/>
-                                    </div>
-                                    <div className="form-group text_box">
                                         <label className="f_p text_c f_400">Phone</label>
                                         <input type="text" placeholder="Phone"
                                         onChange={e => {
@@ -63,6 +55,19 @@ const SignUpForm =()=>{
                                             setCenter(newUserObj);
                                         }
                                         }/>
+                                    </div>
+                                    <div className="form-group text_box">
+                                        <label className="f_p text_c f_400">Region</label>
+                                        <select className="custom-select" id="Region-select" 
+                                         onChange={e => {
+                                            const newUserObj = { ...center, Region: e.target.value }
+                                            setCenter(newUserObj);
+                                        }}>
+                                        <option value="Region">--Please select your Region --</option>
+                                        {Region.map((option, index) => { 
+                                            return  (<option  value={option} key={index}>{option} </option> )   
+                                        })}
+                                        </select>
                                     </div>
                                     <div className="form-group text_box">
                                         <label className="f_p text_c f_400">Address</label>
