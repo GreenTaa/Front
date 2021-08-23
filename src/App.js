@@ -49,18 +49,10 @@ import Faq from "./Pages/Faq";
 import ServiceDetails from "./Pages/ServiceDetails";
 import SignIn from "./Pages/SignIn";
 import SignUp from "./Pages/SignUp";
-import SignUpTeam from "./Pages/SignUpTeam";
-import SignUpCenter from "./Pages/SignUpCenter"
 import BlogGridPage from "./Pages/BlogGridPage";
-<<<<<<< Updated upstream
-import { Provider } from 'react-redux'
-import store from './components/redux/store'
-
-=======
 import login from "./views/user/login";
 import { useHistory } from "react-router-dom";
 import ResetNewPassword from "./Pages/ResetNewPassword";
->>>>>>> Stashed changes
 
 const AuthRoute = ({ component: Component, authUser, ...rest }) => (
   <Route
@@ -85,8 +77,6 @@ class App extends Component {
     const currentAppLocale = AppLocale[locale];
 
     return (
-      <div>
-        <Provider store={store}>
       <div className="h-100">
         <IntlProvider
           locale={currentAppLocale.locale}
@@ -113,7 +103,7 @@ class App extends Component {
           />
                     <ScrollToTopRoute path="/home" component={Home} />
                     ResetNewPassword
-                    <ScrollToTopRoute path="/ResetNewPassword/:id" component={ResetNewPassword} />
+                    <ScrollToTopRoute path="/ResetNewPassword/:id" component={ResetNewPassword  } />
 
           <ScrollToTopRoute path="/HR-Management" component={HRManagement} />
           <ScrollToTopRoute path="/Startup" component={Startup} />
@@ -157,21 +147,13 @@ class App extends Component {
           <ScrollToTopRoute path="/ServiceDetails" component={ServiceDetails} />
           <ScrollToTopRoute path="/SignIn" component={SignIn} />
           <ScrollToTopRoute path="/SignUp" component={SignUp} />
-<<<<<<< Updated upstream
-          <ScrollToTopRoute path="/SignUpTeam" component={SignUpTeam} />
-          <ScrollToTopRoute path="/SignUpCenter" component={SignUpCenter} />
-          <Redirect to="/error" />
-=======
->>>>>>> Stashed changes
 
               </Switch>
             </Router>
           </React.Fragment>
         </IntlProvider>
       </div>
-      </Provider>
-      </div>
-      );
+    );
   }
 }
 
