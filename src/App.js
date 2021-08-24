@@ -59,6 +59,8 @@ import test from './views/app/index'
 import login from "./views/user/login";
 import { useHistory } from "react-router-dom";
 import ResetNewPassword from "./Pages/ResetNewPassword";
+import ResetPassword from "./Pages/ResetPassword";
+
 import SignUpTeam from "./Pages/SignUpTeam";
 import SignUpCenter from "./Pages/SignUpCenter"
 
@@ -113,7 +115,7 @@ class App extends Component {
           />
                     <ScrollToTopRoute path="/home" component={Home} />
                     <ScrollToTopRoute path="/ResetNewPassword/:id" component={ResetNewPassword  } />
-
+                    <ScrollToTopRoute path="/Resetpassword" component={ResetPassword  } />
           <ScrollToTopRoute path="/HR-Management" component={HRManagement} />
           <ScrollToTopRoute path="/Startup" component={Startup} />
           <ScrollToTopRoute path="/About" component={About} />
