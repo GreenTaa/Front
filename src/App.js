@@ -63,6 +63,7 @@ import ResetPassword from "./Pages/ResetPassword";
 
 import SignUpTeam from "./Pages/SignUpTeam";
 import SignUpCenter from "./Pages/SignUpCenter"
+import SupporterInterface from "./Pages/Users/SupporterInterface"
 
 const AuthRoute = ({ component: Component, authUser, ...rest }) => (
   <Route
@@ -102,7 +103,7 @@ class App extends Component {
                 <Route path="/error" exact component={error} />
                 <Route path="/log" exact component={login} />
                 <Route path="/test" exact component={test} />
-
+                <Route path="/SupporterInterface" exact component={SupporterInterface} />
                 <AuthRoute path="/" exact component={main} />
 
           <ScrollToTopRoute

@@ -5,7 +5,7 @@ class AgencyBanner extends Component {
         let BannerData = this.props.BannerData;
         return(
             <section className="agency_banner_area bg_color">
-                <img className="banner_shap" src={require('../../img/home4/banner_bg.png')} alt=""/>
+                <img className="banner_shap" src={require('../../img/home4/back.png')} alt=""/>
                 <div className="container custom_container">
                     <div className="row">
                         <div className="col-lg-5 d-flex align-items-center">
