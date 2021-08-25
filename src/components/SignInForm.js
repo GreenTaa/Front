@@ -54,8 +54,9 @@ const SignIn = () => {
         console.log(myrole);
 
         if (user.Role === "Supporter") {
-          
+          localStorage.setItem("Firstname", user.Firstname);
           localStorage.setItem("Email", user.Email);
+          localStorage.setItem("Avatar", user.Avatar);
           localStorage.setItem("Role", user.Role);
           localStorage.setItem("id", user._id);
           console.log(localStorage);

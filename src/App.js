@@ -113,7 +113,7 @@ class App extends Component {
             path="/Payment-processing"
             component={PaymentProcessing}
           />
-                    <ScrollToTopRoute path="/home" component={Home} />
+                    <ScrollToTopRoute path="/home" component={DigitalMarketing} />
                     <ScrollToTopRoute path="/ResetNewPassword/:id" component={ResetNewPassword  } />
                     <ScrollToTopRoute path="/Resetpassword" component={ResetPassword  } />
           <ScrollToTopRoute path="/HR-Management" component={HRManagement} />
