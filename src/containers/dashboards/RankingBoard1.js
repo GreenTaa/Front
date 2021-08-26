@@ -1,15 +1,14 @@
-import React, { useEffect} from "react";
-import { Card, CardBody, CardTitle } from "reactstrap";
+import React, { useEffect, useState} from "react";
+import { Card, CardBody, CardTitle, Dropdown } from "reactstrap";
 import ReactTable from "react-table";
 import {fetchTeams} from '../../components/redux/teams/teamActions'
 import { useDispatch, useSelector } from 'react-redux';
 import IntlMessages from "../../helpers/IntlMessages";
 import Pagination from "../../components/DatatablePagination";
-import { ContactSupportOutlined } from "@material-ui/icons";
 
 
 const BestSellers = ({title="dashboards.best-sellers"}) => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const teamsData = useSelector((state) => state.teams)
   useEffect(() => {
     dispatch(fetchTeams())
@@ -17,12 +16,12 @@ const BestSellers = ({title="dashboards.best-sellers"}) => {
   }
 
 , [])
-  
+
   const columns = [
     {
       Header: "#",
-      accessor: "index",
-      Cell: props => <p className="list-item-heading">{props.value}</p>
+      accessor: "_id",
+      Cell: ({ row }) => <p className="text-muted">{row._index + 1}</p>
     },
     {
       Header: "Logo",
@@ -56,11 +55,11 @@ const BestSellers = ({title="dashboards.best-sellers"}) => {
     <Card className="h-100">
       <CardBody>
         <CardTitle>
-          <IntlMessages id="table.teams-ranking">Teams Ranking</IntlMessages>
+          <IntlMessages id="table.teams-ranking"/>
         </CardTitle>
         <ReactTable
           defaultPageSize={6}
-          data={(teamsData.teams).sort((a, b) => a.Score > b.Score ? -1 : 1)}
+          data={(teamsData. teams).sort((a, b) => a.Score > b.Score ? -1 : 1)}
           columns={columns}
           minRows={0}
           showPageJump={false}
