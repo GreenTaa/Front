@@ -69,7 +69,7 @@ const AuthRoute = ({ component: Component, authUser, ...rest }) => (
   <Route
     {...rest}
     render={props =>
-      localStorage.Role ? (
+      localStorage.Role ==="Admin" ? (
         <Component {...props} />
       ) : (
         <Redirect

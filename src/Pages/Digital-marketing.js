@@ -11,6 +11,8 @@ import AgencyAction from '../components/AgencyAction';
 import FooterTwo from '../components/Footer/FooterTwo';
 import FooterData from '../components/Footer/FooterData';
 import HRService from '../components/Service/HRService';
+import FeaturesHome from '../components/FeaturesHome';
+
 import Reveal from 'react-reveal/Reveal';
 
 
@@ -21,6 +23,7 @@ const DigitalMarketing = () => {
             <AgencyBanner BannerData={BannerData}/>
 
             <HRService ServiceData={ServiceData}/>
+            <FeaturesHome></FeaturesHome>
             {/* <MarketingService ServiceData={ServiceData}/> */}
 
             {/* <AgencyAbout ServiceData={ServiceData}/>
