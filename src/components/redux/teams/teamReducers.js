@@ -1,4 +1,4 @@
-import {ADD_TEAM, FETCH_TEAMS_FAILURE, FETCH_TEAMS_REQUEST, FETCH_TEAMS_SUCCESS} from './teamTypes'
+import {ADD_TEAM, FETCH_TEAMS_FAILURE, FETCH_TEAMS_REQUEST, FETCH_TEAMS_SUCCESS, DELETE_TEAM, UPDATE_TEAM} from './teamTypes'
 const initialState = {
     loading: false,
     teams: [],
@@ -23,6 +23,16 @@ const reducer = (state = initialState, action) => {
                 teams: [],
                 error: action.payload
             }
+            case DELETE_TEAM:
+                return {
+                    ...state,
+                    teams: state.teams.filter((teams) => teams._id !== action.payload)
+                }
+            case UPDATE_TEAM:
+                return {
+                    ...state,
+                    teams: state.teams.map((teams)=> teams._id === action.payload._id ? action.payload : teams  )
+                }
         case ADD_TEAM:
             return {
                 ...state,

@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 
 import AppLayout from "../../layout/AppLayout";
 import dashboards from "./dashboards";
+
 import pages from "./pages";
 import applications from "./applications";
 import ui from "./ui";

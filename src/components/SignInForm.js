@@ -76,19 +76,25 @@ const SignIn = () => {
             localStorage.setItem("Role", user.Role);
             localStorage.setItem("id", user._id);
             console.log(localStorage);
-             history.push("/app");
+             history.push("/app/dashboards/dashboard-admin");
           }
       }
     },
   });
 
+
   const SingUp = () => {
-    setsingUp(!singUp);
+    history.push("SignUp");
   };
 
-  const singUpAsCustomer = () => {
-    history.push("SignUpCustomer");
+  const SingUpTeam = () => {
+    history.push("SignUpTeam");
   };
+
+  const SingUpCenter = () => {
+    history.push("SignUpCenter");
+  };
+
   const singUpAsDriver = () => {
     history.push("/");
   };
@@ -105,12 +111,22 @@ const SignIn = () => {
                 <h3 className="f_p f_600 f_size_24 t_color3 mb_40">
                   First time here? <br />
                   <button className="btn_three" onClick={SingUp}>
-                    {singUp ? <>Sing In</> : <>Sign Up</>}
+                    Sign Up
                   </button>
+                  <div>
+                  <button className="btn_three" onClick={SingUpTeam}>
+                    Sign Up Team
+                  </button>
+                  </div>
+                  <div>
+                  <button className="btn_three" onClick={SingUpCenter}>
+                    Sign Up Collect Center
+                  </button>
+                  </div>
                 </h3>
 
                 <h2 className="f_p f_400 f_size_30 mb-30">
-                  You are a customer?
+                  Sign up here
                   <br /> <span className="f_700">
                     Use your face to sign in
                   </span>{" "}

@@ -36,7 +36,7 @@ const dataTableColumns = [
     Header: "Category",
     accessor: "category",
     Cell: props => <p className="text-muted">{props.value}</p>
-  }
+  }       
 ];
 
 export const ReactTableWithPaginationCard = props => {

@@ -53,6 +53,13 @@ module.exports = {
   "user.username": "Username",
 
   /* 03.Menu */
+  "menu.manageusers": "Manage Users",
+  "menu.managesupporters": "Manage Supporters",
+  "menu.manageteams": "Manage Teams",
+  "menu.managecollect": "Manage Collect Centers",
+  "menu.managetrash": "Manage Trash Bins",
+  "menu.ranking": "Ranking",
+  "menu.statistics": "Statistics",
   "menu.app": "Home",
   "menu.dashboards": "Dashboards",
   "menu.default": "Default",
@@ -326,6 +333,7 @@ module.exports = {
   "button.radio-button": "Radio Button",
   "button.primary": "Primary",
   "button.secondary": "Secondary",
+  "button.add": "Show add form",
   "button.success": "Success",
   "button.danger": "Danger",
   "button.warning": "Warning",
@@ -570,9 +578,13 @@ module.exports = {
   "table.bootstrap-borderless": "Borderless Table",
   "table.bootstrap-hoverable": "Hoverable Rows",
   "table.bootstrap-responsive": "Responsive Table",
+  "table.teams-ranking":"Teams Ranking",
   "table.react-tables": "React Tables",
   "table.react-pagination": "Pagination",
   "table.react-scrollable": "Scrollable",
+  "table.react-supporters": "Supporters",
+  "table.react-teams": "Teams",
+  "table.react-centers": "Collect Centers",
   "table.react-advanced": "Filter, Length and Jump",
 
 };

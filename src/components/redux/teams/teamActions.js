@@ -1,4 +1,4 @@
-import {FETCH_TEAMS_REQUEST, FETCH_TEAMS_SUCCESS, FETCH_TEAMS_FAILURE, ADD_TEAM} from './teamTypes'
+import {FETCH_TEAMS_REQUEST, FETCH_TEAMS_SUCCESS, FETCH_TEAMS_FAILURE, ADD_TEAM, DELETE_TEAM, UPDATE_TEAM} from './teamTypes'
 import axios from 'axios'
 
 export const fetchTeamsRequest = () => {
@@ -27,6 +27,19 @@ export const addTeam = (team) =>{
         payload : team
     }
 }
+export const deleteTeam = (id) =>{
+    return {
+        type : DELETE_TEAM,
+        payload : id
+    }
+}
+
+export const updateTeam = (teams) =>{
+    return {
+        type : UPDATE_TEAM,
+        payload : teams
+    }
+}
 
 export const fetchTeams = () => {
     return function(dispatch){
@@ -51,5 +64,25 @@ export const AddTeam = (team) =>{
          .then((response) => {
             dispatch(addTeam(response.data))
         }).catch((error)=>console.log("errorAddinng  : ", error));
+    }
+}
+
+export const DeleteTeam = (id) =>{
+    return function (dispatch){
+         axios.delete(`http://localhost:3000/teams/${id}`)
+        .then(
+            dispatch(deleteTeam(id))
+        )
+    }
+}
+
+export const UpdateTeam = (teams) =>{
+    return function (dispatch){
+         axios.put(`http://localhost:3000/teams/${teams._id}`,teams)
+         .then(() => {
+            dispatch(updateTeam(teams))
+        }, (error) => {
+            console.log({"error updating ": error});
+        });
     }
 }

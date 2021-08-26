@@ -53,6 +53,13 @@ module.exports = {
   "user.username": "Nombre de Usuario",
 
   /* 03.Menú */
+  "menu.manageusers": "Manage Users",
+  "menu.managesupporters": "Manage Supporters",
+  "menu.manageteams": "Manage Teams",
+  "menu.managecollect": "Manage Collect Centers",
+  "menu.managetrash": "Manage Trash Bins",
+  "menu.ranking": "Ranking",
+  "menu.statistics": "Statistics",
   "menu.app": "Inicio",
   "menu.dashboards": "Tableros",
   "menu.default": "Defecto",
@@ -322,6 +329,7 @@ module.exports = {
   "button.radio-button": "Radio Button",
   "button.primary": "Primary",
   "button.secondary": "Secondary",
+  "button.add": "Show add form",
   "button.success": "Success",
   "button.danger": "Danger",
   "button.warning": "Warning",
@@ -560,10 +568,12 @@ module.exports = {
   "table.bootstrap-bordered": "Tablas Con Bordes",
   "table.bootstrap-borderless": "Tablas Sin Bordes",
   "table.bootstrap-hoverable": "Tablas dinámicas",
+  "table.teams-ranking":"Teams Ranking",
   "table.bootstrap-responsive": "Tablas Responsive",
   "table.react-tables": "Tablas React",
   "table.react-pagination": "Paginación",
   "table.react-scrollable": "Tablas Con Voluta",
+  "table.react-supporters": "Supporters",
   "table.react-advanced": "Filtro, Longitud y Salto",
 
 };

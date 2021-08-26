@@ -1,5 +1,46 @@
 const data = [
   {
+    id: "Statistics",
+    icon: "simple-icon-pie-chart",
+    label: "menu.statistics",
+    to: "/app/dashboards/dashboard-admin",
+  },
+  {
+    id: "Users",
+    icon: "simple-icon-people",
+    label: "menu.manageusers",
+    to: "/app/dashboards/dashboard-admin",
+    subs: [
+      {
+        icon: "simple-icon-user-follow",
+        label: "menu.managesupporters",
+        to: "/app/dashboards/dashboard-admin"
+      },
+      {
+        icon: "simple-icon-grid",
+        label: "menu.manageteams",
+        to: "/app/dashboards/manageTeams"
+      },
+      {
+        icon: "simple-icon-home",
+        label: "menu.managecollect",
+        to: "/app/dashboards/manageCenters"
+      }
+    ]
+  },
+  {
+    id: "Manage Trashbins",
+    icon: "simple-icon-trash",
+    label: "menu.managetrash",
+    to: "/app/dashboards/dashboard-admin",
+  },
+  {
+    id: "Ranking",
+    icon: "simple-icon-graph",
+    label: "menu.ranking",
+    to: "/app/dashboards/ranking",
+  },
+  {
     id: "dashboards",
     icon: "iconsminds-shop-4",
     label: "menu.dashboards",
@@ -246,5 +287,6 @@ const data = [
     to: "https://gogo-react-docs.coloredstrategies.com/",
     newWindow:true
   }
+  
 ];
 export default data;

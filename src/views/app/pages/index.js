@@ -8,6 +8,7 @@ import detailsPages from './details';
 import searchPages from './search';
 import mailingPages from './mailing';
 import invoicePages from './invoice';
+import thumb from './thumb'
 
 const Pages = ({ match }) => (
     <div className="dashboard-wrapper">
@@ -20,6 +21,7 @@ const Pages = ({ match }) => (
             <Route path={`${match.url}/search`} component={searchPages} />
             <Route path={`${match.url}/mailing`} component={mailingPages} />
             <Route path={`${match.url}/invoice`} component={invoicePages} />
+            <Route path={`${match.url}/manageSupporters`} component={thumb} />
             <Redirect to="/error" />
 
         </Switch>

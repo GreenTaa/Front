@@ -121,7 +121,7 @@ const SignUpForm =()=>{
                                                 Date_birth : moment(date).format("YYYY-MM-DD")
                                             })
                                         }}  
-                                        dateFormat= 'yyyy/MM/dd'
+                                        dateFormat= 'dd/MM/yyyy'
                                         isClearable
                                         showYearDropdown
                                         scrollableMonthYearDropdown
