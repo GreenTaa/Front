@@ -213,6 +213,7 @@ class TopNav extends Component {
 
         <div className="ml-auto">
           <div className="header-icons d-inline-block align-middle">
+            <TopnavNotifications />
             
             <button
               className="header-icon btn btn-empty d-none d-sm-inline-block"

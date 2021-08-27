@@ -1,15 +1,16 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { withRouter} from "react-router-dom";
-
+import CustomNavbar from '../components/CustomNavbar'
 import TopNav from "../containers/navs/Topnav";
 import Sidebar from "../containers/navs/Sidebar";
 class AppLayout extends Component {
   render() {
     const { containerClassnames } = this.props;
     return (
-      <div id="app-container" className={containerClassnames}>
-        <TopNav history={this.props.history} />
+      <div id="app-container" >
+        {/* <CustomNavbar/> */}
+        <TopNav/>
         <Sidebar />
         <main>
           <div className="container-fluid">
