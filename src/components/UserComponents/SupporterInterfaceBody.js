@@ -3,6 +3,7 @@ import React, {Fragment} from 'react';
 //import CustomerStats from "./CustomerStats";
 //import CustomerFavoriteDrivers from "./CustomerFavoriteDrivers";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import  Usercard from './Usercard';
 
 import { Button, Tooltip } from '@material-ui/core';
 //import CustomerOperationsPayments from "./CustomerOperationsPayments";
@@ -39,7 +40,7 @@ const SupporterInterfaceBody =(props)=>{
                                             className="font-size-xl"
                                         />
                                         <br/>
-                                    Send Package</a>
+                                    My profile</a>
                                 </li>
 
 
@@ -50,38 +51,11 @@ const SupporterInterfaceBody =(props)=>{
                                             className="font-size-xl"
                                         />
                                         <br/>
-                                        My Packages</a>
+                                        History</a>
                                 </li>
 
 
-                                <li className="nav-item">
-                                    <a className="nav-link" id="price-tab" data-toggle="tab" href="#Payments" role="tab" aria-controls="price" aria-selected="false">
-                                        <FontAwesomeIcon
-                                            icon={['fa', 'credit-card']}
-                                            className="font-size-xl"
-                                        />
-                                        <br/>
-                                        My Payments</a>
-                                </li>
-
-                                <li className="nav-item">
-                                    <a className="nav-link" id="price-tab" data-toggle="tab" href="#Profile" role="tab" aria-controls="price" aria-selected="false">
-                                        <FontAwesomeIcon
-                                            icon={['fa', 'user-edit']}
-                                            className="font-size-xl"
-                                        />
-                                        <br/>
-                                        Edit Profile</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link" id="price-tab" data-toggle="tab" href="#Security" role="tab" aria-controls="price" aria-selected="false">
-                                        <FontAwesomeIcon
-                                            icon={['fa', 'user-secret']}
-                                            className="font-size-xl"
-                                        />
-                                        <br/>
-                                        Security</a>
-                                </li>
+                              
 
                             </ul>
                         </div>
@@ -90,36 +64,25 @@ const SupporterInterfaceBody =(props)=>{
 
 
                     <div   className="col-lg-8">
-                        <Button style = {{marginLeft: '15.9rem'}} variant="contained" color="primary" className="m-2">
-                            <FontAwesomeIcon icon={['far', 'bell']} />
-                            <span className="ml-3 badge badge-warning">
-                          <b>23</b> New
-                            </span>
-                        </Button>
+                       
 
                         <div className="tab-content faq_content" id="myTabContent">
                             <div className="tab-pane fade show active" id="Analytics" role="tabpanel" aria-labelledby="purchas-tab">
-                                   {props.supporter.Firstname}
+                            stats
+
                             </div>
 
                             <div className="tab-pane fade" id="Packages" role="tabpanel" aria-labelledby="price-tab">
-                            second
-                            </div>
+third                            </div>
                             <div className="tab-pane fade" id="Payments" role="tabpanel" aria-labelledby="price-tab">
-                third                           
+                                                    
                  </div>
 
                             <div className="tab-pane fade" id="SendPackage" role="tabpanel" aria-labelledby="price-tab">
-                                    fourth
+                            <Usercard supporter={props.supporter}/>  
                             </div>
 
-                            <div className="tab-pane fade" id="Profile" role="tabpanel" aria-labelledby="price-tab">
-                            fourth
-                            </div>
-
-                            <div className="tab-pane fade" id="Security" role="tabpanel" aria-labelledby="price-tab">
-                                fifth
-                            </div>
+                           
 
                         </div>
                     </div>
