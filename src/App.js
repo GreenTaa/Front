@@ -60,6 +60,7 @@ import login from "./views/user/login";
 import { useHistory } from "react-router-dom";
 import ResetNewPassword from "./Pages/ResetNewPassword";
 import ResetPassword from "./Pages/ResetPassword";
+import maptest from "./components/trash/addtrash";
 
 import SignUpTeam from "./Pages/SignUpTeam";
 import SignUpCenter from "./Pages/SignUpCenter"
@@ -102,7 +103,7 @@ class App extends Component {
                 <AuthRoute path="/app" authUser={loginUser} component={app} />
                 <Route path="/error" exact component={error} />
                 <Route path="/log" exact component={login} />
-                <Route path="/test" exact component={test} />
+                <Route path="/test" exact component={maptest} />
                 <Route path="/SupporterInterface" exact component={SupporterInterface} />
                 <AuthRoute path="/" exact component={main} />
 

@@ -51,9 +51,9 @@ export default function CustomNavbar(props) {
     history.push("/");
   };
 
-  const myAccountPath = () => {
+  const Myaccount = () => {
     if (role === "Supporter") {
-      history.push("/EntrepriseInterface");
+      history.push("/supporterinterface");
     }
   };
 
@@ -131,10 +131,10 @@ export default function CustomNavbar(props) {
                 </span>
               </DropdownToggle>
               <DropdownMenu className="mt-3" right>
-                <DropdownItem>Account</DropdownItem>
+                <DropdownItem onClick={() => Myaccount()} >Account</DropdownItem>
                 <DropdownItem>Mile stones</DropdownItem>
                 <DropdownItem>History</DropdownItem>
-       
+                
                 <DropdownItem divider />
                 <DropdownItem   onClick={() => Logout()}>
                   Sign out
