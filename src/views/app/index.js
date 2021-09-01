@@ -10,6 +10,8 @@ import applications from "./applications";
 import ui from "./ui";
 import menu from "./menu";
 import blankPage from "./blank-page";
+import maptest from "../../components/trash/addtrash";
+import alltrash from "../../components/trash/Alltrash";
 
 class App extends Component {
   render() {
@@ -24,6 +26,8 @@ class App extends Component {
           <Route path={`${match.url}/pages`} component={pages} />
           <Route path={`${match.url}/ui`} component={ui} />
           <Route path={`${match.url}/menu`} component={menu} />
+          <Route path={`${match.url}/addtrash`} component={maptest} />
+          <Route path={`${match.url}/alltrash`} component={alltrash} />
           <Route path={`${match.url}/blank-page`} component={blankPage} />
           <Redirect to="/error" />
         </Switch>

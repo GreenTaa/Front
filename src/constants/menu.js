@@ -33,6 +33,23 @@ const data = [
     icon: "simple-icon-trash",
     label: "menu.managetrash",
     to: "/app/dashboards/dashboard-admin",
+    subs: [
+      {
+        icon: "simple-icon-user-follow",
+        label: "Add Trashbin",
+        to: "/app/addtrash"
+      },
+      {
+        icon: "simple-icon-grid",
+        label: "All trash bins",
+        to: "/app/alltrash"
+      },
+      {
+        icon: "simple-icon-home",
+        label: "Affect trashbins",
+        to: "/app/dashboards/manageCenters"
+      }
+    ]
   },
   {
     id: "Ranking",
