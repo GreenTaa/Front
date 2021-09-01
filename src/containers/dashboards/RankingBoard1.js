@@ -11,11 +11,12 @@ const BestSellers = ({title="dashboards.best-sellers"}) => {
   const dispatch = useDispatch();
   const teamsData = useSelector((state) => state.teams)
   useEffect(() => {
-    dispatch(fetchTeams())
-    console.log("Teams : ", teamsData)
+    const interval = setInterval(() => {
+      dispatch(fetchTeams())
+    }, 500);
+    return () => clearInterval(interval);
   }
-
-, [])
+  , [])  
 
   const columns = [
     {

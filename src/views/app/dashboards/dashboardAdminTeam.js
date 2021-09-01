@@ -67,10 +67,9 @@ export default function EcommerceDashboard()  {
   const dispatch = useDispatch()
   const teamsData = useSelector((state) => state.teams)
   useEffect(() => {
-      dispatch(fetchTeams())
-      console.log("Teams : ", teamsData)
+        dispatch(fetchTeams())
   }
-  , [])  
+  , [])   
   const Columns = [
     {
       Header: "Logo",

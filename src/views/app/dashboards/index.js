@@ -9,6 +9,7 @@ import dashboardAdmin from "./dashboardAdmin";
 import dashboardAdminTeam from "./dashboardAdminTeam"
 import dashboardAdminCenter from "./dashboardAdminCenter"
 import dashboardAdminRanking from "./dashboardAdminRanking"
+import dashboardTeam from "./dashboardAdminTeam"
 
 const Dashboards = ({ match }) => (
     <div className="dashboard-wrapper">
@@ -22,6 +23,7 @@ const Dashboards = ({ match }) => (
             <Route path={`${match.url}/manageTeams`} component={dashboardAdminTeam} />
             <Route path={`${match.url}/manageCenters`} component={dashboardAdminCenter} />
             <Route path={`${match.url}/ranking`} component={dashboardAdminRanking} />
+            <Route path={`${match.url}/dashboard-team`} component={dashboardTeam} />
             <Redirect to="/error" />
 
         </Switch>

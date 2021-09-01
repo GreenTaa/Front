@@ -13,10 +13,17 @@ export default function RecentOrders() {
     const dispatch = useDispatch()
     const teamsData = useSelector((state) => state.teams)
     useEffect(() => {
-      dispatch(fetchTeams())
+      
       console.log("Teams : ", teamsData)}
   
   , [])
+  useEffect(() => {
+    const interval = setInterval(() => {
+        dispatch(fetchTeams())
+    }, 500);
+    return () => clearInterval(interval);
+}
+, [])  
   return (
     <Card>
       <div className="position-absolute card-top-buttons">

@@ -45,6 +45,7 @@
     "react-google-maps": "^9.4.5",
     "react-history": "^0.18.2",
     "react-hook-form": "^7.14.1",
+    "react-icons": "^4.2.0",
     "react-images-loaded": "^2.0.0",
     "react-intl": "2.4.0",
     "react-leaflet": "^3.2.1",
@@ -90,7 +91,7 @@
     "extends": "react-app"
   },
   "engines": {
-    "node": "14.17.4",
+    "node": "14.17.5",
     "npm": "6.14.4"
   },
   "browserslist": [

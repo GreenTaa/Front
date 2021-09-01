@@ -69,7 +69,7 @@ module.exports = {
   "menu.pages": "Pages",
   "menu.data-list": "Data List",
   "menu.thumb-list": "Thumb List",
-  "menu.image-list": "Image List",
+  "menu.image-list": "Store",
   "menu.details": "Details",
   "menu.search": "Search",
   "menu.login": "Login",

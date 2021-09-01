@@ -98,7 +98,11 @@ export default function CustomNavbar(props) {
                     Home
                   </Link>
                 </li>
-
+                <li className="nav-item dropdown submenu mega_menu mega_menu_two">
+                  <Link to="/store" className="nav-link dropdown-toggle">
+                    Store
+                  </Link>
+                </li>
                 <li className="dropdown submenu nav-item">
                   <Link to="/Service" className="dropdown-toggle nav-link">
                     Services

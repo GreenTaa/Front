@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, {useState, Component, Fragment, useEffect} from "react";
 import { Row } from "reactstrap";
 import axios from "axios";
 
@@ -10,14 +10,19 @@ import ContextMenuContainer from "../../../containers/pages/ContextMenuContainer
 import ListPageHeading from "../../../containers/pages/ListPageHeading";
 import ImageListView from "../../../containers/pages/ImageListView";
 import ThumbListView from "../../../containers/pages/ThumbListView";
-import AddNewModal from "../../../containers/pages/AddNewModal";
+import {fetchProducts, addProduct, deleteProduct, updateProduct} from '../../../components/redux/products/productActions'
+import CustomNavbar from '../../../components/CustomNavbar'
+import { useDispatch, useSelector } from 'react-redux';
+import Produits from './produits'
 
 function collect(props) {
   return { data: props.data };
 }
+
 const apiUrl = servicePath + "/cakes/paging";
 
 class ThumbListPages extends Component {
+  
   constructor(props) {
     super(props);
     this.mouseTrap = require('mousetrap');
@@ -64,6 +69,19 @@ class ThumbListPages extends Component {
       });
       return false;
     });
+    const renderId = () => {
+        let id = 0
+        if(localStorage.getItem('id') != null)
+        {
+            id= localStorage.getItem('id');
+        }
+        else {
+            id="60949f6ba158b41be4b96bf0";
+        }
+        return id;
+        
+    }
+
   }
   
   componentWillUnmount() {
@@ -257,8 +275,10 @@ class ThumbListPages extends Component {
     return !this.state.isLoading ? (
       <div className="loading" />
     ) : (
-      <Fragment>
-        <div className="disable-text-selection">
+      <div>
+        <CustomNavbar mClass="menu_four" cClass="custom_container p0" nClass="pl_120 mr-auto ml-auto" hbtnClass="menu_cus"/>
+        <Fragment>
+        <div className="disable-text-selection">     
           <ListPageHeading
             heading="menu.image-list"
             displayMode={displayMode}
@@ -279,45 +299,29 @@ class ThumbListPages extends Component {
             pageSizes={pageSizes}
             toggleModal={this.toggleModal}
           />
-          <AddNewModal
-            modalOpen={modalOpen}
+          <ListPageHeading
+            heading="menu.image-list"
+            displayMode={displayMode}
+            changeDisplayMode={this.changeDisplayMode}
+            handleChangeSelectAll={this.handleChangeSelectAll}
+            changeOrderBy={this.changeOrderBy}
+            changePageSize={this.changePageSize}
+            selectedPageSize={selectedPageSize}
+            totalItemCount={totalItemCount}
+            selectedOrderOption={selectedOrderOption}
+            match={match}
+            startIndex={startIndex}
+            endIndex={endIndex}
+            selectedItemsLength={selectedItems ? selectedItems.length : 0}
+            itemsLength={items ? items.length : 0}
+            onSearchKey={this.onSearchKey}
+            orderOptions={orderOptions}
+            pageSizes={pageSizes}
             toggleModal={this.toggleModal}
-            categories={categories}
           />
           <Row>
-            {this.state.items.map(product => {
-              if (this.state.displayMode === "imagelist") {
-                return (
-                  <ImageListView
-                    key={product.id}
-                    product={product}
-                    isSelect={this.state.selectedItems.includes(product.id)}
-                    collect={collect}
-                    onCheckItem={this.onCheckItem}
-                  />
-                );
-              } else if (this.state.displayMode === "thumblist") {
-                return (
-                  <ThumbListView
-                    key={product.id}
-                    product={product}
-                    isSelect={this.state.selectedItems.includes(product.id)}
-                    collect={collect}
-                    onCheckItem={this.onCheckItem}
-                  />
-                );
-              } else {
-                return (
-                  <DataListView
-                    key={product.id}
-                    product={product}
-                    isSelect={this.state.selectedItems.includes(product.id)}
-                    onCheckItem={this.onCheckItem}
-                    collect={collect}
-                  />
-                );
-              }
-            })}{" "}
+            <Produits/>
+            
             <Pagination
               currentPage={this.state.currentPage}
               totalPage={this.state.totalPage}
@@ -330,6 +334,7 @@ class ThumbListPages extends Component {
           </Row>
         </div>
       </Fragment>
+      </div>
     );
   }
 }

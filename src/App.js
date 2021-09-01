@@ -65,6 +65,10 @@ import maptest from "./components/trash/addtrash";
 import SignUpTeam from "./Pages/SignUpTeam";
 import SignUpCenter from "./Pages/SignUpCenter"
 import SupporterInterface from "./Pages/Users/SupporterInterface"
+import dashboardTeam from "./views/app/dashboards/dashboardteam"
+/* import Store from './Pages/Store' */
+import Produits from './views/app/pages/produits'
+import Store from './views/app/pages/image-list'
 
 const AuthRoute = ({ component: Component, authUser, ...rest }) => (
   <Route
@@ -126,6 +130,8 @@ class App extends Component {
           <ScrollToTopRoute path="/Team" component={Team} />
           <ScrollToTopRoute path="/Portfolio-2col" component={Portfolio2col} />
           <ScrollToTopRoute path="/Portfolio-3col" component={Portfolio3col} />
+          <ScrollToTopRoute path="/store" component={Store} />
+          <ScrollToTopRoute path="/produits" component={Produits} />
           <ScrollToTopRoute
             path="/Portfolio-fullwidth-4col"
             component={Portfoliofull4col}
@@ -165,6 +171,7 @@ class App extends Component {
           <ScrollToTopRoute path="/Service-Supporter" component={ServiceSupporter} />
           <ScrollToTopRoute path="/Service-Team" component={ServiceTeam} />
           <ScrollToTopRoute path="/Service-Center" component={ServiceCenter} />
+          <ScrollToTopRoute path="/dashboard-team" component={dashboardTeam} />
           <Redirect to="/error" />
 
               </Switch>

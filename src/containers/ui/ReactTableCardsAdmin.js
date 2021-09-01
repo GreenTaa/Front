@@ -24,10 +24,12 @@ export const ReactTableWithScrollableCard = (show) => {
 const supportersData = useSelector((state) => state.supporters)
 const dispatch = useDispatch()
 useEffect(() => {
-    dispatch(fetchSupporters())
-    console.log("Supporters : ", supportersData)
+  const interval = setInterval(() => {
+      dispatch(fetchSupporters())
+  }, 500);
+  return () => clearInterval(interval);
 }
-, []) 
+, [])  
 const dataTableColumns = [ 
     {
       Header: "Image",
@@ -108,10 +110,12 @@ const dataTableColumns = [
     const dispatch = useDispatch()
 const teamsData = useSelector((state) => state.teams)
 useEffect(() => {
-    dispatch(fetchTeams())
-    console.log("Teams : ", teamsData)
+  const interval = setInterval(() => {
+      dispatch(fetchTeams())
+  }, 500);
+  return () => clearInterval(interval);
 }
-, [])  
+, [])   
 const Columns = [
     {
       Header: "Logo",
@@ -171,10 +175,12 @@ export const ReactTableWithScrollableCardCenters = props => {
     const dispatch = useDispatch()
     const centersData = useSelector((state) => state.centers)
     useEffect(() => {
-        dispatch(fetchCenters())
-        console.log("Centers : ", centersData)
-}
-, [])  
+      const interval = setInterval(() => {
+          dispatch(fetchCenters())
+      }, 500);
+      return () => clearInterval(interval);
+    }
+    , [])  
 const ColumnsC = [
     {
       Header: "Name",

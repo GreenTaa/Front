@@ -40,7 +40,7 @@ const data = [
     label: "menu.ranking",
     to: "/app/dashboards/ranking",
   },
-  /* {
+   {
     id: "dashboards",
     icon: "iconsminds-shop-4",
     label: "menu.dashboards",
@@ -286,7 +286,7 @@ const data = [
     label: "menu.docs",
     to: "https://gogo-react-docs.coloredstrategies.com/",
     newWindow:true
-  } */
+  } 
   
 ];
 export default data;

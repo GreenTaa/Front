@@ -68,7 +68,7 @@ const SignIn = () => {
             localStorage.setItem("Role", user.Role);
             localStorage.setItem("id", user._id);
             console.log(localStorage);
-             history.push("/app");
+             history.push("/dashboard-team");
           }
           if (user.Role === "Admin") {
           

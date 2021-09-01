@@ -45,10 +45,9 @@ const onUpdate = (e, center) => {
   const dispatch = useDispatch()
   const centersData = useSelector((state) => state.centers)
   useEffect(() => {
-      dispatch(fetchCenters())
-      console.log("Centers : ", centersData)
-}
-, [])  
+        dispatch(fetchCenters())
+  }
+  , [])   
 const ColumnsC = [
   {
     Header: "Name",

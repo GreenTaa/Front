@@ -74,15 +74,6 @@ class ListPageHeading extends Component {
             </h1>
 
             <div className="float-sm-right">
-              <Button
-                color="primary"
-                size="lg"
-                className="top-right-button"
-                onClick={()=>toggleModal()}
-              >
-                <IntlMessages id="pages.add-new" />
-              </Button>
-              {"  "}
               <ButtonDropdown
                 isOpen={dropdownSplitOpen}
                 toggle={this.toggleSplit}

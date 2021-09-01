@@ -49,7 +49,6 @@ export default function EcommerceDashboard()  {
       console.log("entred")
       dispatch(AddSupporter(user))
       console.log("passed")
-      window.location.reload(true);
   }
   return (
     <div>

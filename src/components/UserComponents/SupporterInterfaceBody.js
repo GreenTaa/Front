@@ -5,6 +5,7 @@ import React, { Fragment, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Usercard from "./Usercard";
 import Trash from "../trash/addtrash";
+
 import {
   MapContainer,
   TileLayer,
@@ -101,7 +102,6 @@ const SupporterInterfaceBody = (props) => {
               >
                
                
-
 
 
 

@@ -64,9 +64,13 @@ const uploadImage = async (base64EncodedImage) => {
 }
 const teamsData = useSelector((state) => state.teams)
 useEffect(() => {
+      dispatch(fetchSupporters())
+}
+, [])  
+useEffect(() => {
   dispatch(fetchTeams())
-  console.log("Teams : ", teamsData)}
-  , [])
+}
+, [])  
 var teams = teamsData.teams.map(team => team.Sname)
 const [fileInputState, setFileInputState] = useState('')
 const [previewSource, setPreviewSource] = useState('')
@@ -78,7 +82,6 @@ const onAdd = (e) => {
     console.log("entred")
     dispatch(AddSupporter(user))
     console.log("passed")
-    window.location.reload(true);
 }
 const onUpdate = (e, user) => {
   console.log("entred to update")
@@ -96,11 +99,7 @@ const dispatch = useDispatch()
 const ReactTableWithScrollableCard = (show) => {
   const supportersData = useSelector((state) => state.supporters)
   const dispatch = useDispatch()
-  useEffect(() => {
-      dispatch(fetchSupporters())
-      console.log("Supporters : ", supportersData)
-  }
-  , []) 
+
   const dataTableColumns = [ 
       {
         Header: "Image",
@@ -242,7 +241,7 @@ const ReactTableWithScrollableCard = (show) => {
                     Date_birth : moment(date).format("YYYY-MM-DD")
                 })
             }}  
-            dateFormat= 'yyyy/MM/dd'
+            dateFormat= 'dd/MM/yyyy'
             isClearable
             showYearDropdown
             scrollableMonthYearDropdown
