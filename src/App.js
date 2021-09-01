@@ -107,7 +107,6 @@ class App extends Component {
                 <AuthRoute path="/app" authUser={loginUser} component={app} />
                 <Route path="/error" exact component={error} />
                 <Route path="/log" exact component={login} />
-                <Route path="/test" exact component={maptest} />
                 <Route path="/SupporterInterface" exact component={SupporterInterface} />
                 <AuthRoute path="/" exact component={main} />
 
