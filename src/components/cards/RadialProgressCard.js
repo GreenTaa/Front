@@ -1,6 +1,5 @@
 import React from "react";
 import { Card, CardBody, CardTitle, CardHeader } from "reactstrap";
-import CircularProgressbar from "react-circular-progressbar";
 
 const RadialProgressCard = ({
   title = "title",
@@ -19,11 +18,7 @@ const RadialProgressCard = ({
       <CardBody className="d-flex justify-content-between align-items-center">
         <CardTitle className="mb-0">{title}</CardTitle>
         <div className="progress-bar-circle">
-          <CircularProgressbar
-            strokeWidth={4}
-            percentage={percent}
-            text={`${percent}%`}
-          />
+         
         </div>
       </CardBody>
     </Card>

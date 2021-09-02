@@ -1,6 +1,5 @@
 import React from "react";
 import { Card, CardBody } from "reactstrap";
-import CircularProgressbar from "react-circular-progressbar";
 
 const GradientWithRadialProgressCard = ({
   icon = "iconsminds-bell",
@@ -22,11 +21,7 @@ const GradientWithRadialProgressCard = ({
           </div>
         </div>
         <div className="progress-bar-circle progress-bar-banner position-relative">
-          <CircularProgressbar
-            strokeWidth={4}
-            percentage={percent}
-            text={progressText}
-          />
+          
         </div>
       </CardBody>
     </Card>
