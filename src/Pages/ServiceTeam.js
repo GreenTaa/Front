@@ -10,14 +10,16 @@ import Partner from '../components/Partner';
 import ServiceSubscribe from '../components/ServiceSubscribe';
 import FooterTwo from '../components/Footer/FooterTwo';
 import FooterData from '../components/Footer/FooterData';
+import Breadcrumb from '../components/Breadcrumb';
 
 const HomeCloud = () => {
     return(
         <div className="body_wrapper">
-            <CustomNavbar slogo="sticky_logo" mClass="menu_four" nClass="w_menu" hbtnClass="btn_get_radious menu_custfive"/>
+            <CustomNavbar mClass="menu_four" cClass="custom_container p0" nClass="pl_120 mr-auto ml-auto" hbtnClass="menu_cus"/>
+            <Breadcrumb breadcrumbClass="breadcrumb_area" imgName="breadcrumb/banner_bg.png" Ptitle="Team's service" Pdescription="Why I say old chap that is spiffing off his nut arse pear shaped plastered Jeffrey bodge barney some dodgy.!!"/>
             <CloudFeatures/>
             <CloudServiceTab/>
-            <FooterTwo fClass="pt_150" FooterData={FooterData}/>
+            <FooterTwo  FooterData={FooterData}/>
         </div>
     )
 }

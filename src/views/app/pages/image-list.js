@@ -1,9 +1,9 @@
 import React, {useState, Component, Fragment, useEffect} from "react";
 import { Row } from "reactstrap";
 import axios from "axios";
-
 import { servicePath } from "../../../constants/defaultValues";
-
+import FooterTwo from '../../../components/Footer/FooterTwo';
+import FooterData from '../../../components/Footer/FooterData';
 import DataListView from "../../../containers/pages/DataListView";
 import Pagination from "../../../containers/pages/Pagination";
 import ContextMenuContainer from "../../../containers/pages/ContextMenuContainer";
@@ -272,13 +272,16 @@ class ThumbListPages extends Component {
     const startIndex = (currentPage - 1) * selectedPageSize;
     const endIndex = currentPage * selectedPageSize;
 
-    return !this.state.isLoading ? (
-      <div className="loading" />
-    ) : (
+    return  (
+      
       <div>
         <CustomNavbar mClass="menu_four" cClass="custom_container p0" nClass="pl_120 mr-auto ml-auto" hbtnClass="menu_cus"/>
-        <Fragment>
-        <div className="disable-text-selection">     
+        <img src="http://res.cloudinary.com/dkqbdhbrp/image/upload/v1630597218/teams/ordflpx7kuhlwj5ahkwb.jpg" width="1550px" height="700px" />
+        <br></br>
+        <br></br>
+        <Fragment >
+        <div className="disable-text-selection container">  
+        
           <ListPageHeading
             heading="menu.image-list"
             displayMode={displayMode}
@@ -299,27 +302,10 @@ class ThumbListPages extends Component {
             pageSizes={pageSizes}
             toggleModal={this.toggleModal}
           />
-          <ListPageHeading
-            heading="menu.image-list"
-            displayMode={displayMode}
-            changeDisplayMode={this.changeDisplayMode}
-            handleChangeSelectAll={this.handleChangeSelectAll}
-            changeOrderBy={this.changeOrderBy}
-            changePageSize={this.changePageSize}
-            selectedPageSize={selectedPageSize}
-            totalItemCount={totalItemCount}
-            selectedOrderOption={selectedOrderOption}
-            match={match}
-            startIndex={startIndex}
-            endIndex={endIndex}
-            selectedItemsLength={selectedItems ? selectedItems.length : 0}
-            itemsLength={items ? items.length : 0}
-            onSearchKey={this.onSearchKey}
-            orderOptions={orderOptions}
-            pageSizes={pageSizes}
-            toggleModal={this.toggleModal}
-          />
-          <Row>
+         
+          
+           
+            <Row> 
             <Produits/>
             
             <Pagination
@@ -332,10 +318,13 @@ class ThumbListPages extends Component {
               onContextMenu={this.onContextMenu}
             />
           </Row>
-        </div>
+          </div>     
+        
       </Fragment>
-      </div>
-    );
+      <FooterTwo  FooterData={FooterData}/>
+      </div> 
+      
+    )
   }
 }
 export default ThumbListPages;

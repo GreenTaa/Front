@@ -167,7 +167,7 @@ class Contacts extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                <button type="submit" className="btn_three">Send Message</button>
+                                <button type="submit" className="btn_three">Sen Message</button>
                             </form>
                             {/* {emailStatus ? emailStatus : null} */}
                             <div id="success">Your message succesfully sent!</div>

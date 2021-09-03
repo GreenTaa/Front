@@ -41,71 +41,56 @@ const ImageListView = ({ }) => {
     const dispatch = useDispatch()
       const productsData = useSelector((state) => state.products)
       useEffect(() => {
-        getSupporter();
         const interval = setInterval(() => {
-            dispatch(fetchProducts())
-        }, 2000);
-        return () => clearInterval(interval);
-    }, [ getSupporter()]);  
-      const onUpdate = (product) => {
-        axios.put(`http://localhost:3000/products/${product._id}`,{...product, Likes: product.Likes + 1}  )
+          getSupporter();
+          dispatch(fetchProducts())
+      }, 2000);
+      return () => clearInterval(interval);
+        
+    }, [ ]);  
+    
+      const onUpdate = (points) => {
+        axios.put( "http://localhost:3000/supporters/"+localStorage.getItem('id'),{...supporter, Score: supporter.Score - points}  )
       }
       const [supporter,setSupporter] = useState();
 
   return (
-    
     productsData.products.map((product) => {
         return(
-        
-<Colxx sm="6" lg="4" xl="3" className="mb-3" key={product._id}>
+      <Colxx sm="6" lg="4" xl="3" className="mx-auto" key={product._id}>
         <ContextMenuTrigger id="menu_id" data={product._id} >
-          {supporter? <Card>
+          
+          <div className="mb-5">
+           <Card>  
+          
           <div className="position-relative">
             <NavLink to={`?p=${product._id}`} className="w-40 w-sm-100">
-              <CardImg top alt={product.Name} src={product.Picture} />
+              <CardImg top alt={product.Name} src={product.Picture} width="270" height="270"/>
             </NavLink>
           </div>
           <CardBody>
             <Row>
-              <Colxx xxs="2">
-                <CustomInput
-                  className="item-check mb-0"
-                  type="checkbox"
-                  id={`check_${product._id}`}
-                  
-                  onChange={() => {}}
-                  label=""
-                />
-              </Colxx>
               <Colxx xxs="10" className="mb-3">
                 <CardSubtitle>{product.Name}</CardSubtitle>
                 <CardSubtitle>{product.Points_Required   }</CardSubtitle>
                 <CardText className="text-muted text-small mb-0 font-weight-light">
                 <div className="col-md-3 .ml-md-auto">
-                <Row >
-                <button className="btn btn-outline-primary" onClick={() =>  
-                 onUpdate(product)} >
-                      Like </button>
-                <h4>{product.Likes}</h4>
-                </Row>
                 <Row>
-                <button className="btn btn-outline-primary" >Buy</button>
+                <button className="btn btn-outline-primary"  onClick={() => onUpdate(product.Points_Required)} >Buy</button>
                 </Row>
                 </div>
                 </CardText>
               </Colxx>
             </Row>
           </CardBody>
-        </Card>: ""}
           
+        </Card>
+        </div>
+      
         </ContextMenuTrigger>
       </Colxx> 
-     
         )
-        
     })
-   
-  
   );
 };
 

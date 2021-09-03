@@ -78,7 +78,7 @@ $animation-time-short: 200ms;
 
 $border-radius: 0.1rem;
 
-$theme-color-purple: #922c88;
+$theme-color-purple: #3ba266;
 $theme-color-blue: #145388;
 $theme-color-green: #576a3d;
 $theme-color-orange: #e2863b;
@@ -140,6 +140,12 @@ body {
   }
 }
 
+.avatar-rounded-circle{
+  vertical-align: middle;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
 .fixed-background {
   background: url("/assets/img/balloon.jpg") no-repeat center center fixed;
   background-size: cover;
@@ -1718,8 +1724,8 @@ button {
   }
 
   .navbar-logo {
-    width: 110px;
-    height: 35px;
+    width: 200px;
+    height: 90px;
     position: absolute;
     left: 0;
     right: 0;

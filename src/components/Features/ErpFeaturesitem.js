@@ -20,7 +20,7 @@ class ErpFeaturesitem extends Component {
                         </div>
                         <ErpIconitem iconName="icon_menu-square_alt2" erpText="Manage your agents"/>
                         <ErpIconitem eitemClass="green" iconName="icon_ribbon_alt" erpText="Manage your trash bins"/>
-                        <a href="/#" className="erp_btn_learn">Sign Up<i className="arrow_right"></i></a>
+                        <a href="/SignUpCenter" className="erp_btn_learn">Sign Up<i className="arrow_right"></i></a>
                     </div>
                 </div>
             </div>

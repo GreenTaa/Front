@@ -5,8 +5,8 @@ import {
     UncontrolledDropdown,
     DropdownItem,
     DropdownToggle,
-    DropdownMenu
-    
+    DropdownMenu,
+    Row
   } from "reactstrap";
 import {
   Avatar,
@@ -63,7 +63,7 @@ export default function CustomNavbar(props) {
         <nav className={`navbar navbar-expand-lg menu_one ${mClass}`}>
           <div className={`container ${cClass}`}>
             <Link className={`navbar-brand ${slogo}`} to="/">
-            <img src={require("../img/greenta web.png")} alt=""/>
+            <img style={{width: "175px"}} src={require("../img/greenta web.png")} alt=""/>
             <img style={{width: "175px"}} src={require("../img/greenta web.png")} alt="logo"/>
             </Link>
             <button
@@ -103,11 +103,13 @@ export default function CustomNavbar(props) {
                     Store
                   </Link>
                 </li>
-                <li className="dropdown submenu nav-item">
-                  <Link to="/Service" className="dropdown-toggle nav-link">
-                    Services
-                  </Link>
-                </li>
+                <li className="dropdown submenu nav-item"><Link title="Pages" className="dropdown-toggle nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" to="#">Services</Link>
+                                    <ul role="menu" className=" dropdown-menu">
+                                        <li className="nav-item"><NavLink title="Portfolio 2" className="nav-link" to='/service-supporter'>Supporter's Services</NavLink></li>
+                                        <li className="nav-item"><NavLink title="Portfolio 3" className="nav-link" to='/service-team'>Team's Services</NavLink></li>
+                                        <li className="nav-item"><NavLink title="Portfolio Fullwidth" className="nav-link" to='/service-center'>Collect centers' Services</NavLink></li>
+                                    </ul>
+                                </li>
               
 
                 <li className="nav-item">
@@ -121,6 +123,7 @@ export default function CustomNavbar(props) {
                   </NavLink>
                 </li>
               </ul>
+              
               
               {connected ? (
                 <>
@@ -148,12 +151,29 @@ export default function CustomNavbar(props) {
           </div>
                 </>
               ) : (
+                <>
+                <div style={{marginRight : "-15%"}}>
+                <Row >
                 <Link
                   to="/SignIn"
                   className={`btn_get btn_hover ${hbtnClass}`}
+                  style={{marginRight : "-10%"}}
                 >
-                  Sign Up / Sign in
+                 Sign In
                 </Link>
+                <div className="dropdown">
+                <button className="btn_get btn_hover" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Sign Up
+                </button>
+                <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a className="dropdown-item" href="SignUpTeam">Team</a>
+                  <a className="dropdown-item" href="/SignUp">Supporter</a>
+                  <a className="dropdown-item" href="SignUpCenter">Collect Center</a>
+                </div>
+              </div>
+              </Row>
+              </div>
+               </> 
               )}
             </div>
           </div>

@@ -77,7 +77,7 @@ class MailingPages extends Component {
                                                             <tbody>
                                                                 <tr>
                                                                     <td align="center" valign="middle" style="padding:13px;">
-                                                                        <a href="#" title="START NOW" target="_blank" style="font-size: 14px; line-height: 1.5; font-weight: 700; letter-spacing: 1px; padding: 15px 40px; text-align:center; text-decoration:none; color:#FFFFFF; border-radius: 50px; background-color:#922c88;">START
+                                                                        <a href="#" title="START NOW" target="_blank" style="font-size: 14px; line-height: 1.5; font-weight: 700; letter-spacing: 1px; padding: 15px 40px; text-align:center; text-decoration:none; color:#FFFFFF; border-radius: 50px; background-color:#3ba266;">START
                                                                             NOW</a>
                                                                     </td>
                                                                 </tr>
@@ -99,9 +99,9 @@ class MailingPages extends Component {
                                             ColoredStrategies Inc, 35 Little Russell St. Bloomsburg London,UK
                                         </p>
                                         <p style="font-size: 12px; line-height:1; color:#909090;  margin-top:5px; margin-bottom:5px;">
-                                            <a href="#" style="color: #922c88; text-decoration:none;">Privacy
+                                            <a href="#" style="color: #3ba266; text-decoration:none;">Privacy
                                                 Policy</a>
-                                            | <a href="#" style="color: #922c88; text-decoration:none;">Unscubscribe</a>
+                                            | <a href="#" style="color: #3ba266; text-decoration:none;">Unscubscribe</a>
                                         </p>
                                     </td>
                                 </tr>
@@ -154,7 +154,7 @@ class MailingPages extends Component {
                                                         Package</p>
                                                 </td>
                                                 <td style="padding-top:0px; padding-bottom:20px; text-align: right;">
-                                                    <p style="font-size: 13px; line-height: 1; color:#922c88;  margin-top:5px; vertical-align:top; white-space:nowrap;">$
+                                                    <p style="font-size: 13px; line-height: 1; color:#3ba266;  margin-top:5px; vertical-align:top; white-space:nowrap;">$
                                                         14.82</p>
                                                 </td>
                                             </tr>
@@ -175,7 +175,7 @@ class MailingPages extends Component {
                                                         Package</p>
                                                 </td>
                                                 <td style="padding-top:0px; padding-bottom:20px; text-align: right;">
-                                                    <p style="font-size: 13px; line-height: 1; color:#922c88;  margin-top:5px; vertical-align:top; white-space:nowrap;">$
+                                                    <p style="font-size: 13px; line-height: 1; color:#3ba266;  margin-top:5px; vertical-align:top; white-space:nowrap;">$
                                                         4.24</p>
                                                 </td>
                                             </tr>
@@ -196,7 +196,7 @@ class MailingPages extends Component {
                                                         Package</p>
                                                 </td>
                                                 <td style="padding-top:0px; padding-bottom:20px; text-align: right;">
-                                                    <p style="font-size: 13px; line-height: 1; color:#922c88;  margin-top:5px; vertical-align:top; white-space:nowrap;">$
+                                                    <p style="font-size: 13px; line-height: 1; color:#3ba266;  margin-top:5px; vertical-align:top; white-space:nowrap;">$
                                                         12.91</p>
                                                 </td>
                                             </tr>
@@ -216,7 +216,7 @@ class MailingPages extends Component {
                                                         Package</p>
                                                 </td>
                                                 <td style="padding-top:0px; padding-bottom:20px; text-align: right;">
-                                                    <p style="font-size: 13px; line-height: 1; color:#922c88;  margin-top:5px; vertical-align:top; white-space:nowrap;">$
+                                                    <p style="font-size: 13px; line-height: 1; color:#3ba266;  margin-top:5px; vertical-align:top; white-space:nowrap;">$
                                                         54.20</p>
                                                 </td>
                                             </tr>
@@ -228,7 +228,7 @@ class MailingPages extends Component {
                                                     <p style="font-size: 12px; line-height: 1; margin-top:5px; vertical-align:top;  margin-bottom: 0;">Subtotal:&nbsp;</p>
                                                 </td>
                                                 <td style="padding-top:0px; padding-bottom:5px; text-align: right; padding-left: 15px;">
-                                                    <p style="font-size: 13px; line-height: 1; margin-top:5px; vertical-align:top; color:#922c88; white-space:nowrap; margin-bottom: 0;">$
+                                                    <p style="font-size: 13px; line-height: 1; margin-top:5px; vertical-align:top; color:#3ba266; white-space:nowrap; margin-bottom: 0;">$
                                                         124.20</p>
                                                 </td>
                                             </tr>
@@ -237,7 +237,7 @@ class MailingPages extends Component {
                                                     <p style="font-size: 12px; line-height: 1; margin-top:5px; vertical-align:top; margin-bottom: 0;">Shipping:&nbsp;</p>
                                                 </td>
                                                 <td style="padding-top:0px; padding-bottom:5px; text-align: right; padding-left: 15px;">
-                                                    <p style="font-size: 13px; line-height: 1; margin-top:5px; vertical-align:top; color:#922c88; white-space:nowrap; margin-bottom: 0;">$
+                                                    <p style="font-size: 13px; line-height: 1; margin-top:5px; vertical-align:top; color:#3ba266; white-space:nowrap; margin-bottom: 0;">$
                                                         4.04</p>
                                                 </td>
                                             </tr>
@@ -246,7 +246,7 @@ class MailingPages extends Component {
                                                     <p style="font-size: 12px; line-height: 1; margin-top:5px; vertical-align:top; margin-bottom: 0;">Taxes:&nbsp;</p>
                                                 </td>
                                                 <td style="padding-top:0px; padding-bottom:5px; text-align: right; padding-left: 15px;">
-                                                    <p style="font-size: 13px; line-height: 1; margin-top:5px; vertical-align:top; color:#922c88; white-space:nowrap; margin-bottom: 0;">$
+                                                    <p style="font-size: 13px; line-height: 1; margin-top:5px; vertical-align:top; color:#3ba266; white-space:nowrap; margin-bottom: 0;">$
                                                         9.14</p>
                                                 </td>
                                             </tr>
@@ -255,7 +255,7 @@ class MailingPages extends Component {
                                                     <p style="font-size: 12px; line-height: 1; margin-top:5px; vertical-align:top; margin-bottom: 0;"><strong>Total:&nbsp;</strong></p>
                                                 </td>
                                                 <td style="padding-top:0px; padding-bottom:5px; text-align: right; padding-left: 15px;">
-                                                    <p style="font-size: 13px; line-height: 1; margin-top:5px; vertical-align:top; color:#922c88; white-space:nowrap; margin-bottom: 0;"><strong>$
+                                                    <p style="font-size: 13px; line-height: 1; margin-top:5px; vertical-align:top; color:#3ba266; white-space:nowrap; margin-bottom: 0;"><strong>$
                                                             137.38</strong></p>
                                                 </td>
                                             </tr>
@@ -273,9 +273,9 @@ class MailingPages extends Component {
                                             ColoredStrategies Inc, 35 Little Russell St. Bloomsburg London,UK
                                         </p>
                                         <p style="font-size: 12px; line-height:1; color:#909090;  margin-top:5px; margin-bottom:5px;">
-                                            <a href="#" style="color: #922c88; text-decoration:none;">Privacy
+                                            <a href="#" style="color: #3ba266; text-decoration:none;">Privacy
                                                 Policy</a>
-                                            | <a href="#" style="color: #922c88; text-decoration:none;">Unscubscribe</a>
+                                            | <a href="#" style="color: #3ba266; text-decoration:none;">Unscubscribe</a>
                                         </p>
                                     </td>
                                 </tr>
@@ -325,7 +325,7 @@ class MailingPages extends Component {
                                                         core competencies before integrate emerging process-centric
                                                         communities.
                                                     </p>
-                                                    <p style="font-size: 14px; line-height: 1; margin-top:5px;"><a style="color:#922c88; text-decoration:initial;"
+                                                    <p style="font-size: 14px; line-height: 1; margin-top:5px;"><a style="color:#3ba266; text-decoration:initial;"
                                                             href="#">Learn
                                                             More</a></p>
                                                 </td>
@@ -347,7 +347,7 @@ class MailingPages extends Component {
                                                         core competencies before integrate emerging process-centric
                                                         communities.
                                                     </p>
-                                                    <p style="font-size: 14px; line-height: 1; margin-top:5px;"><a style="color:#922c88; text-decoration:initial;"
+                                                    <p style="font-size: 14px; line-height: 1; margin-top:5px;"><a style="color:#3ba266; text-decoration:initial;"
                                                             href="#">Learn
                                                             More</a></p>
                                                 </td>
@@ -369,7 +369,7 @@ class MailingPages extends Component {
                                                         core competencies before integrate emerging process-centric
                                                         communities.
                                                     </p>
-                                                    <p style="font-size: 14px; line-height: 1; margin-top:5px;"><a style="color:#922c88; text-decoration:initial;"
+                                                    <p style="font-size: 14px; line-height: 1; margin-top:5px;"><a style="color:#3ba266; text-decoration:initial;"
                                                             href="#">Learn
                                                             More</a></p>
                                                 </td>
@@ -388,9 +388,9 @@ class MailingPages extends Component {
                                             ColoredStrategies Inc, 35 Little Russell St. Bloomsburg London,UK
                                         </p>
                                         <p style="font-size: 12px; line-height:1; color:#909090;  margin-top:5px; margin-bottom:5px;">
-                                            <a href="#" style="color: #922c88; text-decoration:none;">Privacy
+                                            <a href="#" style="color: #3ba266; text-decoration:none;">Privacy
                                                 Policy</a>
-                                            | <a href="#" style="color: #922c88; text-decoration:none;">Unscubscribe</a>
+                                            | <a href="#" style="color: #3ba266; text-decoration:none;">Unscubscribe</a>
                                         </p>
                                     </td>
                                 </tr>

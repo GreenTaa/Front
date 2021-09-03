@@ -108,31 +108,7 @@ const SignIn = () => {
           <div className="row">
             <div className="col-lg-5">
               <div className="sign_info_content">
-                <h3 className="f_p f_600 f_size_24 t_color3 mb_40">
-                  First time here? <br />
-                  <button className="btn_three" onClick={SingUp}>
-                    Sign Up
-                  </button>
-                  <div>
-                  <button className="btn_three" onClick={SingUpTeam}>
-                    Sign Up Team
-                  </button>
-                  </div>
-                  <div>
-                  <button className="btn_three" onClick={SingUpCenter}>
-                    Sign Up Collect Center
-                  </button>
-                  </div>
-                </h3>
-
-                <h2 className="f_p f_400 f_size_30 mb-30">
-                  Sign up here
-                  <br /> <span className="f_700">
-                    Use your face to sign in
-                  </span>{" "}
-                  , it's an easy and fast way! <br /> Sign in with
-                  <br />
-                </h2>
+               {/*  illustration Sign In */}
               </div>
             </div>
             <div className="col-lg-7">

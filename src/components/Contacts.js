@@ -127,22 +127,22 @@ class Contacts extends Component {
     render(){
         // const {name, email, subject, message, emailStatus} = this.state;
         return(
-            <section className="contact_info_area sec_pad bg_color">
-                <div className="container">
+            <section className="contact_info_area bg_color">
+                <div className="container ">
                     <div className="row">
-                        <div className="col-lg-3">
+                        <div className="col-lg-3 sec_pad1">
                             <div className="contact_info_item">
                                 <h6 className="f_p f_size_20 t_color3 f_500 mb_20">Office Address</h6>
-                                <p className="f_400 f_size_15">Melbourne’s GPO 434 Bourke St. Dhaka VIC 3074, Australia</p>
+                                <p className="f_400 f_size_15">Orange Digital Center, Lac1, Tunis, Tunisie</p>
                             </div>
                             <div className="contact_info_item">
                                 <h6 className="f_p f_size_20 t_color3 f_500 mb_20">Contact Info</h6>
-                                <p className="f_400 f_size_15"><span className="f_400 t_color3">Phone:</span> <a href="tel:3024437488">(+096) 302 443 7488</a></p>
-                                <p className="f_400 f_size_15"><span className="f_400 t_color3">Fax:</span> <a href="tel:3024437488">(+096) 204 353 6684</a></p>
-                                <p className="f_400 f_size_15"><span className="f_400 t_color3">Email:</span> <a href="mailto:saasland@gmail.com">saasland@gmail.com</a></p>
+                                <p className="f_400 f_size_15"><span className="f_400 t_color3">Phone:</span> <a href="tel:25 347 968">(+216) 25 347 968</a></p>
+                                <p className="f_400 f_size_15"><span className="f_400 t_color3">Email:</span> <a href="mailto:greentaaaa@gmail.com">greentaaaa@gmail.com</a></p>
                             </div>
                         </div>
-                        <div className="contact_form col-lg-9">
+                        <div className="line"></div>
+                        <div className="contact_form col-lg-8 sec_pad">
                             <h2 className="f_p f_size_22 t_color3 f_600 l_height28 mb_40">Leave a Message</h2>
                             <form onSubmit={this.submitForm} className="contact_form_box" method="post" id="contactForm">
                                 <div className="row">

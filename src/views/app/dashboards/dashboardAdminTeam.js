@@ -3,6 +3,7 @@ import { Colxx } from "../../../components/common/CustomBootstrap";
 import PerfectScrollbar from "react-perfect-scrollbar";
 import ReactTable from "react-table";
 import classnames from "classnames";
+import TopNav from "../../../containers/navs/Topnav";
 import { Row, Card, CardBody, CardTitle, Table, Button } from "reactstrap";
 import IntlMessages from "../../../helpers/IntlMessages";
 import {fetchTeams, AddTeam, DeleteTeam, UpdateTeam} from '../../../components/redux/teams/teamActions'
@@ -78,7 +79,7 @@ export default function EcommerceDashboard()  {
       src={props.value}
       width="50px"
       height="50px"
-      className="list-thumbnail border-0"
+      className="avatar-rounded-circle"
     />
     },
     {
@@ -108,6 +109,7 @@ export default function EcommerceDashboard()  {
     }
 ];
   return (
+    
     <Card className="mb-4">
       <CardBody>
         <Row>
@@ -132,6 +134,7 @@ export default function EcommerceDashboard()  {
   
   return (
     <Fragment>
+      
       <Button outline color="secondary" className="mb-2"  onClick={() => setShow(!show)} >
                 <IntlMessages id="button.add" />
       </Button>

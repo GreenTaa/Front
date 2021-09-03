@@ -78,7 +78,7 @@ class ListPageHeading extends Component {
                 isOpen={dropdownSplitOpen}
                 toggle={this.toggleSplit}
               >
-                <div className="btn btn-primary pl-4 pr-0 check-button check-all">
+{/*                 <div className="btn btn-primary pl-4 pr-0 check-button check-all">
                     <CustomInput
                       className="custom-checkbox mb-0 d-inline-block"
                       type="checkbox"
@@ -97,11 +97,11 @@ class ListPageHeading extends Component {
                       }
                     />
                 </div>
-                <DropdownToggle
+                 <DropdownToggle
                   caret
                   color="primary"
                   className="dropdown-toggle-split pl-2 pr-2"
-                />
+                />*/}
                 <DropdownMenu right>
                   <DropdownItem>
                     <IntlMessages id="pages.delete" />
@@ -112,7 +112,7 @@ class ListPageHeading extends Component {
                 </DropdownMenu>
               </ButtonDropdown>
             </div>
-            <Breadcrumb match={match} />
+           
           </div>
 
           <div className="mb-2">
@@ -129,7 +129,7 @@ class ListPageHeading extends Component {
               className="d-md-block"
               id="displayOptions"
             >
-              <span className="mr-3 mb-2 d-inline-block float-md-left">
+              {/* <span className="mr-3 mb-2 d-inline-block float-md-left">
                 <a
                   href="#/"
                   className={`mr-2 view-icon ${
@@ -157,7 +157,7 @@ class ListPageHeading extends Component {
                 >
                   <ImageListIcon />
                 </a>
-              </span>
+              </span> */}
 
               <div className="d-block d-md-inline-block">
                 <UncontrolledDropdown className="mr-1 float-md-left btn-group mb-1">
@@ -178,7 +178,7 @@ class ListPageHeading extends Component {
                     })}
                   </DropdownMenu>
                 </UncontrolledDropdown>
-                <div className="search-sm d-inline-block float-md-left mr-1 mb-1 align-top">
+                {/* <div className="search-sm d-inline-block float-md-left mr-1 mb-1 align-top">
                   <input
                     type="text"
                     name="keyword"
@@ -186,7 +186,7 @@ class ListPageHeading extends Component {
                     placeholder={messages["menu.search"]}
                     onKeyPress={e => onSearchKey(e)}
                   />
-                </div>
+                </div> */}
               </div>
               <div className="float-md-right">
                 <span className="text-muted text-small mr-1">{`${startIndex}-${endIndex} of ${totalItemCount} `}</span>

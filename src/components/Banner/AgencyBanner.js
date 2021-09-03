@@ -5,8 +5,7 @@ class AgencyBanner extends Component {
         let BannerData = this.props.BannerData;
         return(
             <section className="agency_banner_area bg_color">
-                <img className="banner_shap" src={require('../../img/home4/back.png')} alt=""/>
-                <div className="container custom_container">
+                <div className="container custom_container" style={{marginTop: "70px"}}>
                     <div className="row">
                         <div className="col-lg-5 d-flex align-items-center">
                             <div className="agency_content">
@@ -15,15 +14,15 @@ class AgencyBanner extends Component {
                                     BannerData.AgencyText.map(Agency =>{
                                         return(
                                             <React.Fragment key={Agency.id}>
-                                                <h2 className="f_700 t_color3 mb_40 wow fadeInLeft" data-wow-delay="0.3s">{Agency.btitle}</h2>
-                                                <p className="f_400 l_height28 wow fadeInLeft" data-wow-delay="0.4s">{Agency.description}</p>
+                                                <h2 className="f_700 t_color3 mb_40 wow fadeInLeft" data-wow-delay="0.3s">Greenta The first smart bin in Tunisia</h2>
+                                                <p className="f_400 l_height28 wow fadeInLeft" data-wow-delay="0.4s">Join Greenta's community, collect plastic, save the environment, cheer for your team and get your prizes </p>
                                             </React.Fragment>
                                         )
                                     })
                                 }
                                 <div className="action_btn d-flex align-items-center mt_60">
-                                    <a href="/#" className="btn_hover agency_banner_btn wow fadeInLeft" data-wow-delay="0.5s">Get in Touch</a>
-                                    <a href="/#" className="agency_banner_btn_two wow fadeInLeft" data-wow-delay="0.7s">Google Sing Up</a>
+                                    <a href="/SignIn" className="btn_hover agency_banner_btn wow fadeInLeft" data-wow-delay="0.5s">Sign In</a>
+                                    <a href="/SignUp" className="agency_banner_btn_two wow fadeInLeft" data-wow-delay="0.7s">Sing Up</a>
                                 </div>
                                 </Reveal>
                             </div>
@@ -34,15 +33,7 @@ class AgencyBanner extends Component {
                     </div>
                     <div className="partner_logo">
                         {
-                            BannerData.ClientsLogo.map(item =>{
-                                return(
-                                    <Reveal key={item.id} effect="fadeInLeft" duration={1500}>
-                                        <div className="p_logo_item">
-                                            <a href="/#"><img src={require("../../img/home3/" + item.image)} alt=""/></a>
-                                        </div>
-                                    </Reveal>
-                                )
-                            })
+                            ""
                         }
                     </div>
                 </div>

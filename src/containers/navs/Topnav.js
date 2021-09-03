@@ -208,7 +208,7 @@ class TopNav extends Component {
 
         <a className="navbar-logo" href="/">
           <span className="logo d-none d-xs-block" />
-          <img src="http://res.cloudinary.com/dkqbdhbrp/image/upload/v1629891776/supporter/uvkpmmmo9vallcr7djze.png" height="40px" width="200px"/>
+          <img src="http://res.cloudinary.com/dkqbdhbrp/image/upload/v1630662305/supporter/nn9kzh4bmqtdjwnvvqc2.png" height="94px" width="200px"/>
         </a>
 
         <div className="ml-auto">

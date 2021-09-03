@@ -89,6 +89,7 @@ module.exports = {
   "menu.charts": "Charts",
   "menu.collapse": "Collapse",
   "menu.dropdowns": "Dropdowns",
+  "menu.store": "",
   "menu.editors": "Editors",
   "menu.form-layouts": "Form Layouts",
   "menu.form-components": "Form Components",

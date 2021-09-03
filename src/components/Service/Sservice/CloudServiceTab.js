@@ -31,56 +31,18 @@ const CloudServiceTab =()=>{
                             </li>
                         </ul>
                     </div> */}
-                    <div className="col-lg-9 col-md-9">
+                    <div className="col-lg-12 col-md-12">
                         <div className="tab-content software_service_tab_content">
                             <div className="tab-pane fade show active" id="de" role="tabpanel" aria-labelledby="de-tab">
                                 <div className="row">
                                     <Tabitem ticon="ti-user" text="Manage Store" description="Crikey blow off chap knackered gosh bobby geeza gormless well, Charles cheeky bugger I cor blimey guvnor hanky panky jolly good."/>
                                     <Tabitem colClass="offset-lg-2" ticon="ti-basketball" text="Manage Blog" description="Crikey blow off chap knackered gosh bobby geeza gormless well, Charles cheeky bugger I cor blimey guvnor hanky panky jolly good."/>
-                                    <Tabitem ticon="ti-face-smile" text="Statistics" description="Crikey blow off chap knackered gosh bobby geeza gormless well, Charles cheeky bugger I cor blimey guvnor hanky panky jolly good."/>
-                                    <Tabitem colClass="offset-lg-2" ticon="ti-harddrives" text="Backups & Snapshots" description="Crikey blow off chap knackered gosh bobby geeza gormless well, Charles cheeky bugger I cor blimey guvnor hanky panky jolly good."/>
+                                    <Tabitem colClass="offset-lg-3"ticon="ti-face-smile" text="Statistics" description="Crikey blow off chap knackered gosh bobby geeza gormless well, Charles cheeky bugger I cor blimey guvnor hanky panky jolly good."/>
                                 </div>
                             </div>
-                            <div className="tab-pane fade" id="saas" role="tabpanel" aria-labelledby="saas-tab">
-                                <div className="row">
-                                    <Tabitem ticon="ti-face-smile" text="Cluster Deployments" description="Crikey blow off chap knackered gosh bobby geeza gormless well, Charles cheeky bugger I cor blimey guvnor hanky panky jolly good."/>
-                                    <Tabitem colClass="offset-lg-2" ticon="ti-harddrives" text="Backups & Snapshots" description="Crikey blow off chap knackered gosh bobby geeza gormless well, Charles cheeky bugger I cor blimey guvnor hanky panky jolly good."/>
-                                    <Tabitem ticon="ti-user" text="Team Management" description="Crikey blow off chap knackered gosh bobby geeza gormless well, Charles cheeky bugger I cor blimey guvnor hanky panky jolly good."/>
-                                    <Tabitem colClass="offset-lg-2" ticon="ti-basketball" text="Global Availability" description="Crikey blow off chap knackered gosh bobby geeza gormless well, Charles cheeky bugger I cor blimey guvnor hanky panky jolly good."/>
-                                </div>
-                            </div>
-                            <div className="tab-pane fade" id="ma" role="tabpanel" aria-labelledby="ma-tab">
-                                <div className="row">
-                                    <Tabitem ticon="ti-user" text="Team Management" description="Crikey blow off chap knackered gosh bobby geeza gormless well, Charles cheeky bugger I cor blimey guvnor hanky panky jolly good."/>
-                                    <Tabitem colClass="offset-lg-2" ticon="ti-basketball" text="Global Availability" description="Crikey blow off chap knackered gosh bobby geeza gormless well, Charles cheeky bugger I cor blimey guvnor hanky panky jolly good."/>
-                                    <Tabitem ticon="ti-face-smile" text="Cluster Deployments" description="Crikey blow off chap knackered gosh bobby geeza gormless well, Charles cheeky bugger I cor blimey guvnor hanky panky jolly good."/>
-                                    <Tabitem colClass="offset-lg-2" ticon="ti-harddrives" text="Backups & Snapshots" description="Crikey blow off chap knackered gosh bobby geeza gormless well, Charles cheeky bugger I cor blimey guvnor hanky panky jolly good."/>
-                                </div>
-                            </div>
-                            <div className="tab-pane fade" id="secure" role="tabpanel" aria-labelledby="secure-tab">
-                                <div className="row">
-                                    <Tabitem ticon="ti-user" text="Team Management" description="Crikey blow off chap knackered gosh bobby geeza gormless well, Charles cheeky bugger I cor blimey guvnor hanky panky jolly good."/>
-                                    <Tabitem colClass="offset-lg-2" ticon="ti-basketball" text="Global Availability" description="Crikey blow off chap knackered gosh bobby geeza gormless well, Charles cheeky bugger I cor blimey guvnor hanky panky jolly good."/>
-                                    <Tabitem ticon="ti-face-smile" text="Cluster Deployments" description="Crikey blow off chap knackered gosh bobby geeza gormless well, Charles cheeky bugger I cor blimey guvnor hanky panky jolly good."/>
-                                    <Tabitem colClass="offset-lg-2" ticon="ti-harddrives" text="Backups & Snapshots" description="Crikey blow off chap knackered gosh bobby geeza gormless well, Charles cheeky bugger I cor blimey guvnor hanky panky jolly good."/>
-                                </div>
-                            </div>
-                            <div className="tab-pane fade" id="scale" role="tabpanel" aria-labelledby="scale-tab">
-                                <div className="row">
-                                    <Tabitem ticon="ti-user" text="Team Management" description="Crikey blow off chap knackered gosh bobby geeza gormless well, Charles cheeky bugger I cor blimey guvnor hanky panky jolly good."/>
-                                    <Tabitem colClass="offset-lg-2" ticon="ti-face-smile" text="Cluster Deployments" description="Crikey blow off chap knackered gosh bobby geeza gormless well, Charles cheeky bugger I cor blimey guvnor hanky panky jolly good."/>
-                                    <Tabitem ticon="ti-harddrives" text="Backups & Snapshots" description="Crikey blow off chap knackered gosh bobby geeza gormless well, Charles cheeky bugger I cor blimey guvnor hanky panky jolly good."/>
-                                    <Tabitem colClass="offset-lg-2" ticon="ti-basketball" text="Global Availability" description="Crikey blow off chap knackered gosh bobby geeza gormless well, Charles cheeky bugger I cor blimey guvnor hanky panky jolly good."/>
-                                </div>
-                            </div>
-                            <div className="tab-pane fade" id="monitor" role="tabpanel" aria-labelledby="monitor-tab">
-                                <div className="row">
-                                    <Tabitem ticon="ti-user" text="Team Management" description="Crikey blow off chap knackered gosh bobby geeza gormless well, Charles cheeky bugger I cor blimey guvnor hanky panky jolly good."/>
-                                    <Tabitem colClass="offset-lg-2" ticon="ti-basketball" text="Global Availability" description="Crikey blow off chap knackered gosh bobby geeza gormless well, Charles cheeky bugger I cor blimey guvnor hanky panky jolly good."/>
-                                    <Tabitem ticon="ti-face-smile" text="Cluster Deployments" description="Crikey blow off chap knackered gosh bobby geeza gormless well, Charles cheeky bugger I cor blimey guvnor hanky panky jolly good."/>
-                                    <Tabitem colClass="offset-lg-2" ticon="ti-harddrives" text="Backups & Snapshots" description="Crikey blow off chap knackered gosh bobby geeza gormless well, Charles cheeky bugger I cor blimey guvnor hanky panky jolly good."/>
-                                </div>
-                            </div>
+                           
+                            
+                            
                         </div>
                     </div>
                 </div>

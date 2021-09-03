@@ -22,7 +22,7 @@ const DigitalMarketing = () => {
             <CustomNavbar mClass="menu_four" cClass="custom_container p0" nClass="pl_120 mr-auto ml-auto" hbtnClass="menu_cus"/>
             <AgencyBanner BannerData={BannerData}/>
 
-            <HRService ServiceData={ServiceData}/>
+            
             <FeaturesHome></FeaturesHome>
             {/* <MarketingService ServiceData={ServiceData}/> */}
 
