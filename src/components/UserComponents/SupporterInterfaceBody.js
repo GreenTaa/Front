@@ -4,6 +4,8 @@ import React, { Fragment, useState } from "react";
 //import CustomerFavoriteDrivers from "./CustomerFavoriteDrivers";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Usercard from "./Usercard";
+import Mile from "./Milestones";
+
 import Trash from "../trash/addtrash";
 
 import {
@@ -103,7 +105,7 @@ const SupporterInterfaceBody = (props) => {
                
                
 
-
+              < Mile pcr={30}></Mile>
 
 
                
