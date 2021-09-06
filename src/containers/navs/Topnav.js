@@ -205,7 +205,6 @@ class TopNav extends Component {
         >
           <MobileMenuIcon />
         </NavLink>
-
         <a className="navbar-logo" href="/">
           <span className="logo d-none d-xs-block" />
           <img src="http://res.cloudinary.com/dkqbdhbrp/image/upload/v1630662305/supporter/nn9kzh4bmqtdjwnvvqc2.png" height="94px" width="200px"/>

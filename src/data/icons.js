@@ -41,7 +41,7 @@ export const simplelineicons = [
   "simple-icon-trophy",
   "simple-icon-screen-smartphone",
   "simple-icon-screen-desktop",
-  "simple-icon-plane",
+  "simple--plane",
   "simple-icon-notebook",
   "simple-icon-mustache",
   "simple-icon-mouse",

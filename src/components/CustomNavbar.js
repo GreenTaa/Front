@@ -98,11 +98,13 @@ export default function CustomNavbar(props) {
                     Home
                   </Link>
                 </li>
+                {connected ? 
                 <li className="nav-item dropdown submenu mega_menu mega_menu_two">
                   <Link to="/store" className="nav-link dropdown-toggle">
                     Store
                   </Link>
                 </li>
+                : ""}
                 <li className="dropdown submenu nav-item"><Link title="Pages" className="dropdown-toggle nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" to="#">Services</Link>
                                     <ul role="menu" className=" dropdown-menu">
                                         <li className="nav-item"><NavLink title="Portfolio 2" className="nav-link" to='/service-supporter'>Supporter's Services</NavLink></li>
@@ -128,8 +130,8 @@ export default function CustomNavbar(props) {
               {connected ? (
                 <>
                  
-
-                  <div className="user d-inline-block">
+                <Row>
+            <div className="user d-inline-block container" >
             <UncontrolledDropdown className="dropdown-menu-right">
               <DropdownToggle className="p-0" color="empty">
                 <span className="name mr-1">Welcome {username}</span>
@@ -137,6 +139,7 @@ export default function CustomNavbar(props) {
                   <img alt="Profile" src={img} />
                 </span>
               </DropdownToggle>
+              <img style={{width :"35px", height : "35px"}} onClick={() => console.log("lkjihuygtfr")} alt="Profile" src="http://res.cloudinary.com/dkqbdhbrp/image/upload/v1630925384/teams/p9ml46rx0rximg2reyqc.png" />
               <DropdownMenu className="mt-3" right>
                 <DropdownItem onClick={() => Myaccount()} >Account</DropdownItem>
                 <DropdownItem>Mile stones</DropdownItem>
@@ -148,7 +151,9 @@ export default function CustomNavbar(props) {
                 </DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
+
           </div>
+          </Row>
                 </>
               ) : (
                 <>

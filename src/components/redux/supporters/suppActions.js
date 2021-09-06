@@ -1,4 +1,4 @@
-import {FETCH_SUPPORTERS_REQUEST, FETCH_SUPPORTERS_SUCCESS, FETCH_SUPPORTERS_FAILURE, ADD_SUPPORTER, UPDATE_SUPPORTER, DELETE_SUPPORTER} from './suppTypes'
+import {FETCH_SUPPORTERS_REQUEST, FETCH_SUPPORTERS_SUCCESS,FETCH_SUPPORTER, FETCH_SUPPORTERS_FAILURE, ADD_SUPPORTER, UPDATE_SUPPORTER, DELETE_SUPPORTER} from './suppTypes'
 import axios from 'axios'
 import { fetchTeamsSuccess } from '../teams/teamActions'
 
@@ -21,6 +21,14 @@ export const fetchSupportersFailure = error => {
         payload : error
     }
 }
+
+export const fetchSupporter = (id) =>{
+    return {
+        type : FETCH_SUPPORTER,
+        payload : id
+    }
+}
+
 export const addSupporter = (supp) =>{
     return {
         type : ADD_SUPPORTER,
@@ -49,6 +57,7 @@ export const AddSupporter = (supp) =>{
          axios.post(`http://localhost:3000/users/addsupp/`,supp)
          .then((response) => {
             dispatch(addSupporter(response.data))
+            /* fetchSupporters() */
         }).catch((error)=>console.log("errorAddinng  : ", error));
     }
 }
@@ -67,7 +76,6 @@ export const UpdateSupporter = (supporters) =>{
          axios.put(`http://localhost:3000/supporters/${supporters._id}`,supporters)
          .then(() => {
             dispatch(updateSupporter(supporters))
-            dispatch(fetchSupporters(supporters))
         }, (error) => {
             console.log({"error updating ": error});
         });
@@ -86,5 +94,14 @@ export const fetchSupporters = () => {
          // error.message is the error description
          dispatch(fetchSupportersFailure(error.message))
      })
+    }
+}
+
+export const FetchSupporter = (id) =>{
+    return function (dispatch){
+         axios.get(`http://localhost:3000/supporters/${id}`)
+        .then(
+            dispatch(fetchSupporter(id))
+        )
     }
 }

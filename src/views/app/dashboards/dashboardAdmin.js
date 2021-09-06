@@ -108,7 +108,7 @@ const ReactTableWithScrollableCard = (show) => {
         src={props.value}
         width="50px"
         height="50px"
-        className="list-thumbnail border-0 mr-2"
+        className="avatar-rounded-circle border-0 mr-2"
       />
       },
       {
@@ -149,7 +149,7 @@ const ReactTableWithScrollableCard = (show) => {
          {
           Header: "Action",
           accessor: "_id",
-          Cell: props => <button className="btn btn-outline-warning" onClick={() => (setShow(true), setVal("Update") , supportersData.supporters.filter( e => props.value === e._id)).map((data) => {setUser(data) })} >Update</button>
+          Cell: props => <button className="btn btn-outline-primary" onClick={() => (setShow(true), setVal("Update") , supportersData.supporters.filter( e => props.value === e._id)).map((data) => {setUser(data) })} >Update</button>
         }, 
   ];
 

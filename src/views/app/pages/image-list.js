@@ -255,6 +255,20 @@ class ThumbListPages extends Component {
   };
 
   render() {
+    const Supp = () => {
+      console.log("entreeeeeed oiuhg")
+      if(localStorage.getItem('id') === null){
+        return false
+      }
+      else {
+      axios.get("http://localhost:3000/supporters/"+localStorage.getItem('id'))
+      .then(function(doc){
+        {
+            return true
+        }
+      })
+    }
+    }
     const {
       currentPage,
       items,
@@ -276,6 +290,8 @@ class ThumbListPages extends Component {
       
       <div>
         <CustomNavbar mClass="menu_four" cClass="custom_container p0" nClass="pl_120 mr-auto ml-auto" hbtnClass="menu_cus"/>
+        {Supp ? 
+        <div>
         <img src="http://res.cloudinary.com/dkqbdhbrp/image/upload/v1630597218/teams/ordflpx7kuhlwj5ahkwb.jpg" width="1550px" height="700px" />
         <br></br>
         <br></br>
@@ -306,7 +322,9 @@ class ThumbListPages extends Component {
           
            
             <Row> 
-            <Produits/>
+{/*             productsData.products.map((product) => {
+            <Produits product = {product}/>
+            }) */}
             
             <Pagination
               currentPage={this.state.currentPage}
@@ -321,6 +339,8 @@ class ThumbListPages extends Component {
           </div>     
         
       </Fragment>
+      </div>
+      : ""}
       <FooterTwo  FooterData={FooterData}/>
       </div> 
       

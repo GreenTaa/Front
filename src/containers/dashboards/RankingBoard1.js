@@ -31,7 +31,7 @@ const BestSellers = ({title="dashboards.best-sellers"}) => {
       src={props.value}
       width="50px"
       height="50px"
-      className="list-thumbnail border-0"
+      className="avatar-rounded-circle border-0"
     />
     },
     {

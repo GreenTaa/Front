@@ -59,6 +59,7 @@ const SignIn = () => {
           localStorage.setItem("Avatar", user.Avatar);
           localStorage.setItem("Role", user.Role);
           localStorage.setItem("id", user._id);
+          localStorage.setItem("Team", user.Team);
           console.log(localStorage);
            history.push("/home");
         }
