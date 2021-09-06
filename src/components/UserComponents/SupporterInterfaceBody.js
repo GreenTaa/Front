@@ -5,6 +5,7 @@ import React, { Fragment, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Usercard from "./Usercard";
 import Mile from "./Milestones";
+import Newprofile from "./newprofile";
 
 import Trash from "../trash/addtrash";
 
@@ -132,8 +133,7 @@ const SupporterInterfaceBody = (props) => {
                 role="tabpanel"
                 aria-labelledby="price-tab"
               >
-                <Usercard supporter={props.supporter} />
-              </div>
+ss              </div>
             </div>
           </div>
         </div>
