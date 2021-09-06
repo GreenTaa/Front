@@ -124,12 +124,13 @@ export default function EcommerceDashboard()  {
                                 <div className="form-group text_box">
                                     <label className="f_p text_c f_400">Image</label>
                                     <div>
-                                    <input type="file"
+                                    <label className="btn_get"> Select Avatar
+                                        <input type="file"
                                         className="form-input"
                                         name="Avatar"
                                         value={fileInputState}
                                         onChange={onFileChange}
-                                    /></div>
+                                    /></label></div>
                                 </div>
                                 <div>
                                     {previewSource && (<img src={previewSource} alt="chosen" style={{height:'300px'}}/>)}

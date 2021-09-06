@@ -235,15 +235,15 @@ const UserCardExamples = (props) => {
 
               <Colxx sm={4}>
                 <FormGroup>
-                  <Label for="exampleZipGrid">Avatar</Label>
-                  <Input
-                    type="file"
-                    name="exampleZipGrid"
-                    id="exampleZipGrid"
-                    placeholder="zip"
+                <Label for="exampleZipGrid">Avatar</Label>
+                <label className="btn_get"> Avatar
+                    <input type="file"
+                    className="form-input"
+                    name="Avatar"
                     ref={fileInputRef}
+                    value={fileInputState}
                     onChange={onFileChange}
-                  />
+                /></label>
                 </FormGroup>
               </Colxx>
             </FormGroup>

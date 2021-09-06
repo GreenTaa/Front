@@ -16,23 +16,19 @@ import Pagination   from './pagination';
 
 const ImageListView = ({ }) => {
     var [productLiked, setProductLiked] = useState()
+    const dispatch = useDispatch()
+    const productsData = useSelector((state) => state.products)
     const [supporter,setSupporter] = useState();
     const [connected, setConnected] = useState(false);
     const team = localStorage.getItem("Team");
-    const [posts, setPosts] = useState([]);
-    const [loading, setLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
-    const [postsPerPage] = useState(4);
-  
-    // Get current posts
+    const [postsPerPage] = useState(6);
     const indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  
-    // Change page
+    const currentPosts = productsData.products.filter(product => product.Team == team).slice(indexOfFirstPost, indexOfLastPost);
+    const currentPostsFiltred = productsData.products.filter(product => product.Team == team).filter(product => product).slice(indexOfFirstPost, indexOfLastPost);            
     const paginate = pageNumber => setCurrentPage(pageNumber);
 
-    const dispatch = useDispatch()
-    const productsData = useSelector((state) => state.products)
     useEffect(() => {
         dispatch(fetchProducts());
     }, [ ]);  
@@ -55,7 +51,7 @@ const ImageListView = ({ }) => {
                 <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <a className="dropdown-item" onClick={() => (setSelected(false))}>All Categories</a> 
                 {category1.map((option, index) => { 
-                    return  ( <a className="dropdown-item" key={index} value={option} onClick={() =>( /* showProductsByCategory({option}),  */ console.log("dsfqvbg " + team), setSelected(true), setOption(option) )}>{option}</a> )   
+                    return  ( <a className="dropdown-item" key={index} value={option} onClick={() =>( /* showProductsByCategory({option}),  */ console.log("Posts =  " + team), setSelected(true), setOption(option) )}>{option}</a> )   
                 })}
                 </div>
             </div>
@@ -64,36 +60,37 @@ const ImageListView = ({ }) => {
             
             {selected? 
             <>
-            <center>
+           <center>
             <Row>
-            { productsData.products.slice(indexOfFirstPost, indexOfLastPost).filter(product => product.Team === team).filter(product => product.Category === option).map(product =>
+            { productsData.products.filter(product => product.Team == team).filter(product => product.Category == option).slice(indexOfFirstPost, indexOfLastPost).map(product =>
                 <CardStore key={product._id} product={product}   />  
             )}
-            </Row>
-            </center>
-            <div className="container center">
+           </Row>
+           <div className="container text-center">
             <Pagination
                 postsPerPage={postsPerPage}
-                totalPosts={productsData.products.filter(product => product.Team === team).filter(product => product.Category === option).length}
+                totalPosts={productsData.products.filter(product => product.Team == team).filter(product => product.Category == option).length}
                 paginate={paginate}
-                
-            /></div>
+                /></div>
+          
+           </center>
             </>
             : 
             <>
             <center>
             <Row>
-            { productsData.products.slice(indexOfFirstPost, indexOfLastPost).filter(product => product.Team === team).map(product =>
+            { currentPosts.map(product =>
                 <CardStore key={product._id} product={product}   />  
             )}
            </Row>
-           </center>
-            <div className="container text-center">
+           <div className="container text-center">
             <Pagination
                 postsPerPage={postsPerPage}
-                totalPosts={productsData.products.filter(product => product.Team === team).length}
+                totalPosts={productsData.products.filter(product => product.Team == team).length}
                 paginate={paginate}
                 /></div>
+          
+           </center>
             </>}
             
             </div>
