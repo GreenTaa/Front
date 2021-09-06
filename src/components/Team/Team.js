@@ -4,7 +4,7 @@ import Teamitem from '../Team/Teamitem';
 const Team =()=>{
     return(
         <section className="experts_team_area sec_pad">
-            <div className="container" style={{marginTop:"100px"}}>
+            <div className="container">
                 <Sectitle sClass="sec_title text-center mb_70" Title="Our Team" tClass="t_color3" TitleP="Here we introduce Greenta's team."/>
                 <div className="row">
                     <div className="col-lg-4 col-sm-6">

@@ -72,7 +72,7 @@ const ColumnsC = [
   {
     Header: "Action",
     accessor: "_id",
-    Cell: props => <button className="btn btn-outline-danger"  onClick={() => (setShow(true), setVal("Update") , centersData.centers.filter( e => props.value === e._id)).map((data) => {setCenter(data) })}>Update</button>
+    Cell: props => <button className="btn btn-outline-primary"  onClick={() => (setShow(true), setVal("Update") , centersData.centers.filter( e => props.value === e._id)).map((data) => {setCenter(data) })}>Update</button>
   },
 ]; 
 return (

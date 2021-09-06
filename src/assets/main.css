@@ -439,13 +439,38 @@ button:focus {
   color: #fff;
 }
 
+.btn_gett{
+  font: 500 14px/47px "Poppins", sans-serif;
+  color: #3ba266;
+  border: 2px solid #3ba266;
+  border-radius: 45px;
+  background-color: #ffffff;
+  padding: 0px 23px;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  -webkit-transition-property: color;
+  -o-transition-property: color;
+  transition-property: color;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  min-width: 120px;
+  text-align: center;
+}
+
+.btn_gett:hover {
+  color: #fff;
+  background: #3ba266;
+  border-color: #3ba266;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
 .btn_get {
   font: 500 14px/47px "Poppins", sans-serif;
   color: #3ba266;
-  border: 2px solid #ccc5fa;
-  border-radius: 4px;
-  -webkit-box-shadow: 0px 20px 24px 0px rgba(0, 11, 40, 0.1);
-  box-shadow: 0px 20px 24px 0px rgba(0, 11, 40, 0.1);
+  border: 2px solid #3ba266;
+  border-radius: 45px;
   padding: 0px 23px;
   -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
@@ -517,11 +542,20 @@ button:focus {
   color: #fff;
 }
 
+input[type="file"] {
+    display: none;
+}
+
+.center{
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .btn_three {
   font: 500 14px "Poppins", sans-serif;
   color: #fff;
   background: #3ba266;
-  border-radius: 3px;
+  border-radius: 45px;
   padding: 15px 30px;
   border: 1px solid #3ba266;
   margin-top: 50px;
@@ -543,7 +577,7 @@ button:focus {
   background: #3ba266;
   -webkit-box-shadow: 0px 20px 30px 0px rgba(12, 0, 46, 0.1);
   box-shadow: 0px 20px 30px 0px rgba(12, 0, 46, 0.1);
-  border-radius: 3px;
+  border-radius: 45px;
   padding: 16px 38px;
   border: 1px solid #3ba266;
   -webkit-transition: all 0.2s linear;
@@ -2502,6 +2536,7 @@ button:focus {
   background-color: white;
   -webkit-box-shadow: 0px 2px 4px 0px rgba(12, 0, 46, 0.1);
   box-shadow: 0px 2px 4px 0px rgba(12, 0, 46, 0.1);
+  z-index: 1000000;
 }
 
 .header_area_three .menu_four .pl_30 {
@@ -11044,15 +11079,14 @@ button:focus {
   );
   background-image: -ms-linear-gradient(
     45deg,
-    #151f35 0%,
-    #3ba266 100%
+    rgba(27, 38, 68, 0.7) 0%,
+    rgba(59, 162, 102, 0.7) 100%
   );
   background-image: linear-gradient(
     45deg,
-      #151f35 0%,
-      #3ba266 80%
+      rgba(27, 38, 68, 0.7) 0%,
+      rgba(59, 162, 102, 0.7) 80%
   );
-  opacity: 0;
   visibility: visible;
   z-index: -1;
   -webkit-transition: all 0.4s ease;

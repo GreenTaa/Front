@@ -14,8 +14,8 @@ class AgencyAbout extends Component {
         };
         let ServiceData = this.props.ServiceData;
         return(
-            <section className="agency_about_area d-flex bg_color " style={{marginTop:"100px"}}>
-                <div className="col-lg-6 about_content_left " >
+            <section className="agency_about_area d-flex bg_color " style={{marginTop:"100px", marginBottom: "200px",  height :"400px"}}>
+                <div className="col-lg-6 about_content_left " style={{marginTop:"50px"}}>
                     <div className="about_content mb_30">
                         <h2 className="f_size_30 f_700 l_height45 mb_20">Concept </h2>
                         <p className="f_size_15 f_400 mb_40">Greenta is a system of competition between Tunisian sports teams in order to collect more plastic by benefiting from the intense competitive spirit between their supporters.

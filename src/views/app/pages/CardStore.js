@@ -9,6 +9,7 @@ import {
   CustomInput,
   Badge
 } from "reactstrap";
+import './CardStore.css'
 import axios from "axios";
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from "react-router-dom";
@@ -16,7 +17,7 @@ import { ContextMenuTrigger } from "react-contextmenu";
 import { Colxx } from "../../../components/common/CustomBootstrap";
 import {fetchProducts, addProduct, deleteProduct, updateProduct} from '../../../components/redux/products/productActions'
 
-const ImageListView = ({ product}) => {
+const CardStore = ({ product}) => {
     var [productLiked, setProductLiked] = useState()
     const getSupporter= async () => {
       try {
@@ -42,6 +43,8 @@ const ImageListView = ({ product}) => {
       const productsData = useSelector((state) => state.products)
       useEffect(() => {
           dispatch(fetchProducts())
+
+          
         
     }, [ ]);  
     
@@ -51,8 +54,8 @@ const ImageListView = ({ product}) => {
       const [supporter,setSupporter] = useState();
 
   return (
-
-      <Colxx sm="6" lg="4" xl="3" className="mx-auto" key={product._id}>
+      <div>
+       <Colxx sm="6" lg="4" xl="3" className="mx-auto" key={product._id}>
         <ContextMenuTrigger id="menu_id" data={product._id} >
           
           <div className="mb-5">
@@ -83,9 +86,10 @@ const ImageListView = ({ product}) => {
         </div>
       
         </ContextMenuTrigger>
-      </Colxx> 
-  );
+      </Colxx>
+  </div>
+ )
 };
 
 /* React.memo detail : https://reactjs.org/docs/react-api.html#reactpurecomponent  */
-export default React.memo(ImageListView);
+export default React.memo(CardStore);

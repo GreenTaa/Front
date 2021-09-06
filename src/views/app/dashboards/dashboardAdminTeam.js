@@ -105,7 +105,7 @@ export default function EcommerceDashboard()  {
     {
       Header: "Action",
       accessor: "_id",
-      Cell: props => <button className="btn btn-outline-danger" onClick={() => (setShow(true), setVal("Update") , teamsData.teams.filter( e => props.value === e._id)).map((data) => {setTeam(data) })}>Update</button>
+      Cell: props => <button className="btn btn-outline-primary" onClick={() => (setShow(true), setVal("Update") , teamsData.teams.filter( e => props.value === e._id)).map((data) => {setTeam(data) })}>Update</button>
     }
 ];
   return (
