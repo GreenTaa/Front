@@ -134,7 +134,7 @@ export default function EcommerceDashboard()  {
           <CardBody>
             <Row>
             <CardTitle>
-              <IntlMessages id="table.react-teams" />
+              <IntlMessages id="table.react-products" />
             </CardTitle>
             </Row>
             <ReactTable
@@ -155,7 +155,7 @@ export default function EcommerceDashboard()  {
       return (
         <Fragment>
           <Button outline color="secondary" className="mb-2"  onClick={() => setShow(!show)} >
-                    <IntlMessages id="button.add" />
+                    <IntlMessages id="button.add.product" />
           </Button>
           {show? 
             <form action="#" className="login-form sign-in-form" onSubmit={(e) => { val=="Add" ? onAdd(e) : onUpdate(e, product) }}>

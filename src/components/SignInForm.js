@@ -63,22 +63,22 @@ const SignIn = () => {
           console.log(localStorage);
            history.push("/home");
         }
-        if (user.Role === "Team") {
+        if (user.Role === "Admin") {
+          
+          localStorage.setItem("Email", user.Email);
+          localStorage.setItem("Role", user.Role);
+          localStorage.setItem("id", user._id);
+          console.log(localStorage);
+           history.push("/app/dashboards/dashboard-admin");
+          }
+          if (user.Role === "Team") {
           
             localStorage.setItem("Email", user.Email);
             localStorage.setItem("Role", user.Role);
             localStorage.setItem("id", user._id);
             console.log(localStorage);
-             history.push("/dashboard-team");
-          }
-          if (user.Role === "Admin") {
-          
-            localStorage.setItem("Email", user.Email);
-            localStorage.setItem("Role", user.Role);
-            localStorage.setItem("id", user._id);
-            console.log(localStorage);
-             history.push("/app/dashboards/dashboard-admin");
-          }
+             history.push("/app/dashboards/dashboard-team");
+            }
       }
     },
   });

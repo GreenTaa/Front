@@ -18,35 +18,15 @@ import { Colxx } from "../../../components/common/CustomBootstrap";
 import {fetchProducts, addProduct, deleteProduct, updateProduct} from '../../../components/redux/products/productActions'
 
 const CardStore = ({ product}) => {
-    var [productLiked, setProductLiked] = useState()
-    const getSupporter= async () => {
-      try {
-          const Supp = await axios.get(
-              "http://localhost:3000/supporters/"+localStorage.getItem('id')
-          ).then(function(doc){
-              if(JSON.stringify(doc.data) === JSON.stringify(supporter))
-              {
-                  console.log("same")
-              }
-              else{
-                  setSupporter(doc.data);
-                  console.log("elseeee");
-              }
-          });
-         
-          // set State
-      } catch (err) {
-          console.error(err.message);
-      }
-  };
     const dispatch = useDispatch()
       const productsData = useSelector((state) => state.products)
       useEffect(() => {
           dispatch(fetchProducts())
-
-          
-        
     }, [ ]);  
+
+    const addWhishlist = (id) => {
+
+    }
     
       const onUpdate = (points) => {
         axios.put( "http://localhost:3000/supporters/"+localStorage.getItem('id'),{...supporter, Score: supporter.Score - points}  )
@@ -71,7 +51,7 @@ const CardStore = ({ product}) => {
         <span>10</span>
       </div>
       <br></br>
-      <button className="btn_gett">Buy Now</button>
+      <button className="btn_gett" onClick={() => addWhishlist(product._id)}>Buy Now</button>
     </div>
   </div>
 </div>

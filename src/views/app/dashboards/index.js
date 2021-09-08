@@ -9,7 +9,7 @@ import dashboardAdmin from "./dashboardAdmin";
 import dashboardAdminTeam from "./dashboardAdminTeam"
 import dashboardAdminCenter from "./dashboardAdminCenter"
 import dashboardAdminRanking from "./dashboardAdminRanking"
-import dashboardTeam from "./dashboardAdminTeam"
+import dashboardTeam from "./dashboardteam"
 
 const Dashboards = ({ match }) => (
     <div className="dashboard-wrapper">

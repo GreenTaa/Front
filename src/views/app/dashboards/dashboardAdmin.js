@@ -182,7 +182,7 @@ const ReactTableWithScrollableCard = (show) => {
     return (
       <Fragment>
         <Button outline color="secondary" className="mb-2"  onClick={() => setShow(!show)} >
-                  <IntlMessages id="button.add" />
+                  <IntlMessages id="button.add.supporter" />
         </Button>
         {show? 
         <div>

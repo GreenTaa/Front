@@ -101,7 +101,7 @@ return (
     return (
       <Fragment>
         <Button outline color="secondary" className="mb-2"  onClick={() => setShow(!show)} >
-                  <IntlMessages id="button.add" />
+                  <IntlMessages id="button.add.center" />
         </Button>
         {show? 
         <form action="#" className="login-form sign-in-form" onSubmit={(e) => { val=="Add" ? onAdd(e) : onUpdate(e, center) }}>
