@@ -3,8 +3,8 @@ import CustomNavbar from '../../components/CustomNavbar';
 import Breadcrumb from '../../components/Breadcrumb';
 import FooterTwo from '../../components/Footer/FooterTwo';
 import FooterData from '../../components/Footer/FooterData';
-import SupporterInterfaceBody from "../../components/UserComponents/SupporterInterfaceBody";
-import SignInForm from '../../components/SignInForm';
+import SupporterInterfaceBody from "../../components/UserComponents/newprofile";
+import SignIn from '../SignIn';
 import axios from "axios";
 
 
@@ -49,20 +49,19 @@ const SupporterInterface = () => {
         
         const interval = setInterval(() => {
             getSupporter();
-        }, 2000);
+        }, 4000);
         return () => clearInterval(interval);
     }, [ getSupporter()]);
 
     return(
         <div className="body_wrapper">
-            <CustomNavbar mClass="menu_four" cClass="custom_container p0" nClass="pl_120 mr-auto ml-auto" hbtnClass="menu_cus"/>
-            <Breadcrumb breadcrumbClass="breadcrumb_area" imgName="breadcrumb/banner_bg.png" Ptitle="Customer Interface" Pdescription=""/>
+          
             {supporter ?
                 (   <>
                 
                        <SupporterInterfaceBody supporter={supporter}/>
                     </>
-                ) : (<SignInForm/>)}
+                ) : (<SignIn/>)}
             <FooterTwo fClass="pt_150" FooterData={FooterData}/>
         </div>
     )
