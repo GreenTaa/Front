@@ -136,7 +136,7 @@ export default function EcommerceDashboard()  {
     <Fragment>
       
       <Button outline color="secondary" className="mb-2"  onClick={() => setShow(!show)} >
-                <IntlMessages id="button.add" />
+                <IntlMessages id="button.add.team" />
       </Button>
       {show? 
         <form action="#" className="login-form sign-in-form" onSubmit={(e) => { val=="Add" ? onAdd(e) : onUpdate(e, team) }}>
@@ -197,12 +197,13 @@ export default function EcommerceDashboard()  {
         <div className="form-group text_box">
             <label className="f_p text_c f_400">Logo</label>
             <div>
+            <label className="btn_get"> Select Logo
             <input type="file"
                 className="form-input"
                 name="Logo"
                 value={fileInputState}
                 onChange={onFileChange}
-            /></div>
+            /></label></div>
         </div>
         <div>
             {previewSource && (<img src={previewSource} alt="chosen" style={{height:'300px'}}/>)}

@@ -6,7 +6,6 @@ import { NavLink } from "react-router-dom";
 import classnames from "classnames";
 import PerfectScrollbar from "react-perfect-scrollbar";
 import { withRouter } from "react-router-dom";
-
 import IntlMessages from "../../helpers/IntlMessages";
 
 import {
@@ -16,7 +15,7 @@ import {
   changeSelectedMenuHasSubItems
 } from "../../redux/actions";
 
-import menuItems from "../../constants/menu";
+ import menuItems from "../../constants/menu"; 
 
 class Sidebar extends Component {
   constructor(props) {
@@ -26,6 +25,7 @@ class Sidebar extends Component {
       viewingParentMenu: ""
     };
   }
+  
 
   handleWindowResize = event => {
     if (event && !event.isTrusted) {
@@ -202,7 +202,7 @@ class Sidebar extends Component {
       } else if (this.state.selectedParentMenu === "") {
         this.setState(
           {
-            selectedParentMenu: menuItems[0].id
+            selectedParentMenu: menuItems[localStorage.getItem("Role")].id
           },
           callback
         );
@@ -218,7 +218,7 @@ class Sidebar extends Component {
 
   getIsHasSubItem = () => {
     const { selectedParentMenu } = this.state;
-    const menuItem = menuItems.find(x => x.id === selectedParentMenu);
+    const menuItem = menuItems[localStorage.getItem("Role")].find(x => x.id === selectedParentMenu);
     if (menuItem)
       return menuItem && menuItem.subs && menuItem.subs.length > 0
         ? true
@@ -305,8 +305,8 @@ class Sidebar extends Component {
               option={{ suppressScrollX: true, wheelPropagation: false }}
             >
               <Nav vertical className="list-unstyled">
-                {menuItems &&
-                  menuItems.map(item => {
+                {menuItems[localStorage.getItem("Role")] &&
+                  menuItems[localStorage.getItem("Role")].map(item => {
                     return (
                       <NavItem
                         key={item.id}
@@ -349,8 +349,8 @@ class Sidebar extends Component {
             <PerfectScrollbar
               option={{ suppressScrollX: true, wheelPropagation: false }}
             >
-              {menuItems &&
-                menuItems.map(item => {
+              {menuItems[localStorage.getItem("Role")] &&
+                menuItems[localStorage.getItem("Role")].map(item => {
                   return (
                     <Nav
                       key={item.id}

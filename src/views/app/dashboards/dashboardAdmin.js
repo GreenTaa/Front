@@ -182,7 +182,7 @@ const ReactTableWithScrollableCard = (show) => {
     return (
       <Fragment>
         <Button outline color="secondary" className="mb-2"  onClick={() => setShow(!show)} >
-                  <IntlMessages id="button.add" />
+                  <IntlMessages id="button.add.supporter" />
         </Button>
         {show? 
         <div>
@@ -260,12 +260,13 @@ const ReactTableWithScrollableCard = (show) => {
         <div className="form-group text_box">
             <label className="f_p text_c f_400">Image</label>
             <div>
+            <label className="btn_get"> Select Avatar
             <input type="file"
                 className="form-input"
                 name="Avatar"
                 value={fileInputState}
                 onChange={onFileChange}
-            /></div>
+            /></label></div>
         </div>
         <div>
             {previewSource && (<img src={previewSource} alt="chosen" style={{height:'300px'}}/>)}

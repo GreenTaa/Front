@@ -104,12 +104,13 @@ export default function EcommerceDashboard()  {
                                     <div className="form-group text_box">
                                         <label className="f_p text_c f_400">Logo</label>
                                         <div>
+                                        <label className="btn_get"> Select Logo
                                         <input type="file"
                                             className="form-input"
                                             name="Logo"
                                             value={fileInputState}
                                             onChange={onFileChange}
-                                        /></div>
+                                        /></label></div> 
                                     </div>
                                     <div>
                                         {previewSource && (<img src={previewSource} alt="chosen" style={{height:'300px'}}/>)}

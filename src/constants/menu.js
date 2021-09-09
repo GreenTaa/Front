@@ -1,4 +1,7 @@
-const data = [
+
+const data = {
+  "Admin" : [
+
   {
     id: "Statistics",
     icon: "simple-icon-pie-chart",
@@ -56,7 +59,31 @@ const data = [
     icon: "simple-icon-graph",
     label: "menu.ranking",
     to: "/app/dashboards/ranking",
-  },
+  }
+],
+  "Team" : 
+  [
+    {
+      id: "Statistics",
+      icon: "simple-icon-pie-chart",
+      label: "menu.statistics",
+      to: "/app/dashboards/analytics",
+    },
+    {
+      id: "Products",
+      icon: "iconsminds-shopping-bag",
+      label: "menu.products",
+      to: "/app/dashboards/dashboard-team",
+    },
+    {
+      id: "Ranking",
+      icon: "simple-icon-pie-chart",
+      label: "menu.ranking",
+      to: "/app/dashboards/ranking",
+    }
+  ],
+  "Other" : 
+  [
    {
     id: "dashboards",
     icon: "iconsminds-shop-4",
@@ -304,6 +331,6 @@ const data = [
     to: "https://gogo-react-docs.coloredstrategies.com/",
     newWindow:true
   } 
-  
-];
+]
+};
 export default data;

@@ -76,6 +76,7 @@ export const UpdateSupporter = (supporters) =>{
          axios.put(`http://localhost:3000/supporters/${supporters._id}`,supporters)
          .then(() => {
             dispatch(updateSupporter(supporters))
+            fetchSupporters()
         }, (error) => {
             console.log({"error updating ": error});
         });
