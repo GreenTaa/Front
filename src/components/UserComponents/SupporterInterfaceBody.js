@@ -133,7 +133,9 @@ const SupporterInterfaceBody = (props) => {
                 role="tabpanel"
                 aria-labelledby="price-tab"
               >
-ss              </div>
+<Newprofile></Newprofile>
+
+              </div>
             </div>
           </div>
         </div>

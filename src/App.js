@@ -61,6 +61,7 @@ import { useHistory } from "react-router-dom";
 import ResetNewPassword from "./Pages/ResetNewPassword";
 import ResetPassword from "./Pages/ResetPassword";
 import maptest from "./components/trash/addtrash";
+import newprofile from "./components/UserComponents/newprofile";
 
 import SignUpTeam from "./Pages/SignUpTeam";
 import SignUpCenter from "./Pages/SignUpCenter"
@@ -118,6 +119,9 @@ class App extends Component {
             path="/Payment-processing"
             component={PaymentProcessing}
           />
+
+<ScrollToTopRoute path="/newprofile" component={newprofile} />
+
                     <ScrollToTopRoute path="/home" component={DigitalMarketing} />
                     <ScrollToTopRoute path="/ResetNewPassword/:id" component={ResetNewPassword  } />
                     <ScrollToTopRoute path="/Resetpassword" component={ResetPassword  } />
