@@ -7,8 +7,7 @@ import {
   DropdownMenu,
   Input
 } from "reactstrap";
-
-import { NavLink } from "react-router-dom";
+import { Link, NavLink, useHistory } from "react-router-dom";
 import { connect } from "react-redux";
 
 import IntlMessages from "../../helpers/IntlMessages";
@@ -38,7 +37,6 @@ class TopNav extends Component {
       searchKeyword: ""
     };
   }
-
   handleChangeLocale = locale => {
     this.props.changeLocale(locale);
   };
@@ -162,7 +160,8 @@ class TopNav extends Component {
   };
 
   handleLogout = () => {
-    this.props.logoutUser(this.props.history);
+    window.localStorage.clear();
+    window.location.href =  "/home";
   };
 
   menuButtonClick = (e, menuClickCount, containerClassnames) => {
@@ -230,9 +229,9 @@ class TopNav extends Component {
           <div className="user d-inline-block">
             <UncontrolledDropdown className="dropdown-menu-right">
               <DropdownToggle className="p-0" color="empty">
-                <span className="name mr-1">Admin</span>
+                <span className="name mr-1">{localStorage.getItem("Name")}</span>
                 <span>
-                  <img alt="Profile" src="/assets/img/profile-pic-l.jpg" />
+                  <img alt="Profile" src={localStorage.getItem("Picture")} />
                 </span>
               </DropdownToggle>
               <DropdownMenu className="mt-3" right>

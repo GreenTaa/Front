@@ -6,7 +6,7 @@ const data = {
     id: "Statistics",
     icon: "simple-icon-pie-chart",
     label: "menu.statistics",
-    to: "/app/dashboards/dashboard-admin",
+    to: "/app/dashboards/analytics",
   },
   {
     id: "Users",

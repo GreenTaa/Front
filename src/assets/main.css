@@ -18999,6 +18999,10 @@ input[type="text"] {
   z-index: 1;
 }
 
+.green_text{
+  color : #3ba266 ;
+}
+
 .map_bg {
   position: absolute;
   top: 0;

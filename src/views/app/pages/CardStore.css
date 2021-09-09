@@ -64,9 +64,9 @@
 
 .container .card .imgBx img{
   position: absolute;
-  top: 50%;
+  top: 30%;
   left: 50%;
-  transform: translate(-50%, -50%) rotate(-25deg);
+  transform: translate(-50%, -50%) ;
   width: 270px;
 }
 

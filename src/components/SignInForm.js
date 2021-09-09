@@ -60,6 +60,7 @@ const SignIn = () => {
           localStorage.setItem("Role", user.Role);
           localStorage.setItem("id", user._id);
           localStorage.setItem("Team", user.Team);
+          localStorage.setItem("Whishlist", user.Whishlist);
           console.log(localStorage);
            history.push("/home");
         }
@@ -68,6 +69,8 @@ const SignIn = () => {
           localStorage.setItem("Email", user.Email);
           localStorage.setItem("Role", user.Role);
           localStorage.setItem("id", user._id);
+          localStorage.setItem("Name", user.Firstname);
+          localStorage.setItem("Picture", user.Avatar);
           console.log(localStorage);
            history.push("/app/dashboards/dashboard-admin");
           }
@@ -76,6 +79,8 @@ const SignIn = () => {
             localStorage.setItem("Email", user.Email);
             localStorage.setItem("Role", user.Role);
             localStorage.setItem("id", user._id);
+            localStorage.setItem("Name", user.Name);
+            localStorage.setItem("Picture", user.Logo);
             console.log(localStorage);
              history.push("/app/dashboards/dashboard-team");
             }

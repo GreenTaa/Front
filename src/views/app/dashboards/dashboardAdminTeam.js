@@ -3,7 +3,6 @@ import { Colxx } from "../../../components/common/CustomBootstrap";
 import PerfectScrollbar from "react-perfect-scrollbar";
 import ReactTable from "react-table";
 import classnames from "classnames";
-import TopNav from "../../../containers/navs/Topnav";
 import { Row, Card, CardBody, CardTitle, Table, Button } from "reactstrap";
 import IntlMessages from "../../../helpers/IntlMessages";
 import {fetchTeams, AddTeam, DeleteTeam, UpdateTeam} from '../../../components/redux/teams/teamActions'

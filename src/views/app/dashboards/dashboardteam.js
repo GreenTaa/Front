@@ -105,7 +105,7 @@ export default function EcommerceDashboard()  {
           src={props.value}
           width="50px"
           height="50px"
-          className="list-thumbnail border-0"
+          className="avatar-rounded-circle border-0 mr-2"
         />
         },
         {
@@ -194,6 +194,16 @@ export default function EcommerceDashboard()  {
                 }
                 }/>
             </div>
+            <div className="form-group text_box">
+                <label className="f_p text_c f_400">Category</label>
+                <input type="text" placeholder="Category"
+                value={product.Category}
+                onChange={e => {
+                    const newUserObj = { ...product, Category: e.target.value }
+                    setProduct(newUserObj);
+                }
+                }/>
+            </div>
             <div className="d-flex justify-content-between align-items-center">
                 <button type="submit" className="btn_three">{val}</button>
             </div>
@@ -204,10 +214,6 @@ export default function EcommerceDashboard()  {
       <ReactTableWithScrollableCard/>
       </Colxx>
     </Row>
-
-<Colxx xl="12" lg="12" className="mb-4">
-  <Ranking />
-  </Colxx>
     
     </Fragment>
     );
