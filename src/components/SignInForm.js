@@ -6,8 +6,12 @@ import MuiAlert from "@material-ui/lab/Alert";
 import { useHistory } from "react-router-dom";
 import { FormHelperText } from "@material-ui/core";
 import axios from "axios";
+import { useDispatch} from 'react-redux';
+import {connectUser} from './redux/connect/connectActions'
 
 const SignIn = () => {
+  const [connectedUser, setConnectedUser] = useState();
+  const dispatch = useDispatch()
   const [error, setError] = useState({
     visible: false,
     message: "",
@@ -30,6 +34,14 @@ const SignIn = () => {
     validationSchema: YupSchema,
     onSubmit: async (values) => {
       console.log("Values", values);
+
+      axios.post(`http://localhost:3000/users/login`, values)
+      .then((response) => {
+          console.log("responseLogin : ", response)
+          setConnectedUser(response.data.user)
+          console.log(response.data.user)
+          dispatch(connectUser(response.data.user))
+      });
 
       const [user, err] = await queryServerApi(
         "users/login",
@@ -114,7 +126,7 @@ const SignIn = () => {
           <div className="row">
             <div className="col-lg-5">
               <div className="sign_info_content">
-               {/*  illustration Sign In */}
+               <img src="http://res.cloudinary.com/dkqbdhbrp/image/upload/v1631197097/teams/ap3sklcukxnbpeh9hlk0.png" width="450px" height="400px" />
               </div>
             </div>
             <div className="col-lg-7">

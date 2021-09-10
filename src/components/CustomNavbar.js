@@ -1,5 +1,7 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { Link, NavLink, useHistory } from "react-router-dom";
+import { useDispatch } from 'react-redux';
+import { disconnectUser } from "./redux/connect/connectActions";
 import Sticky from "react-stickynode";
 import {
     UncontrolledDropdown,
@@ -22,6 +24,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function CustomNavbar(props) {
   const history = useHistory();
+  const dispatch = useDispatch();
   var { mClass, nClass, cClass, slogo, hbtnClass } = props;
   const username = localStorage.getItem("Firstname");
   const role = localStorage.getItem("Role");
@@ -49,6 +52,7 @@ export default function CustomNavbar(props) {
   const Logout = () => {
     localStorage.clear();
     history.push("/");
+    dispatch(disconnectUser())
   };
 
   const Myaccount = () => {
@@ -139,7 +143,7 @@ export default function CustomNavbar(props) {
                   <img alt="Profile" src={img} />
                 </span>
               </DropdownToggle>
-              <img style={{width :"35px", height : "35px"}} onClick={() => console.log("lkjihuygtfr")} alt="Profile" src="http://res.cloudinary.com/dkqbdhbrp/image/upload/v1630925384/teams/p9ml46rx0rximg2reyqc.png" />
+              <img style={{width :"35px", height : "35px"}} onClick={() => history.push("/whishlist") } alt="Profile" src="http://res.cloudinary.com/dkqbdhbrp/image/upload/v1630925384/teams/p9ml46rx0rximg2reyqc.png" />
               <DropdownMenu className="mt-3" right>
                 <DropdownItem onClick={() => Myaccount()} >Account</DropdownItem>
                 <DropdownItem>Mile stones</DropdownItem>

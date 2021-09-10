@@ -22,7 +22,7 @@ const ImageListView = ({ }) => {
     const [connected, setConnected] = useState(false);
     const team = localStorage.getItem("Team");
     const [currentPage, setCurrentPage] = useState(1);
-    const [postsPerPage] = useState(6);
+    const [postsPerPage] = useState(3);
     const indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
     const currentPosts = productsData.products.filter(product => product.Team == team).slice(indexOfFirstPost, indexOfLastPost);
