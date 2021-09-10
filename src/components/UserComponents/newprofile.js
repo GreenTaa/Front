@@ -166,6 +166,7 @@ console.log(values);
                     </div>
                     <hr className="my-4" />
                     <h2>Progress</h2>
+                    <br></br><br></br><br></br>
                     < Mile pcr={30}></Mile>
 <br></br><br></br><br></br>
                     <a href="#">Show more</a>
