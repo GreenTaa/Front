@@ -108,7 +108,7 @@ class App extends Component {
                 <AuthRoute path="/app" authUser={loginUser} component={app} />
                 <Route path="/error" exact component={error} />
                 <Route path="/log" exact component={login} />
-                <Route path="/SupporterInterface" exact component={SupporterInterface} />
+                <Route path="/SupporterInterface" exact component={newprofile} />
                 <AuthRoute path="/" exact component={main} />
 
           <ScrollToTopRoute
