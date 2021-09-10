@@ -6,6 +6,8 @@ import CustomNavbar from "../CustomNavbar";
 import Breadcrumb from "../Breadcrumb";
 import back from "../../img/breadcrumb/banner_bg.png";
 import { queryServerApi } from "../../utils/queryServerApi";
+import * as Yup from 'yup';
+import Mile from "./Milestones";
 
 export default function StepProgressBar(props) {
   const [username, setusername] = useState(props.supporter.Firstname);
@@ -47,12 +49,19 @@ export default function StepProgressBar(props) {
   }
   async function updatedata(img) {
     var wow;
-    var values;
-    console.log(images);
+    var values="ss";
     if (images !== null) {
       wow = await getBase64(images);
     } else wow = null;
     localStorage.setItem("Email", email);
+    values = {
+        Email: email,
+        Firstname: username,
+        Phone: phone,
+        Avatar: wow,
+        Address: address,
+        Date_birth: Date_birth,
+      };
 if(wow===null){
     values = {
         Email: email,
@@ -62,16 +71,10 @@ if(wow===null){
         Date_birth: Date_birth,
       };
 }
-else{
-    values = {
-        Email: email,
-        Firstname: username,
-        Phone: phone,
-        Avatar: wow,
-        Address: address,
-        Date_birth: Date_birth,
-      };
-}
+
+console.log(values);
+
+
     
 
     const [user, err] = await queryServerApi(
@@ -81,8 +84,10 @@ else{
        false
       );
 
-    console.log(localStorage);
   }
+
+
+
   return (
     <div>
       <div className="main-content">
@@ -131,28 +136,25 @@ else{
                     <div className="col">
                       <div className="card-profile-stats d-flex justify-content-center mt-md-5">
                         <div>
-                          <span className="heading">22</span>
-                          <span className="description">Friends</span>
+                          <span className="heading">{props.supporter.Score}</span>
+                          <span className="description">Points</span>
                         </div>
                         <div>
-                          <span className="heading">10</span>
-                          <span className="description">Photos</span>
+                          <span className="heading">{props.supporter.Bottles}</span>
+                          <span className="description">Bottles</span>
                         </div>
-                        <div>
-                          <span className="heading">89</span>
-                          <span className="description">Comments</span>
-                        </div>
+                   
                       </div>
                     </div>
                   </div>
                   <div className="text-center">
                     <h3>
-                      Jessica Jones
+                    {props.supporter.Firstname}  {props.supporter.Lastname}
                       <span className="font-weight-light">, 27</span>
                     </h3>
                     <div className="h5 font-weight-300">
                       <i className="ni location_pin mr-2" />
-                      Bucharest, Romania
+                     Tunis
                     </div>
                     <div className="h5 mt-4">
                       <i className="ni business_briefcase-24 mr-2" />
@@ -163,11 +165,9 @@ else{
                       University of Computer Science
                     </div>
                     <hr className="my-4" />
-                    <p>
-                      Ryan — the name taken by Melbourne-raised, Brooklyn-based
-                      Nick Murphy — writes, performs and records all of his own
-                      music.
-                    </p>
+                    <h2>Progress</h2>
+                    < Mile pcr={30}></Mile>
+<br></br><br></br><br></br>
                     <a href="#">Show more</a>
                   </div>
                 </div>
@@ -414,4 +414,5 @@ else{
       </footer>
     </div>
   );
+  
 }
