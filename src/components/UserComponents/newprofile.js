@@ -1,26 +1,35 @@
 import React, { useState, useRef, useEffect } from "react";
+import useForm from "react-hook-form";
 import "react-step-progress-bar/styles.css";
 import { Button } from "reactstrap";
 import "./profile.css";
 import CustomNavbar from "../CustomNavbar";
-import Breadcrumb from "../Breadcrumb";
 import back from "../../img/breadcrumb/banner_bg.png";
 import { queryServerApi } from "../../utils/queryServerApi";
-import * as Yup from 'yup';
 import Mile from "./Milestones";
 
 export default function StepProgressBar(props) {
   const [username, setusername] = useState(props.supporter.Firstname);
   const [email, setemail] = useState(localStorage.Email);
   const [phone, setphone] = useState(props.supporter.Phone);
-  const [password, setpassword] = useState("");
   const [address, setaddress] = useState(props.supporter.Address);
   const [Date_birth, setDate_birth] = useState(props.supporter.Date_birth);
   const [fileInputState, setFileInputState] = useState("");
   const [previewSource, setPreviewSource] = useState("");
   const fileInputRef = useRef();
   const [images, setImages] = useState(null);
-
+  const { register, errors, handleSubmit, watch } = useForm({});
+  const password = useRef({});
+  password.current = watch("password", "");
+  const onSubmit = async data => {
+    const [user, err] = await queryServerApi(
+        "supporters/changepass/" + localStorage.id,
+         data,
+          "PUT",
+         false
+        );
+        window.location.reload(false);
+  };
   const onFileChange = (event) => {
     // Update the state
     const file = event.target.files[0];
@@ -184,7 +193,6 @@ console.log(values);
                   </div>
                 </div>
                 <div className="card-body">
-                  <form>
                     <h6 className="heading-small text-muted mb-4">
                       User information
                     </h6>
@@ -342,6 +350,7 @@ console.log(values);
                     <h6 className="heading-small text-muted mb-4">
                       Account Security
                     </h6>
+                    <form onSubmit={e => e.preventDefault()}>
                     <div className="pl-lg-4">
                       <div className="row">
                         <div className="col-lg-4">
@@ -356,9 +365,17 @@ console.log(values);
                               type="password"
                               id="input-city"
                               className="form-control form-control-alternative"
-                              placeholder="City"
-                              defaultValue="New York"
+                              name="password"
+                              ref={register({
+                                required: "You must specify a password",
+                                minLength: {
+                                  value: 8,
+                                  message: "Password must have at least 8 characters"
+                                }
+                              })}
                             />
+                                  {errors.password && <p id="pa">{errors.password.message}</p>}
+
                           </div>
                         </div>
                         <div className="col-lg-4">
@@ -372,23 +389,30 @@ console.log(values);
                             <input
                               type="password"
                               id="input-country"
+                              name="password_repeat"
+
                               className="form-control form-control-alternative"
-                              placeholder="Country"
-                              defaultValue="United States"
+                              ref={register({
+                                validate: value =>
+                                  value === password.current || "The passwords do not match"
+                              })}
                             />
+
+                                {errors.password_repeat && <p id="pa">{errors.password_repeat.message}</p>}
+
                           </div>
                         </div>
                         <Button
                           style={{ height: "50px", marginTop: "10px" }}
                           className="btn_hover agency_banner_btn wow fadeInLeft"
                           data-wow-delay="0.5s"
-                          onClick={(e) => console.log(updatedata())}
+                          onClick={handleSubmit(onSubmit)}
                         >
                           Reset password
                         </Button>
                       </div>
                     </div>
-                  </form>
+                    </form>
                 </div>
               </div>
             </div>

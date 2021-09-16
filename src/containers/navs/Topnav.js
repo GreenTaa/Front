@@ -5,12 +5,10 @@ import {
   DropdownItem,
   DropdownToggle,
   DropdownMenu,
-  Input
 } from "reactstrap";
-import { Link, NavLink, useHistory } from "react-router-dom";
+import {  NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 
-import IntlMessages from "../../helpers/IntlMessages";
 import {
   setContainerClassnames,
   clickOnMobileMenu,
@@ -20,12 +18,10 @@ import {
 
 import {
   menuHiddenBreakpoint,
-  searchPath,
-  localeOptions
+  searchPath
 } from "../../constants/defaultValues";
 
 import { MobileMenuIcon, MenuIcon } from "../../components/svg";
-import TopnavEasyAccess from "./Topnav.EasyAccess";
 import TopnavNotifications from "./Topnav.Notifications";
 
 class TopNav extends Component {

@@ -1,9 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import {
-  Row,
-  Card,
   CardBody,
-  CardTitle,
   CardSubtitle,
   CardImg,
   CardText,
@@ -16,11 +13,8 @@ import {
 
 import { NavLink } from "react-router-dom";
 import { queryServerApi } from "../../utils/queryServerApi";
-import { useForm } from "react-hook-form";
 import IntlMessages from "../../helpers/IntlMessages";
 import { Colxx } from "../../components/common/CustomBootstrap";
-import ThumbnailImage from "../../components/cards/ThumbnailImage";
-import ThumbnailLetters from "../../components/cards/ThumbnailLetters";
 const UserCardExamples = (props) => {
   const [username, setusername] = useState(props.supporter.Firstname);
   const [email, setemail] = useState(localStorage.Email);
@@ -29,7 +23,6 @@ const UserCardExamples = (props) => {
   const [address, setaddress] = useState(props.supporter.Address);
   const [Date_birth, setDate_birth] = useState(props.supporter.Date_birth);
 
-  const [file, setfile] = useState("");
   const [fileInputState, setFileInputState] = useState("");
   const [previewSource, setPreviewSource] = useState("");
   const fileInputRef = useRef();

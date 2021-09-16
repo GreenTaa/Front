@@ -2,13 +2,10 @@ import 'leaflet/dist/leaflet.css';
 import "leaflet-control-geocoder/dist/Control.Geocoder.js";
 import React, { useState,useEffect } from "react";
 import L from "leaflet";
-import { MapContainer,Popup,TileLayer,Marker,Circle  } from 'react-leaflet'
+import { MapContainer,Popup,TileLayer,Marker } from 'react-leaflet'
 import axios from "axios";
-import { Colxx } from "../../components/common/CustomBootstrap";
-import { CardText, CardSubtitle, Row, Card, CardBody, CardTitle,CardImg,Badge } from "reactstrap";
+import { CardText, CardSubtitle,CardBody,CardImg,Badge } from "reactstrap";
 import MarkerClusterGroup from "react-leaflet-markercluster";
-import { width } from '@material-ui/system';
-import CircularProgressbar from 'react-circular-progressbar';
 import img1 from './icon/greenta2.png';
 
   const icon = L.icon({

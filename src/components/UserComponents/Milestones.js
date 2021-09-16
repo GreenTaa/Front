@@ -1,13 +1,7 @@
 import React from "react";
 import "react-step-progress-bar/styles.css";
 import { ProgressBar, Step } from "react-step-progress-bar";
-import Tooltip from "@material-ui/core/Tooltip";
-import Card from "@material-ui/core/Card";
-import CardContent from "@material-ui/core/CardContent";
-import CardHeader from "@material-ui/core/CardHeader";
-import AssessmentIcon from "@material-ui/icons/Assessment";
-import Typography from "@material-ui/core/Typography";
-import TrendingUpIcon from "@material-ui/icons/TrendingUp";
+
 import "./miles.css";
 
 export default function StepProgressBar(props) {

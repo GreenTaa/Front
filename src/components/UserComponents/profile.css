@@ -1491,7 +1491,14 @@
     font-weight: 300;
     line-height: 1.7;
   }
+  #pa {
+    color: #bf1650;
+  }
   
+  #pa::before {
+    display: inline;
+    content: "⚠ ";
+  }
   .description {
     font-size: .875rem;
   }

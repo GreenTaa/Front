@@ -2,15 +2,9 @@ import React from 'react';
 import CustomNavbar from '../components/CustomNavbar';
 import AgencyBanner from '../components/Banner/AgencyBanner';
 import BannerData from '../components/Banner/BannerData';
-import MarketingService from '../components/Service/MarketingService';
-import ServiceData from '../components/Service/ServiceData';
-import AgencyAbout from '../components/About/AgencyAbout';
-import Features from '../components/Features/Features';
-import MarketingTestimonial from '../components/Testimonial/MarketingTestimonial';
-import AgencyAction from '../components/AgencyAction';
+
 import FooterTwo from '../components/Footer/FooterTwo';
 import FooterData from '../components/Footer/FooterData';
-import HRService from '../components/Service/HRService';
 import FeaturesHome from '../components/FeaturesHome';
 
 import Reveal from 'react-reveal/Reveal';
