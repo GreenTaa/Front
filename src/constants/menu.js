@@ -44,14 +44,14 @@ const data = {
       },
       {
         icon: "simple-icon-grid",
-        label: "All trash bins",
+        label:"All trash bins",
         to: "/app/alltrash"
       },
       {
-        icon: "simple-icon-home",
+        icon: "simple-icon-graph",
         label: "Affect trashbins",
-        to: "/app/dashboards/manageCenters"
-      }
+        to: "/app/affected-trash"
+      },
     ]
   },
   {
@@ -81,6 +81,41 @@ const data = {
       label: "menu.ranking",
       to: "/app/dashboards/ranking",
     }
+  ],
+  "Center" : 
+  [
+   
+  {
+    id: "Statistics",
+    icon: "simple-icon-pie-chart",
+    label: "menu.statistics",
+    to: "/app/dashboards/analytics",
+  },
+  {
+    id: "Manage Trashbins",
+    icon: "simple-icon-trash",
+    label: "menu.managetrash",
+    to: "/app/dashboards/dashboard-center",
+    subs: [
+    
+      {
+        icon: "simple-icon-grid",
+        label: "My trashbins",
+        to: "/app/alltrash"
+      },
+      {
+        icon: "simple-icon-home",
+        label: "Affect trashbins",
+        to: "/app/dashboards/manageCenters"
+      }
+    ]
+  },
+  {
+    id: "Ranking",
+    icon: "simple-icon-graph",
+    label: "menu.ranking",
+    to: "/app/dashboards/ranking",
+  }
   ],
   "Other" : 
   [

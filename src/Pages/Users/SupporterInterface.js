@@ -10,6 +10,7 @@ import axios from "axios";
 
 const SupporterInterface = () => {
     const [supporter,setSupporter] = useState();
+    const [hystory,sethystory] = useState();
     const renderId = () => {
         let id = 0
         if(localStorage.getItem('id') != null)
@@ -27,16 +28,28 @@ const SupporterInterface = () => {
             const Supp = await axios.get(
                 "http://localhost:3000/supporters/"+renderId()
             ).then(function(doc){
-                if(JSON.stringify(doc.data) === JSON.stringify(supporter))
+                if(JSON.stringify(doc.data) !== JSON.stringify(supporter))
                 {
-                    console.log("same")
-                }
-                else{
-                 
                     setSupporter(doc.data);
-                    console.log("elseeee");
-                   
                 }
+                
+            });
+           
+            // set State
+        } catch (err) {
+            console.error(err.message);
+        }
+    };
+    const getHistory= async () => {
+        try {
+            const Supp = await axios.get(
+                "http://localhost:3000/trash/history/"+renderId()
+            ).then(function(doc){
+                if(JSON.stringify(doc.data) !== JSON.stringify(supporter))
+                {
+                    sethystory(doc.data);
+                }
+            
             });
            
             // set State
@@ -45,9 +58,9 @@ const SupporterInterface = () => {
         }
     };
     useEffect(() => {
-      getSupporter();
-        
+     
         const interval = setInterval(() => {
+            getHistory();
             getSupporter();
         }, 4000);
         return () => clearInterval(interval);
@@ -59,7 +72,7 @@ const SupporterInterface = () => {
             {supporter ?
                 (   <>
                 
-                       <SupporterInterfaceBody supporter={supporter}/>
+                       <SupporterInterfaceBody history={hystory} supporter={supporter}/>
                     </>
                 ) : (<SignIn/>)}
             <FooterTwo fClass="pt_150" FooterData={FooterData}/>

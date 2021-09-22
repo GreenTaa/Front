@@ -988,10 +988,7 @@
     opacity: .9 !important;
   }
   
-  .center {
-    left: 50%;
-    transform: translateX(-50%);
-  }
+ 
   
   [class*='shadow'] {
     transition: all .15s ease;

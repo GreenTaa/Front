@@ -67,6 +67,7 @@ import SignUpTeam from "./Pages/SignUpTeam";
 import SignUpCenter from "./Pages/SignUpCenter"
 import SupporterInterface from "./Pages/Users/SupporterInterface"
 import dashboardTeam from "./views/app/dashboards/dashboardteam"
+import dashboardCenter from "./views/app/dashboards/dashboardcenter"
 /* import Store from './Pages/Store' */
 import Produits from './views/app/pages/produits'
 import Store from './views/app/pages/store'
@@ -76,7 +77,7 @@ const AuthRoute = ({ component: Component, authUser, ...rest }) => (
   <Route
     {...rest}
     render={props =>
-      localStorage.Role ==="Team" | localStorage.Role ==="Admin" ? (
+      localStorage.Role ==="Team" |localStorage.Role ==="Center" | localStorage.Role ==="Admin" ? (
         <Component {...props} />
       ) : (
         <Redirect
@@ -177,6 +178,7 @@ class App extends Component {
           <ScrollToTopRoute path="/Service-Team" component={ServiceTeam} />
           <ScrollToTopRoute path="/Service-Center" component={ServiceCenter} />
           <ScrollToTopRoute path="/dashboard-team" component={dashboardTeam} />
+          <ScrollToTopRoute path="/dashboard-center" component={dashboardCenter} />
           <Redirect to="/error" />
 
               </Switch>

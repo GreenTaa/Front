@@ -96,6 +96,16 @@ const SignIn = () => {
             console.log(localStorage);
              history.push("/app/dashboards/dashboard-team");
             }
+            if (user.Role === "Center") {
+          
+              localStorage.setItem("Email", user.Email);
+              localStorage.setItem("Role", user.Role);
+              localStorage.setItem("id", user._id);
+              localStorage.setItem("Name", user.Name);
+              localStorage.setItem("Picture", user.Logo);
+              console.log(localStorage);
+               history.push("/app/dashboards/analytics");
+              }
       }
     },
   });

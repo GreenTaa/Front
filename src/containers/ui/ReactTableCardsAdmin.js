@@ -26,7 +26,7 @@ const dispatch = useDispatch()
 useEffect(() => {
   const interval = setInterval(() => {
       dispatch(fetchSupporters())
-  }, 500);
+  }, 5000);
   return () => clearInterval(interval);
 }
 , [])  
@@ -112,7 +112,7 @@ const teamsData = useSelector((state) => state.teams)
 useEffect(() => {
   const interval = setInterval(() => {
       dispatch(fetchTeams())
-  }, 500);
+  }, 5000);
   return () => clearInterval(interval);
 }
 , [])   
@@ -177,7 +177,7 @@ export const ReactTableWithScrollableCardCenters = props => {
     useEffect(() => {
       const interval = setInterval(() => {
           dispatch(fetchCenters())
-      }, 500);
+      }, 5000);
       return () => clearInterval(interval);
     }
     , [])  

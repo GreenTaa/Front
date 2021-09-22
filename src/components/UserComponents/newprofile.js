@@ -7,6 +7,8 @@ import CustomNavbar from "../CustomNavbar";
 import back from "../../img/breadcrumb/banner_bg.png";
 import { queryServerApi } from "../../utils/queryServerApi";
 import Mile from "./Milestones";
+import Coin from "./mycoin.png";
+import Timeline from "./timeline";
 
 export default function StepProgressBar(props) {
   const [username, setusername] = useState(props.supporter.Firstname);
@@ -21,14 +23,14 @@ export default function StepProgressBar(props) {
   const { register, errors, handleSubmit, watch } = useForm({});
   const password = useRef({});
   password.current = watch("password", "");
-  const onSubmit = async data => {
+  const onSubmit = async (data) => {
     const [user, err] = await queryServerApi(
-        "supporters/changepass/" + localStorage.id,
-         data,
-          "PUT",
-         false
-        );
-        window.location.reload(false);
+      "supporters/changepass/" + localStorage.id,
+      data,
+      "PUT",
+      false
+    );
+    window.location.reload(false);
   };
   const onFileChange = (event) => {
     // Update the state
@@ -58,44 +60,38 @@ export default function StepProgressBar(props) {
   }
   async function updatedata(img) {
     var wow;
-    var values="ss";
+    var values = "ss";
     if (images !== null) {
       wow = await getBase64(images);
     } else wow = null;
     localStorage.setItem("Email", email);
     values = {
+      Email: email,
+      Firstname: username,
+      Phone: phone,
+      Avatar: wow,
+      Address: address,
+      Date_birth: Date_birth,
+    };
+    if (wow === null) {
+      values = {
         Email: email,
         Firstname: username,
         Phone: phone,
-        Avatar: wow,
         Address: address,
         Date_birth: Date_birth,
       };
-if(wow===null){
-    values = {
-        Email: email,
-        Firstname: username,
-        Phone: phone,
-        Address: address,
-        Date_birth: Date_birth,
-      };
-}
+    }
 
-console.log(values);
-
-
-    
+    console.log(values);
 
     const [user, err] = await queryServerApi(
       "supporters/" + localStorage.id,
-       values,
-        "PUT",
-       false
-      );
-
+      values,
+      "PUT",
+      false
+    );
   }
-
-
 
   return (
     <div>
@@ -145,25 +141,53 @@ console.log(values);
                     <div className="col">
                       <div className="card-profile-stats d-flex justify-content-center mt-md-5">
                         <div>
-                          <span className="heading">{props.supporter.Score}</span>
+                          <span className="heading">
+                            {props.supporter.Score}
+                          </span>
                           <span className="description">Points</span>
                         </div>
                         <div>
-                          <span className="heading">{props.supporter.Bottles}</span>
+                          <span className="heading">
+                            {props.supporter.Bottles}
+                          </span>
                           <span className="description">Bottles</span>
                         </div>
-                   
                       </div>
+                      <div
+                        style={{
+                          width: "200px",
+                          marginLeft:"100px"
+                        }}
+                        class="middle-container d-flex justify-content-between align-items-center mt-3 p-2"
+                      >
+                        <div class="dollar-div px-3">
+                          <div class="round-div">
+                            <img style={{
+                          width: "130%",height:"130%"
+                        }} src={Coin}></img>
+                          </div>
+                        </div>
+                        <div class="d-flex flex-column text-right mr-2">
+                          {" "}
+                          <span class="current-balance">
+                            Current Balance
+                          </span>{" "}
+                          <span class="amount">
+                            <span class="dollar-sign">GC </span> {props.supporter.Score}
+                          </span>{" "}
+                        </div>
+                      </div>
+                      <br></br>
                     </div>
                   </div>
                   <div className="text-center">
                     <h3>
-                    {props.supporter.Firstname}  {props.supporter.Lastname}
+                      {props.supporter.Firstname} {props.supporter.Lastname}
                       <span className="font-weight-light">, 27</span>
                     </h3>
                     <div className="h5 font-weight-300">
                       <i className="ni location_pin mr-2" />
-                     Tunis
+                      Tunis
                     </div>
                     <div className="h5 mt-4">
                       <i className="ni business_briefcase-24 mr-2" />
@@ -175,9 +199,15 @@ console.log(values);
                     </div>
                     <hr className="my-4" />
                     <h2>Progress</h2>
-                    <br></br><br></br><br></br>
-                    < Mile pcr={30}></Mile>
-<br></br><br></br><br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <Mile pcr={30}></Mile>
+
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <Timeline hystory={props.history}></Timeline>
                     <a href="#">Show more</a>
                   </div>
                 </div>
@@ -193,164 +223,166 @@ console.log(values);
                   </div>
                 </div>
                 <div className="card-body">
-                    <h6 className="heading-small text-muted mb-4">
-                      User information
-                    </h6>
-                    <div className="pl-lg-4">
-                      <div className="row">
-                        <div className="col-lg-6">
-                          <div className="form-group focused">
-                            <label
-                              className="form-control-label"
-                              htmlFor="input-username"
-                            >
-                              Name
-                            </label>
-                            <input
-                              onChange={(e) => setusername(e.target.value)}
-                              defaultValue={props.supporter.Firstname}
-                              type="text"
-                              id="input-username"
-                              className="form-control form-control-alternative"
-                              placeholder="Username"
-                            />
-                          </div>
-                        </div>
-                        <div className="col-lg-6">
-                          <div className="form-group">
-                            <label
-                              className="form-control-label"
-                              htmlFor="input-email"
-                            >
-                              Email address
-                            </label>
-                            <input
-                              onChange={(e) => setemail(e.target.value)}
-                              defaultValue={localStorage.Email}
-                              type="email"
-                              id="input-email"
-                              className="form-control form-control-alternative"
-                              placeholder="jesse@example.com"
-                            />
-                          </div>
+                  <h6 className="heading-small text-muted mb-4">
+                    User information
+                  </h6>
+                  <div className="pl-lg-4">
+                    <div className="row">
+                      <div className="col-lg-6">
+                        <div className="form-group focused">
+                          <label
+                            className="form-control-label"
+                            htmlFor="input-username"
+                          >
+                            Name
+                          </label>
+                          <input
+                            onChange={(e) => setusername(e.target.value)}
+                            defaultValue={props.supporter.Firstname}
+                            type="text"
+                            id="input-username"
+                            className="form-control form-control-alternative"
+                            placeholder="Username"
+                          />
                         </div>
                       </div>
-                      <div className="row">
-                        <div className="col-lg-6">
-                          <div className="form-group focused">
-                            <label
-                              className="form-control-label"
-                              htmlFor="input-phone"
-                            >
-                              Phone number
-                            </label>
-                            <input
-                              placeholder="Phone"
-                              onChange={(e) => setphone(e.target.value)}
-                              defaultValue={props.supporter.Phone}
-                              type="text"
-                              id="phone"
-                              className="form-control form-control-alternative"
-                            />
-                          </div>
-                        </div>
-                        <div className="col-lg-6">
-                          <div className="form-group focused">
-                            <label
-                              className="form-control-label"
-                              htmlFor="input-last-name"
-                            >
-                              Birth date
-                            </label>
-                            <input
-                              onChange={(e) => setDate_birth(e.target.value)}
-                              defaultValue={props.supporter.Date_birth}
-                              type="date"
-                              id="input-last-name"
-                              className="form-control form-control-alternative"
-                            />
-                          </div>
+                      <div className="col-lg-6">
+                        <div className="form-group">
+                          <label
+                            className="form-control-label"
+                            htmlFor="input-email"
+                          >
+                            Email address
+                          </label>
+                          <input
+                            onChange={(e) => setemail(e.target.value)}
+                            defaultValue={localStorage.Email}
+                            type="email"
+                            id="input-email"
+                            className="form-control form-control-alternative"
+                            placeholder="jesse@example.com"
+                          />
                         </div>
                       </div>
                     </div>
-                    <hr className="my-4" />
-                    {/* Address */}
-                    <h6 className="heading-small text-muted mb-4">
-                      Contact information
-                    </h6>
-                    <div className="pl-lg-4">
-                      <div className="row">
-                        <div className="col-md-12">
-                          <div className="form-group focused">
-                            <label
-                              className="form-control-label"
-                              htmlFor="input-address"
-                            >
-                              Address
-                            </label>
-                            <input
-                              onChange={(e) => setaddress(e.target.value)}
-                              defaultValue={props.supporter.Address}
-                              id="input-address"
-                              className="form-control form-control-alternative"
-                              placeholder="Home Address"
-                              type="text"
-                            />
-                          </div>
+                    <div className="row">
+                      <div className="col-lg-6">
+                        <div className="form-group focused">
+                          <label
+                            className="form-control-label"
+                            htmlFor="input-phone"
+                          >
+                            Phone number
+                          </label>
+                          <input
+                            placeholder="Phone"
+                            onChange={(e) => setphone(e.target.value)}
+                            defaultValue={props.supporter.Phone}
+                            type="text"
+                            id="phone"
+                            className="form-control form-control-alternative"
+                          />
                         </div>
-                        <div className="col-lg-4">
+                      </div>
+                      <div className="col-lg-6">
+                        <div className="form-group focused">
+                          <label
+                            className="form-control-label"
+                            htmlFor="input-last-name"
+                          >
+                            Birth date
+                          </label>
+                          <input
+                            onChange={(e) => setDate_birth(e.target.value)}
+                            defaultValue={props.supporter.Date_birth}
+                            type="date"
+                            id="input-last-name"
+                            className="form-control form-control-alternative"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <hr className="my-4" />
+                  {/* Address */}
+                  <h6 className="heading-small text-muted mb-4">
+                    Contact information
+                  </h6>
+                  <div className="pl-lg-4">
+                    <div className="row">
+                      <div className="col-md-12">
+                        <div className="form-group focused">
                           <label
                             className="form-control-label"
                             htmlFor="input-address"
                           >
-                            Profile Image
+                            Address
                           </label>
-                          <div className="form-group text_box">
-                            <label className="f_p text_c f_200">Image</label>
-
-                            <label style={{marginLeft:"400px",height:"50px"}}  className="btn_get">
-                              {" "}
-                              
-                              Avatar
-                              <input
-                                type="file"
-                                className="form-input"
-                                name="Avatar"
-                                ref={fileInputRef}
-                                value={fileInputState}
-                                onChange={onFileChange}
-                              />
-                            </label>
-
-                            <div>
-              {previewSource && (
-                <img
-                  src={previewSource}
-                  alt="chosen"
-                  style={{marginLeft:"400px",height:"150px"}}
-                />
-              )}
-            </div>
-            <br></br>
-                          </div>
+                          <input
+                            onChange={(e) => setaddress(e.target.value)}
+                            defaultValue={props.supporter.Address}
+                            id="input-address"
+                            className="form-control form-control-alternative"
+                            placeholder="Home Address"
+                            type="text"
+                          />
                         </div>
                       </div>
-                      <div className="text-center">
-                        <Button
-                          className="btn_hover agency_banner_btn wow fadeInLeft"
-                          data-wow-delay="0.5s"
-                          onClick={(e) => updatedata()}
+                      <div className="col-lg-4">
+                        <label
+                          className="form-control-label"
+                          htmlFor="input-address"
                         >
-                          Update
-                        </Button>
+                          Profile Image
+                        </label>
+                        <div className="form-group text_box">
+                          <label className="f_p text_c f_200">Image</label>
+
+                          <label
+                            style={{ marginLeft: "400px", height: "50px" }}
+                            className="btn_get"
+                          >
+                            {" "}
+                            Avatar
+                            <input
+                              type="file"
+                              className="form-input"
+                              name="Avatar"
+                              ref={fileInputRef}
+                              value={fileInputState}
+                              onChange={onFileChange}
+                            />
+                          </label>
+
+                          <div>
+                            {previewSource && (
+                              <img
+                                src={previewSource}
+                                alt="chosen"
+                                style={{ marginLeft: "400px", height: "150px" }}
+                              />
+                            )}
+                          </div>
+                          <br></br>
+                        </div>
                       </div>
                     </div>
-                    <hr className="my-4" />
-                    {/* Description */}
-                    <h6 className="heading-small text-muted mb-4">
-                      Account Security
-                    </h6>
-                    <form onSubmit={e => e.preventDefault()}>
+                    <div className="text-center">
+                      <Button
+                        className="btn_hover agency_banner_btn wow fadeInLeft"
+                        data-wow-delay="0.5s"
+                        onClick={(e) => updatedata()}
+                      >
+                        Update
+                      </Button>
+                    </div>
+                  </div>
+                  <hr className="my-4" />
+                  {/* Description */}
+                  <h6 className="heading-small text-muted mb-4">
+                    Account Security
+                  </h6>
+                  <form onSubmit={(e) => e.preventDefault()}>
                     <div className="pl-lg-4">
                       <div className="row">
                         <div className="col-lg-4">
@@ -370,12 +402,14 @@ console.log(values);
                                 required: "You must specify a password",
                                 minLength: {
                                   value: 8,
-                                  message: "Password must have at least 8 characters"
-                                }
+                                  message:
+                                    "Password must have at least 8 characters",
+                                },
                               })}
                             />
-                                  {errors.password && <p id="pa">{errors.password.message}</p>}
-
+                            {errors.password && (
+                              <p id="pa">{errors.password.message}</p>
+                            )}
                           </div>
                         </div>
                         <div className="col-lg-4">
@@ -390,16 +424,17 @@ console.log(values);
                               type="password"
                               id="input-country"
                               name="password_repeat"
-
                               className="form-control form-control-alternative"
                               ref={register({
-                                validate: value =>
-                                  value === password.current || "The passwords do not match"
+                                validate: (value) =>
+                                  value === password.current ||
+                                  "The passwords do not match",
                               })}
                             />
 
-                                {errors.password_repeat && <p id="pa">{errors.password_repeat.message}</p>}
-
+                            {errors.password_repeat && (
+                              <p id="pa">{errors.password_repeat.message}</p>
+                            )}
                           </div>
                         </div>
                         <Button
@@ -412,7 +447,7 @@ console.log(values);
                         </Button>
                       </div>
                     </div>
-                    </form>
+                  </form>
                 </div>
               </div>
             </div>
@@ -439,5 +474,4 @@ console.log(values);
       </footer>
     </div>
   );
-  
 }

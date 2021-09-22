@@ -86,7 +86,7 @@ function App() {
           );
       }
   return (
-<div className="center">
+<div style={{width:"1100px",height:"900px"}} className="center">
     <MapContainer  center={center} zoom={13} scrollWheelZoom={true}> 
     
     <TileLayer
