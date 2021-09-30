@@ -30,7 +30,7 @@ const DigitalMarketing = () => {
                                 return(
                                     <Reveal key={item.id} effect="fadeInLeft" duration={1500}>
                                         <div className="p_logo_item">
-                                            <a href="/#"><img src={require("../img/home3/" + item.image)} alt=""/></a>
+                                            <a href="/#"><img src={require("../img/home3/" + item.image)} alt="" width={item.width} height={item.height} /></a>
                                         </div>
                                     </Reveal>
                                 )

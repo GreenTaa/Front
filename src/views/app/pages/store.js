@@ -40,7 +40,7 @@ const ImageListView = ({ }) => {
             <>
             <CustomNavbar mClass="menu_four" cClass="custom_container p0" nClass="pl_120 mr-auto ml-auto" hbtnClass="menu_cus"/>
             <>
-            <img src="http://res.cloudinary.com/dkqbdhbrp/image/upload/v1630597218/teams/ordflpx7kuhlwj5ahkwb.jpg" width="1550px" height="700px" style={{marginBottom: "80px"}}/>
+            <img src="http://res.cloudinary.com/dkqbdhbrp/image/upload/v1630597218/teams/ordflpx7kuhlwj5ahkwb.jpg" width="1550px" height="500px" style={{marginBottom: "80px"}}/>
             <div className="container">
             <div className="container" style={{marginBottom: "50px"}}>
                 <h2>{team} Store</h2>

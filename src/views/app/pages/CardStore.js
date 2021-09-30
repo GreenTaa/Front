@@ -4,27 +4,22 @@ import axios from "axios";
 import { useDispatch, useSelector } from 'react-redux';
 import {fetchProducts} from '../../../components/redux/products/productActions'
 import {fetchSupporters} from '../../../components/redux/supporters/suppActions'
+import {addWhishlist} from '../../../components/redux/whishlist/whishlistActions'
+
 const CardStore = ({ product}) => {
     const dispatch = useDispatch()
     
     const supportersData = useSelector((state) => state.supporters)
     const [supporter, setSupporter] = useState()
     const [Array, setArray] = useState();
-    const khra = () => {
-      axios.get( "http://localhost:3000/supporters/" +localStorage.getItem('id'))
-      .then(reponse => {
-      console.log(reponse.data) 
-      setArray(reponse.data.Whishlist)})
-    }
+
       useEffect(() => {
           dispatch(fetchProducts())
           dispatch(fetchSupporters())
-          khra()
           console.log("pokdjf  " + Array )
     }, [ ]);  
     const addWhishlist = (id) => {
-      const Array = []
-      setArray(...Array, Array.push(id))
+      setArray(Array.concat([id]))
       axios.put( "http://localhost:3000/supporters/"+localStorage.getItem('id'),{Whishlist: Array}  )
       console.log("kamlna " + Array)
     }

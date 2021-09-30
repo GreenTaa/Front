@@ -1,4 +1,3 @@
-
   hr {
     overflow: visible;
     box-sizing: content-box;
@@ -387,28 +386,9 @@
     }
   }
   
-  .btn {
-    font-size: 1rem;
-    font-weight: 600;
-    line-height: 1.5;
-    display: inline-block;
-    padding: .625rem 1.25rem;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-    text-align: center;
-    vertical-align: middle;
-    white-space: nowrap;
-    border: 1px solid transparent;
-    border-radius: .375rem;
-  }
   
   @media screen and (prefers-reduced-motion: reduce) {
-    .btn {
-      transition: none;
-    }
+
   }
   
  
@@ -540,10 +520,7 @@
     display: flex;
   }
   
-  .input-group-prepend .btn {
-    position: relative;
-    z-index: 2;
-  }
+
  
   
   .navbar-nav .nav-link {
@@ -875,9 +852,7 @@
       text-shadow: none !important;
     }
   
-    a:not(.btn) {
-      text-decoration: underline;
-    }
+
   
     img {
       page-break-inside: avoid;
@@ -1034,45 +1009,11 @@
     height: 36px;
   }
   
-  .btn {
-    font-size: .875rem;
-    position: relative;
-    transition: all .15s ease;
-    letter-spacing: .025em;
-    text-transform: none;
-    will-change: transform;
-  }
+
   
-  .btn:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 7px 14px rgba(50, 50, 93, .1), 0 3px 6px rgba(0, 0, 0, .08);
-  }
+
   
-  .btn:not(:last-child) {
-    margin-right: .5rem;
-  }
-  
-  .btn i:not(:first-child) {
-    margin-left: .5rem;
-  }
-  
-  .btn i:not(:last-child) {
-    margin-right: .5rem;
-  }
-  
-  .input-group .btn {
-    margin-right: 0;
-    transform: translateY(0);
-  }
-  
-  .btn-sm {
-    font-size: .75rem;
-  }
-  
-  [class*='btn-outline-'] {
-    border-width: 1px;
-  }
-  
+
   .card-profile-image {
     position: relative;
   }
@@ -1521,9 +1462,7 @@
   }
   
   @media (max-width: 768px) {
-    .btn {
-      margin-bottom: 10px;
-    }
+
   }
   
   #navbar .navbar {
