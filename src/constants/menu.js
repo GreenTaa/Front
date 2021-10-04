@@ -3,7 +3,7 @@ const data = {
   "Admin" : [
 
   {
-    id: "Statistics",
+    id: "Statiqtiques",
     icon: "simple-icon-pie-chart",
     label: "menu.statistics",
     to: "/app/dashboards/analytics",
@@ -64,19 +64,19 @@ const data = {
   "Team" : 
   [
     {
-      id: "Statistics",
+      id: "Statistiques",
       icon: "simple-icon-pie-chart",
       label: "menu.statistics",
       to: "/app/dashboards/analytics",
     },
     {
-      id: "Products",
+      id: "Produits",
       icon: "iconsminds-shopping-bag",
       label: "menu.products",
       to: "/app/dashboards/dashboard-team",
     },
     {
-      id: "Ranking",
+      id: "Classement",
       icon: "simple-icon-pie-chart",
       label: "menu.ranking",
       to: "/app/dashboards/ranking",

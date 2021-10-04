@@ -9,23 +9,33 @@ const BannerData = {
     ClientsLogo: [
         {
             id : 1,
-            image: 'logo_01.png'
+            image: 'logo_01.png',
+            width: '100px',
+            height: '100px'
         },
         {
             id : 2,
-            image: 'logo_02.png'
+            image: 'logo_02.png',
+            width: '200px',
+            height: '100px'
         },
         {
             id : 3,
             image: 'logo_03.png',
+            width: '200px',
+            height: '100px'
         },
         {
             id : 4,
             image: 'logo_04.png',
+            width: '200px',
+            height: '100px'
         },
         {
             id : 5,
-            image: 'logo_05.png'
+            image: 'logo_05.png',
+            width: '200px',
+            height: '100px'
         }
     ],
     AgencyTestimonial: [

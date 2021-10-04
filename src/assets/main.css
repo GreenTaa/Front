@@ -3906,6 +3906,17 @@ input[type="file"] {
   transition: all 0.3s ease 0s;
 }
 
+.partner_logo .p_logo_item1 img {
+  max-width: 100%;
+  -webkit-filter: contrast(0.3%);
+  filter: contrast(0.3%);
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  width: 90px;
+  height: 90px;
+}
+
 .partner_logo .p_logo_item:hover img {
   -webkit-filter: contrast(100%);
   filter: contrast(100%);

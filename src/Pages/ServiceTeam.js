@@ -16,7 +16,7 @@ const HomeCloud = () => {
     return(
         <div className="body_wrapper">
             <CustomNavbar mClass="menu_four" cClass="custom_container p0" nClass="pl_120 mr-auto ml-auto" hbtnClass="menu_cus"/>
-            <Breadcrumb breadcrumbClass="breadcrumb_area" imgName="breadcrumb/banner_bg.png" Ptitle="Team's service" Pdescription="Why I say old chap that is spiffing off his nut arse pear shaped plastered Jeffrey bodge barney some dodgy.!!"/>
+            <Breadcrumb breadcrumbClass="breadcrumb_area" imgName="breadcrumb/banner_bg.png" Ptitle="Services aux clubs sportifs" Pdescription="Vous trouvez un exemple du store et du dashboard ainsi que votre bénéfice en tant que club sportif!"/>
             <CloudFeatures/>
             <CloudServiceTab/>
             <FooterTwo  FooterData={FooterData}/>

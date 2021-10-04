@@ -15,11 +15,11 @@ class ErpFeaturesitem extends Component {
                 <div className="col-lg-6">
                     <div className="erp_content_two">
                         <div className="hosting_title erp_title">
-                            <h2>Dashboard Collect Center</h2>
+                            <h2>Dashboard centre de collecte</h2>
                             <p></p>
                         </div>
-                        <ErpIconitem iconName="icon_menu-square_alt2" erpText="Manage your agents"/>
-                        <ErpIconitem eitemClass="green" iconName="icon_ribbon_alt" erpText="Manage your trash bins"/>
+                        <ErpIconitem iconName="icon_menu-square_alt2" erpText="Gérer vos agents"/>
+                        <ErpIconitem eitemClass="green" iconName="icon_ribbon_alt" erpText="Gérer vos poubelles"/>
                         <a href="/SignUpCenter" className="erp_btn_learn">Sign Up<i className="arrow_right"></i></a>
                     </div>
                 </div>

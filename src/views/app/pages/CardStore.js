@@ -2,52 +2,45 @@ import React, {useEffect, useState} from "react";
 import './CardStore.css'
 import axios from "axios";
 import { useDispatch, useSelector } from 'react-redux';
-import {fetchProducts} from '../../../components/redux/products/productActions'
+import {fetchProducts, addProduct} from '../../../components/redux/products/productActions'
 import {fetchSupporters} from '../../../components/redux/supporters/suppActions'
+import { addWhishlist } from "../../../components/redux/whishlist/whishlistActions";
+import { object } from "yup";
+import { Row } from "reactstrap";
+
 const CardStore = ({ product}) => {
     const dispatch = useDispatch()
     
     const supportersData = useSelector((state) => state.supporters)
     const [supporter, setSupporter] = useState()
     const [Array, setArray] = useState();
-    const khra = () => {
-      axios.get( "http://localhost:3000/supporters/" +localStorage.getItem('id'))
-      .then(reponse => {
-      console.log(reponse.data) 
-      setArray(reponse.data.Whishlist)})
-    }
+    const [whishlistItem, setWhishlistItem] = useState({IdUser: localStorage.getItem('id'), Etat: 0})
+
       useEffect(() => {
           dispatch(fetchProducts())
           dispatch(fetchSupporters())
-          khra()
           console.log("pokdjf  " + Array )
     }, [ ]);  
-    const addWhishlist = (id) => {
-      const Array = []
-      setArray(...Array, Array.push(id))
-      axios.put( "http://localhost:3000/supporters/"+localStorage.getItem('id'),{Whishlist: Array}  )
-      console.log("kamlna " + Array)
+    const add = (whishlistItem) => {
+      dispatch(addWhishlist(whishlistItem))
+      console.log("doneeeee" + whishlistItem)
     }
-    
-      /* const onUpdate = (points) => {
-        axios.put( "http://localhost:3000/supporters/"+localStorage.getItem('id'),{...supporter, Score: supporter.Score - points}  )
-      } */
 
   return (
       <div sm="6" lg="4" xl="3" className="mx-auto">
-        <div class="container mb-5">
-  <div class="card">
-    <div class="imgBx">
+        <div className="container mb-5">
+  <div className="card">
+    <div className="imgBx">
       <img src={product.Picture} alt="picture" />
     </div>
-    <div class="contentBx container">
+    <div className="contentBx container">
       <row>
       <h2>{product.Name}</h2>
       <h4>{product.Points_Required}</h4>
       </row>
       <br></br>
       {(product.Category === "T-shirt")? 
-      <div class="size">
+      <div className="size">
         <h3>Size :</h3>
         <span>S</span>
         <span>M</span>
@@ -56,7 +49,10 @@ const CardStore = ({ product}) => {
       </div> : ""}
       <br></br> 
       <button className="btn_gett" onClick={() => {
-          addWhishlist(product)
+          const newObj = { ...whishlistItem, Product: product}
+          setWhishlistItem(newObj)
+          console.log("lmkkjhugfd" + newObj)
+          add(whishlistItem)
           }}
         >Add to whishlist</button>
     </div>
