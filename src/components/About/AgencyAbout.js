@@ -18,8 +18,7 @@ class AgencyAbout extends Component {
                 <div className="col-lg-6 about_content_left " style={{marginTop:"50px"}}>
                     <div className="about_content mb_30">
                         <h2 className="f_size_30 f_700 l_height45 mb_20">Concept </h2>
-                        <p className="f_size_15 f_400 mb_40">Greenta is a system of competition between Tunisian sports teams in order to collect more plastic by benefiting from the intense competitive spirit between their supporters.
-                        Our solution is a smart trash, connected to a mobile and web application. </p>
+                        <p className="f_size_15 f_400 mb_40">Greenta est un système de compétition entre les équipes sportives tunisiennes afin de collecter plus de plastique en profitant de l'intense esprit de compétition entre leurs supporters. Notre solution est une poubelle intelligente, connectée à une application mobile et web. </p>
                         
                     </div>
                 </div>

@@ -13,7 +13,7 @@ class AboutWidget extends Component {
                             
                                 
                                    <li ><a href="/About">Concept</a></li>
-                                        <li ><a href="/About">Our team</a></li>
+                                        <li ><a href="/About">Notre équipe</a></li>
                                         
                                     
                                 

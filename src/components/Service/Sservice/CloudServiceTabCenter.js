@@ -6,7 +6,7 @@ const CloudServiceTab =()=>{
     return(
         <section className="software_service_area sec_pad">
             <div className="container">
-                <Sectitle Title="Votre Gain" TitleP="Qu'est ce que vous gagner en tant que équipe sportive si vous joindrer le réseau GreenTa?"
+                <Sectitle Title="Votre Gain" TitleP="Qu'est ce que vous gagner en tant que centre de collecte si vous joindrer le réseau GreenTa?"
                  sClass="sec_title text-center mb_70"/>
                 <div className="row">
 {/*                     <div className="col-lg-3 col-md-3">
@@ -35,9 +35,9 @@ const CloudServiceTab =()=>{
                         <div className="tab-content software_service_tab_content">
                             <div className="tab-pane fade show active" id="de" role="tabpanel" aria-labelledby="de-tab">
                                 <div className="row">
-                                    <Tabitem ticon="ti-face-smile"  text="Participer à une compétition nationale pour la protection de l'environnement" />
-                                    <Tabitem colClass="offset-lg-2" ticon="ti-face-smile" text="Améliorer l'image du club" />
-                                    <Tabitem colClass="offset-lg-3"ticon="ti-face-smile" text="Adhérer à une cause liée à la protection de l'environnement"/>
+                                    <Tabitem ticon="ti-face-smile" text="Augmenter et organiser la collecte du plastique" />
+                                    <Tabitem colClass="offset-lg-2" ticon="ti-face-smile" text="Encourager la dégitalisation de la collecte du plastique" />
+                                    <Tabitem colClass="offset-lg-3"ticon="ti-face-smile" text="Sensibiliser les citoyens pour la protection de l'environnement" />
                                 </div>
                             </div>
                         </div>

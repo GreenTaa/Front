@@ -29,7 +29,7 @@ class FooterTwo extends Component {
                                     )
                                 })
                             }
-                            <AboutWidget ftitle="About Us"  FooterData={FooterData}/>
+                            <AboutWidget ftitle="A propos de nous"  FooterData={FooterData}/>
                             <SolutionWidget ftitle="Services" FooterData={FooterData}/>
                             <TeamWidget ftitle="Contact" FooterData={FooterData}/>
                         </div>
@@ -51,12 +51,6 @@ class FooterTwo extends Component {
                                         })
                                     }
                                 </div>
-                            </div>
-                            <div className="col-lg-4 col-md-4 col-sm-12">
-                                <ul className="list-unstyled f_menu text-right">
-                                    <li><a href=".#">Terms of Use</a></li>
-                                    <li><a href=".#">Privacy Policy</a></li>
-                                </ul>
                             </div>
                         </div>
                     </div>

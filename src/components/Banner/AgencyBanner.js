@@ -14,8 +14,8 @@ class AgencyBanner extends Component {
                                     BannerData.AgencyText.map(Agency =>{
                                         return(
                                             <React.Fragment key={Agency.id}>
-                                                <h2 className="f_700 t_color3 mb_40 wow fadeInLeft" data-wow-delay="0.3s">Greenta The first smart bin in Tunisia</h2>
-                                                <p className="f_400 l_height28 wow fadeInLeft" data-wow-delay="0.4s">Join Greenta's community, collect plastic, save the environment, cheer for your team and get your prizes </p>
+                                                <h2 className="f_700 t_color3 mb_40 wow fadeInLeft" data-wow-delay="0.3s">Greenta La première poubelle intelligente en Tunisie</h2>
+                                                <p className="f_400 l_height28 wow fadeInLeft" data-wow-delay="0.4s">Rejoignez la communauté de Greenta, collectez du plastique, gagner, faire gagner votre équipe, sauvez l'environnement et recevez des prix.</p>
                                             </React.Fragment>
                                         )
                                     })
