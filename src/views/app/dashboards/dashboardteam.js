@@ -1,36 +1,11 @@
 import React, { useEffect, Component, Fragment, useState } from "react";
-import { injectIntl } from "react-intl";
-import IconCards from "../../../containers/ui/IconCards";
-import { Colxx, Separator } from "../../../components/common/CustomBootstrap";
-import Breadcrumb from "../../../containers/navs/Breadcrumb";
-import ThumbListView from "../../../views/app/pages/thumb";
-import IconCardsCarousel from "../../../containers/dashboards/IconCardsCarousel";
-import Ranking2 from "../../../containers/dashboards/RankingBoard2";
-import Tickets from "../../../containers/dashboards/Tickets";
-import Calendar from "../../../containers/dashboards/Calendar";
-import Ranking from "../../../containers/dashboards/RankingBoard1";
-import {AddSupporter} from '../../../components/redux/supporters/suppActions'
-import {
-  ReactTableWithScrollableCard,
-  ReactTableWithScrollableCardTeams,
-  ReactTableWithScrollableCardCenters
-} from "../../../containers/ui/ReactTableCardsAdmin";
+import { Colxx } from "../../../components/common/CustomBootstrap";
 import { Row, Card, CardBody, CardTitle, Table, Button } from "reactstrap";
-import {Link} from 'react-router-dom';
 import IntlMessages from "../../../helpers/IntlMessages";
-import Cakes from "../../../containers/dashboards/Cakes";
-import SalesChartCard from "../../../containers/dashboards/SalesChartCard";
-import ProductCategoriesDoughnut from "../../../containers/dashboards/ProductCategoriesDoughnut";
 import { useDispatch, useSelector } from 'react-redux';
-import SignUp from "../../../Pages/SignUp";
-import SignUpForm from "../../../components/SignUpForm";
-import FormSupporter from './formSupporter'
-import TopNav from '../../../containers/navs/Topnav'
-import SideNav from '../../../containers/navs/Sidebar'
 import PerfectScrollbar from "react-perfect-scrollbar";
 import ReactTable from "react-table";
 import classnames from "classnames";
-import Products from "../../../views/app/pages/image-list"
 import {fetchProducts, addProduct, deleteProduct, updateProduct} from '../../../components/redux/products/productActions'
 
 
@@ -99,7 +74,7 @@ export default function EcommerceDashboard()  {
   , [])   
       const Columns = [
         {
-          Header: "Picture",
+          Header: "Photo",
           accessor: "Picture",
           Cell: props => <img
           src={props.value}
@@ -109,24 +84,24 @@ export default function EcommerceDashboard()  {
         />
         },
         {
-          Header: "Name",
+          Header: "Nom",
           accessor: "Name",
           Cell: props => <p className="list-item-heading">{props.value}</p>
         },
         {
-          Header: "Points required",
+          Header: "Points requis",
           accessor: "Points_Required",
           Cell: props => <p className="list-item-heading">{props.value}</p>
         },
         {
           Header: "Action",
           accessor: "_id",
-          Cell: props => <button className="btn btn-outline-danger" onClick={() => dispatch(deleteProduct(props.value))} >Delete</button>
+          Cell: props => <button className="btn btn-outline-danger" onClick={() => dispatch(deleteProduct(props.value))} >Supprimer</button>
         },
         {
           Header: "Action",
           accessor: "_id",
-          Cell: props => <button className="btn btn-outline-warning" onClick={() => (setShow(true), setVal("Update") , productsData.products.filter( e => props.value === e._id)).map((data) => {setProduct(data) })}>Update</button>
+          Cell: props => <button className="btn btn-outline-warning" onClick={() => (setShow(true), setVal("Update") , productsData.products.filter( e => props.value === e._id)).map((data) => {setProduct(data) })}>Modifier</button>
         }
     ];
       return (

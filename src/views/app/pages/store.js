@@ -46,7 +46,7 @@ const ImageListView = ({ }) => {
                 <h2>{team} Store</h2>
                 <div className="dropdown">
                 <button className="btn_get btn_hover" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Filter by Category
+                  Catégorie
                 </button>
                 <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <a className="dropdown-item" onClick={() => (setSelected(false))}>All Categories</a> 
