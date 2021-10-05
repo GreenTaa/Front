@@ -13,17 +13,17 @@ const BannerData = {
             width: '100px',
             height: '100px'
         },
-        {
+        {  
             id : 2,
             image: 'logo_02.png',
-            width: '200px',
-            height: '100px'
+            width: '272px',
+            height: '92px'
         },
-        {
+        { 
             id : 3,
             image: 'logo_03.png',
-            width: '200px',
-            height: '100px'
+            width: '280px',
+            height: '92px'
         },
         {
             id : 4,

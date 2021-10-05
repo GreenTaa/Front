@@ -158,7 +158,7 @@ const FooterData = {
         icon: 'ti-pinterest',
       }
     ],
-    copywrite:"© SaasLand Inc.. 2019 All rights reserved.",
+    copywrite:"© Grennta Inc.. 2021 All rights reserved.",
     TestimonialText: [
       {
         id: 1,
