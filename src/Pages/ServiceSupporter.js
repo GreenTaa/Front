@@ -10,7 +10,7 @@ const Process = () => {
     return(
         <div className="body_wrapper">
             <CustomNavbar mClass="menu_four" cClass="custom_container p0" nClass="pl_120 mr-auto ml-auto" hbtnClass="menu_cus"/>
-            <Breadcrumb breadcrumbClass="breadcrumb_area" imgName="breadcrumb/banner_bg.png" Ptitle="Services aux supporters" Pdescription="Voici les étapes que vous devez suivre pour gagner vos points ainsi que votre bénéfice en tant que supporter!"/>
+            <Breadcrumb breadcrumbClass="breadcrumb_area" imgName="breadcrumb/banner_bg.png" Ptitle="Services aux supporters" Pdescription="Voici les étapes que vous devez suivre pour gagner vos points!"/>
             <section className="process_area bg_color sec_pad">
                 <div className="container">
                     <div className="features_info">
@@ -25,7 +25,6 @@ const Process = () => {
                     </div>
                 </div>
             </section>
-            <CloudServiceTab/>
             <FooterTwo FooterData={FooterData}/>
         </div>
     )

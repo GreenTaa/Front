@@ -115,20 +115,15 @@ export default function CustomNavbar(props) {
                   </Link>
                 </li>
                 : ""}
-                <li className="dropdown submenu nav-item"><Link title="Pages" className="dropdown-toggle nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" to="#">Services</Link>
-                                    <ul role="menu" className=" dropdown-menu">
-                                        <li className="nav-item"><NavLink title="Portfolio 2" className="nav-link" to='/service-supporter'>Services aux supporters</NavLink></li>
-                                        <li className="nav-item"><NavLink title="Portfolio 3" className="nav-link" to='/service-team'>Services aux clubs sportifs</NavLink></li>
-                                        <li className="nav-item"><NavLink title="Portfolio Fullwidth" className="nav-link" to='/service-center'>Services aux centres de collectes</NavLink></li>
-                                    </ul>
-                                </li>
-              
-
-                <li className="nav-item">
-                  <NavLink title="About" className="nav-link" to="/About">
-                    A propos
-                  </NavLink>
+                <li className="dropdown submenu nav-item">
+                  <Link title="Pages" className="dropdown-toggle nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" to="#">Services</Link>
+                    <ul role="menu" className=" dropdown-menu">
+                        <li className="nav-item"><NavLink title="Portfolio 2" className="nav-link" to='/service-supporter'>Services aux supporters</NavLink></li>
+                        <li className="nav-item"><NavLink title="Portfolio 3" className="nav-link" to='/service-team'>Services aux clubs sportifs</NavLink></li>
+                        <li className="nav-item"><NavLink title="Portfolio Fullwidth" className="nav-link" to='/service-center'>Services aux centres de collectes</NavLink></li>
+                    </ul>
                 </li>
+                
                 <li className="nav-item">
                   <NavLink title="Pricing" className="nav-link" to="/Contact">
                     Contact

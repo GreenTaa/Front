@@ -5,7 +5,7 @@ const CloudFeatures =()=>{
     return(
         <section className="design_developers_area sec_pad">
             <div className="container">
-                <Sectitle Title="Votre dashboard et store " TitleP="Ici vous pouvez gérer votre produits, store et consulter le classement nationnal!"
+                <Sectitle Title="Dashboard et store " TitleP="Vous pouvez gérer votre produits, store et consulter le classement nationnal!"
                  sClass="sec_title text-center mb_70"/>
                 <div className="row">
                     <div className="col-lg-7 col-md-7">

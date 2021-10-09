@@ -6,38 +6,22 @@ import BannerData from '../components/Banner/BannerData';
 import FooterTwo from '../components/Footer/FooterTwo';
 import FooterData from '../components/Footer/FooterData';
 import FeaturesHome from '../components/FeaturesHome';
-import CloudService from '../components/Service/CloudService';
-
-import Reveal from 'react-reveal/Reveal';
-
+import AgencyAbout from '../components/About/AgencyAbout';
+import ServiceData from '../components/Service/ServiceData';
+import Team from '../Pages/Team';
 
 const DigitalMarketing = () => {
     return(
         <div className="body_wrapper">
             <CustomNavbar mClass="menu_four" cClass="custom_container p0" nClass="pl_120 mr-auto ml-auto" hbtnClass="menu_cus"/>
             <AgencyBanner BannerData={BannerData}/>
-
+            <AgencyAbout ServiceData={ServiceData}/>
+            <FeaturesHome></FeaturesHome>
+            <Team/>
+                <div className="partner_logo" style={{backgroundColor: "white", marginBottom: "30px"}}>
+                    <img src={require ('../img/home9/partenaire.PNG')} alt="" style={{marginLeft: "4%"}}/>
+                </div>
             
-            <CloudService></CloudService>
-            {/* <MarketingService ServiceData={ServiceData}/> */}
-
-            {/* <AgencyAbout ServiceData={ServiceData}/>
-            <Features/>
-            <MarketingTestimonial BannerData={BannerData}/>
-            <AgencyAction/> */}
-            <div className="partner_logo">
-                        {
-                            BannerData.ClientsLogo.map(item =>{
-                                return(
-                                    <Reveal key={item.id} effect="fadeInLeft" duration={1500}>
-                                        <div className="p_logo_item">
-                                            <a href="/#"><img src={require("../img/home3/" + item.image)} alt="" width={item.width} height={item.height} /></a>
-                                        </div>
-                                    </Reveal>
-                                )
-                            })
-                        }
-                    </div>
             <FooterTwo FooterData={FooterData}/>
         </div>
     )

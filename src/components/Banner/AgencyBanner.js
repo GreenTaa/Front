@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Reveal from 'react-reveal/Reveal';
+import Player from "./videobtn";
 class AgencyBanner extends Component {
     render(){
         let BannerData = this.props.BannerData;
@@ -14,16 +15,14 @@ class AgencyBanner extends Component {
                                     BannerData.AgencyText.map(Agency =>{
                                         return(
                                             <React.Fragment key={Agency.id}>
-                                                <h2 className="f_700 t_color3 mb_40 wow fadeInLeft" data-wow-delay="0.3s" style={{fontSize: "300%"}}>Greenta La première poubelle intelligente en Tunisie</h2>
-                                                <p className="f_400 l_height28 wow fadeInLeft" data-wow-delay="0.4s">Rejoignez la communauté de Greenta, collectez du plastique, gagner, faire gagner votre équipe, sauvez l'environnement et recevez des prix.</p>
+                                                <h2 className="f_700 t_color3 mb_40 wow fadeInLeft" data-wow-delay="0.3s" style={{fontSize: "300%"}}>Greenta <br></br> La première poubelle intelligente en Tunisie</h2>
+                                                <p className="f_400 l_height28 wow fadeInLeft" data-wow-delay="0.4s">Greenta est un système de compétition entre les équipes sportives tunisiennes pour collecter plus de plastique en se basant sur l’esprit compétitif des supporters</p>
                                             </React.Fragment>
                                         )
                                     })
                                 }
-                                <div className="action_btn d-flex align-items-center mt_60">
-                                    <a href="/SignIn" className="btn_hover agency_banner_btn wow fadeInLeft" data-wow-delay="0.5s">Sign In</a>
-                                    <a href="/SignUp" className="agency_banner_btn_two wow fadeInLeft" data-wow-delay="0.7s">Sing Up</a>
-                                </div>
+                                
+                                <a href="https://www.youtube.com/watch?v=sU3FkzUKHXU" className="popup-youtube btn_six slider_btn" style={{marginTop:"20px", marginLeft: "100px"}}><i className="fa fa-play-circle" ></i> Regarder la vidéo</a>
                                 </Reveal>
                             </div>
                         </div>

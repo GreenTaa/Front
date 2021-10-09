@@ -13,8 +13,6 @@ const Homeerp = () => {
             <CustomNavbar mClass="menu_four" cClass="custom_container p0" nClass="pl_120 mr-auto ml-auto" hbtnClass="menu_cus"/>
             <Breadcrumb breadcrumbClass="breadcrumb_area" imgName="breadcrumb/banner_bg.png" Ptitle="Services aux centres de collectes" Pdescription="Vous trouvez un exemple du dashboard ainsi que votre bénéfice en tant que centre de collecte!"/>
             <ErpFeatures/>
-            <Price/>
-            <CloudServiceTab/>
             <FooterTwo FooterData={FooterData}/>
         </div>
     )
