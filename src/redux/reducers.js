@@ -10,6 +10,8 @@ import SupporterReducer from '../components/redux/supporters/suppReducers'
 import TeamReducer from '../components/redux/teams/teamReducers'
 import CenterReducer from '../components/redux/collectCenters/centerReducers'
 import ProductReducer from '../components/redux/products/productReducers'
+import WhishlistReducer from '../components/redux/whishlist/whishlistReducers'
+import UserReducer from '../components/redux/connect/connectReducers'
 
 const reducers = combineReducers({
   menu,
@@ -22,7 +24,9 @@ const reducers = combineReducers({
   supporters : SupporterReducer,
   teams: TeamReducer,
   centers: CenterReducer,
-  products: ProductReducer
+  products: ProductReducer,
+  whishlists : WhishlistReducer,
+  connectUser : UserReducer
 });
 
 export default reducers;

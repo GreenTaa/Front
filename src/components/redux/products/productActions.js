@@ -1,4 +1,4 @@
-import {FETCH_PRODUCTS_REQUEST, FETCH_PRODUCTS_SUCCESS, FETCH_PRODUCTS_FAILURE, UPDATE_PRODUCT, DELETE_PRODUCT, ADD_PRODUCT} from './productTypes'
+import {FETCH_PRODUCTS_REQUEST, FETCH_PRODUCT, FETCH_PRODUCTS_SUCCESS, FETCH_PRODUCTS_FAILURE, UPDATE_PRODUCT, DELETE_PRODUCT, ADD_PRODUCT} from './productTypes'
 import axios from 'axios'
 
 export const fetchProductsRequest = () => {
@@ -30,6 +30,13 @@ export const AddProduct = (product) =>{
 export const DeleteProduct = (id) =>{
     return {
         type : DELETE_PRODUCT,
+        payload : id
+    }
+}
+
+export const FetchProduct = (id) =>{
+    return {
+        type : FETCH_PRODUCT,
         payload : id
     }
 }
@@ -72,6 +79,15 @@ export const deleteProduct = (id) =>{
          axios.delete(`http://localhost:3000/products/${id}`)
         .then(
             dispatch(DeleteProduct(id))
+        )
+    }
+}
+
+export const fetchProduct = (id) =>{
+    return function (dispatch){
+         axios.get(`http://localhost:3000/products/${id}`)
+        .then(
+            dispatch(FetchProduct(id))
         )
     }
 }

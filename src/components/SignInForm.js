@@ -38,9 +38,8 @@ const SignIn = () => {
       axios.post(`http://localhost:3000/users/login`, values)
       .then((response) => {
           console.log("responseLogin : ", response)
-          setConnectedUser(response.data.user)
-          console.log(response.data.user)
-          dispatch(connectUser(response.data.user))
+          console.log("console " + response.data)
+          dispatch(connectUser(response.data))
       });
 
       const [user, err] = await queryServerApi(

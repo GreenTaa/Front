@@ -5,8 +5,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import {fetchProducts, addProduct} from '../../../components/redux/products/productActions'
 import {fetchSupporters} from '../../../components/redux/supporters/suppActions'
 import { addWhishlist } from "../../../components/redux/whishlist/whishlistActions";
-import { object } from "yup";
-import { Row } from "reactstrap";
 
 const CardStore = ({ product}) => {
     const dispatch = useDispatch()
@@ -21,10 +19,6 @@ const CardStore = ({ product}) => {
           dispatch(fetchSupporters())
           console.log("pokdjf  " + Array )
     }, [ ]);  
-    const add = (whishlistItem) => {
-      dispatch(addWhishlist(whishlistItem))
-      console.log("doneeeee" + whishlistItem)
-    }
 
   return (
       <div sm="6" lg="4" xl="3" className="mx-auto">
@@ -49,11 +43,8 @@ const CardStore = ({ product}) => {
       </div> : ""}
       <br></br> 
       <button className="btn_gett" onClick={() => {
-          const newObj = { ...whishlistItem, Product: product}
-          setWhishlistItem(newObj)
-          console.log("lmkkjhugfd" + newObj)
-          add(whishlistItem)
-          }}
+          dispatch(addWhishlist({ ...whishlistItem, Product: product}))
+      }}
         >Add to whishlist</button>
     </div>
   </div>

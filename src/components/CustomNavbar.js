@@ -61,6 +61,12 @@ export default function CustomNavbar(props) {
     }
   };
 
+  const MyCard = () =>{
+    if (role === "Supporter") {
+      history.push("/card");
+    }
+  }
+
   return (
     <Sticky top={0} innerZ={9999} activeClass="navbar_fixed">
       <header className="header_area">
@@ -99,7 +105,7 @@ export default function CustomNavbar(props) {
               <ul className={`navbar-nav menu ml-auto ${nClass}`}>
                 <li className="nav-item dropdown submenu mega_menu mega_menu_two">
                   <Link to="/home" className="nav-link dropdown-toggle">
-                    Home
+                    Accueil
                   </Link>
                 </li>
                 {connected ? 
@@ -148,6 +154,7 @@ export default function CustomNavbar(props) {
                 <DropdownItem onClick={() => Myaccount()} >Account</DropdownItem>
                 <DropdownItem>Mile stones</DropdownItem>
                 <DropdownItem>History</DropdownItem>
+                <DropdownItem  onClick={() => MyCard()}>Card</DropdownItem>
                 
                 <DropdownItem divider />
                 <DropdownItem   onClick={() => Logout()}>
