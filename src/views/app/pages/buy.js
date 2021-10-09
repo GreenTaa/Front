@@ -1,11 +1,11 @@
-import React, {useEffect} from "react";
+import React, {useEffect, Component, Fragment, useState} from "react";
 import {
     Row
   } from "reactstrap";
 import axios from "axios";
 import { useDispatch, useSelector } from 'react-redux';
 import CustomNavbar from '../../../components/CustomNavbar'
-import CardWhishlist from './CardWhishlist';
+import Card from './Card';
 import {fetchProducts, fetchProduct} from '../../../components/redux/products/productActions'
 import { fetchWhishlists } from "../../../components/redux/whishlist/whishlistActions";
 
@@ -25,13 +25,14 @@ const ImageListView = ({ }) => {
             <img src="http://res.cloudinary.com/dkqbdhbrp/image/upload/v1630597218/teams/ordflpx7kuhlwj5ahkwb.jpg" width="1550px" height="700px" style={{marginBottom: "80px"}}/>
             <div className="container">
             <div className="container" style={{marginBottom: "50px"}}>
-                <h2>My Whishlist</h2>
+                <h2>My Card</h2>
             </div>
             <hr style={{marginTop : "-10px", marginBottom: "50px"}}></hr>
             <Row>
-            { whishlistsData.whishlists.filter(whishlist => whishlist.IdUser == localStorage.getItem("id")).filter(whishlist => whishlist.Etat == 0).map(whishlist =>
-                 <CardWhishlist key={whishlist._id} whishlist={whishlist} product={productsData.products.filter(product => product._id == whishlist.Product).map(product => product)[0]}   />
+            { whishlistsData.whishlists.filter(whishlist => whishlist.IdUser == localStorage.getItem("id")).filter(whishlist => whishlist.Etat == 1).map(whishlist =>
+                 <Card key={whishlist._id} whishlist={whishlist} product={productsData.products.filter(product => product._id == whishlist.Product).map(product => product)[0]}   />
             )} 
+            
            </Row>
             </div>
             </>

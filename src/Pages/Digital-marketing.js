@@ -6,6 +6,7 @@ import BannerData from '../components/Banner/BannerData';
 import FooterTwo from '../components/Footer/FooterTwo';
 import FooterData from '../components/Footer/FooterData';
 import FeaturesHome from '../components/FeaturesHome';
+import CloudService from '../components/Service/CloudService';
 
 import Reveal from 'react-reveal/Reveal';
 
@@ -17,7 +18,7 @@ const DigitalMarketing = () => {
             <AgencyBanner BannerData={BannerData}/>
 
             
-            <FeaturesHome></FeaturesHome>
+            <CloudService></CloudService>
             {/* <MarketingService ServiceData={ServiceData}/> */}
 
             {/* <AgencyAbout ServiceData={ServiceData}/>

@@ -72,6 +72,7 @@ import dashboardCenter from "./views/app/dashboards/dashboardcenter"
 import Produits from './views/app/pages/produits'
 import Store from './views/app/pages/store'
 import whishlist  from "./views/app/pages/whishlist";
+import card  from "./views/app/pages/buy";
 
 const AuthRoute = ({ component: Component, authUser, ...rest }) => (
   <Route
@@ -137,6 +138,7 @@ class App extends Component {
           <ScrollToTopRoute path="/Portfolio-3col" component={Portfolio3col} />
           <ScrollToTopRoute path="/store" component={Store} />
           <ScrollToTopRoute path="/whishlist" component={whishlist} />
+          <ScrollToTopRoute path="/card" component={card} />
           <ScrollToTopRoute path="/produits" component={Produits} />
           <ScrollToTopRoute
             path="/Portfolio-fullwidth-4col"
