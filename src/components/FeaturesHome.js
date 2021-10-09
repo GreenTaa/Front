@@ -5,7 +5,7 @@ import { useGLTF,OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 
 function Model() {
-  const { scene } = useGLTF("greenta.glb");
+  const { scene } = useGLTF("greentaweb.gltf");
   return <primitive object={scene} />;
 }
 
@@ -28,7 +28,7 @@ export default function FeaturesHome() {
             className="col-lg-6 d-flex align-items-center"
             style={{ marginTop: "-20%" }}
           >
-            <Reveal effect="fadeInRight" duration={800}>
+            <Reveal effect="fadeInRight" duration={800} >
               <div className="payment_features_content pl_70">
                 <h2>For Teams</h2>
 
@@ -46,8 +46,9 @@ export default function FeaturesHome() {
         </div>
         <div style={{ height: "100vh" }}>
           <Canvas camera={{ position: [10, 18, 23], fov: 60 }}>
-            <pointLight position={[10, 10, 10]}  />
-            <Suspense fallback={null}>
+          <directionalLight position={[10, 10, 5]} intensity={2} />
+      <directionalLight position={[-10, -10, -5]} intensity={1} />
+                  <Suspense fallback={null}>
               <Model />
               <OrbitControls/>
             </Suspense>
