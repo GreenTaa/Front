@@ -43,7 +43,7 @@ class FeaturesHome extends Component {
                                 <div className="payment_features_content pl_70">
                                     <h2 style ={{textAlign: "left"}}>Pour les supporters</h2>
                                     <h3>1. Gagner des points transformables en bons de réduction dans les stores de leur club sportif préféré</h3>
-                                    <h3>2. Faire gagner leur club dans le classement nationnal de Greenta League</h3>
+                                    <h3>2. Faire gagner leur club dans le classement national de Greenta League</h3>
                                     <h3>3. Adhérer à une cause environnementale </h3>
                                 </div>
                                 </div>
