@@ -162,7 +162,7 @@ const SignUpForm =()=>{
                             </div>
                             
                             <div className="forgotten-password">
-                                <a href="/#">Forgot Password?</a>
+                                <a href="/#">Mot de passe oubliée?</a>
                             </div>
                         </div>
                         <div className="">
