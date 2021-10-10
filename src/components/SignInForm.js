@@ -161,7 +161,7 @@ const SignIn = () => {
 
                   <div className="form-group text_box">
                     <label className="f_p text_c f_400">
-                      Email or Username
+                      Email ou Username
                     </label>
                     <input
                       id="Email"
@@ -178,7 +178,7 @@ const SignIn = () => {
                   </div>
 
                   <div className="form-group text_box">
-                    <label className="f_p text_c f_400">Password</label>
+                    <label className="f_p text_c f_400">Mot de passe</label>
                     <input
                       id="Password"
                       type="password"
@@ -196,22 +196,19 @@ const SignIn = () => {
                   <div className="extra mb_20">
                     <div className="checkbox remember">
                       <label>
-                        <input type="checkbox" /> Keep me Signed in
+                        <input type="checkbox" /> Gardez-moi connecté
                       </label>
                     </div>
 
                     <div className="forgotten-password">
-                      <a href="/ResetPassword">Forgot Password?</a>
+                      <a href="/ResetPassword">Mot de passe oublié?</a>
                     </div>
                   </div>
                   <div className="d-flex justify-content-between align-items-center">
                     <button type="submit" className="btn_three">
                       Sign in
                     </button>
-                    <div className="social_text d-flex ">
-                      <div className="lead-text"> Sign in with </div>
-                      <ul className="list-unstyled social_tag mb-0"></ul>
-                    </div>
+                   
                   </div>
                 </form>
               </div>

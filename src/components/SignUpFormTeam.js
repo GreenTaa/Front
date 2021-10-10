@@ -55,8 +55,8 @@ const SignUpForm =()=>{
                         <div className="col-lg-6">
                         <div className="form-group text_box">
                                 
-                                        <label className="f_p text_c f_400">Name</label>
-                                         <input type="text" placeholder="Name"
+                                        <label className="f_p text_c f_400">Nom</label>
+                                         <input type="text" placeholder="Nom"
                                          onChange={e => {
                                              const newUserObj = { ...team, Name: e.target.value }
                                              setTeam(newUserObj);
@@ -64,8 +64,8 @@ const SignUpForm =()=>{
                                          }/>
                                      </div>
                                      <div className="form-group text_box">
-                                        <label className="f_p text_c f_400">Acronym</label>
-                                        <input type="text" placeholder="Sname"
+                                        <label className="f_p text_c f_400">Acronyme</label>
+                                        <input type="text" placeholder="Acronyme"
                                         onChange={e => {
                                             const newUserObj = { ...team, Sname: e.target.value }
                                             setTeam(newUserObj);
@@ -73,8 +73,8 @@ const SignUpForm =()=>{
                                         }/>
                                     </div>
                                     <div className="form-group text_box">
-                                        <label className="f_p text_c f_400">Phone</label>
-                                        <input type="text" placeholder="Phone"
+                                        <label className="f_p text_c f_400">Télephone</label>
+                                        <input type="text" placeholder="Télephone"
                                         onChange={e => {
                                             const newUserObj = { ...team, Phone: e.target.value }
                                             setTeam(newUserObj);
@@ -82,13 +82,13 @@ const SignUpForm =()=>{
                                         }/>
                                     </div>
                                     <div className="form-group text_box">
-                                        <label className="f_p text_c f_400">Region</label>
+                                        <label className="f_p text_c f_400">Région</label>
                                         <select className="custom-select" id="Region-select" 
                                          onChange={e => {
                                             const newUserObj = { ...team, Region: e.target.value }
                                             setTeam(newUserObj);
                                         }}>
-                                        <option value="Region">--Please select your Region --</option>
+                                        <option value="Region">-- Sélectionner votre région s'il vous plaît --</option>
                                         {Region.map((option, index) => { 
                                             return  (<option  value={option} key={index}>{option} </option> )   
                                         })}
@@ -102,8 +102,8 @@ const SignUpForm =()=>{
                                    
                                     
                                     <div className="form-group text_box">
-                                        <label className="f_p text_c f_400">Address</label>
-                                        <input type="text" placeholder="Address"
+                                        <label className="f_p text_c f_400">Adresse</label>
+                                        <input type="text" placeholder="Adresse"
                                         onChange={e => {
                                             const newUserObj = { ...team, Address: e.target.value }
                                             setTeam(newUserObj);
@@ -113,7 +113,7 @@ const SignUpForm =()=>{
                                     <div className="form-group text_box">
                                         <label className="f_p text_c f_400">Logo</label>
                                         <div>
-                                        <label className="btn_get1"> Select Logo
+                                        <label className="btn_get1"> Sélectionner Logo
                                         <input type="file"
                                             className="form-input"
                                             name="Logo"
@@ -125,7 +125,7 @@ const SignUpForm =()=>{
                                         {previewSource && (<img src={previewSource} alt="chosen" style={{height:'300px'}}/>)}
                                     </div>
                                     <div className="form-group text_box">
-                                        <label className="f_p text_c f_400">Email Address</label>
+                                        <label className="f_p text_c f_400">Email</label>
                                         <input type="text" placeholder="saasland@gmail.com"
                                         onChange={e => {
                                             const newUserObj = { ...team, Email: e.target.value }
@@ -134,7 +134,7 @@ const SignUpForm =()=>{
                                         }/>
                                     </div>
                                     <div className="form-group text_box">
-                                        <label className="f_p text_c f_400">Password</label>
+                                        <label className="f_p text_c f_400">Mot de passe</label>
                                         <input type="password" placeholder="******"
                                         onChange={e => {
                                             const newUserObj = { ...team, Password: e.target.value }
@@ -157,7 +157,7 @@ const SignUpForm =()=>{
                     <div className="extra mb_20">
                             <div className="checkbox remember">
                                 <label>
-                                    <input type="checkbox"/> I agree to terms and conditions of this website
+                                    <input type="checkbox"/> J'accepte les termes et conditions de ce site web
                                 </label>
                             </div>
                             

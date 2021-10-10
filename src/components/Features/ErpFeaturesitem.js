@@ -18,8 +18,8 @@ class ErpFeaturesitem extends Component {
                             <h2>Dashboard centre de collecte</h2>
                             <p></p>
                         </div>
-                        <ErpIconitem iconName="icon_menu-square_alt2" erpText="Gérer vos agents"/>
-                        <ErpIconitem eitemClass="green" iconName="icon_ribbon_alt" erpText="Gérer vos poubelles"/>
+                        <ErpIconitem eitemClass="green" iconName="icon_menu-square_alt2" erpText="Gérer vos agents"/>
+                        <ErpIconitem eitemClass="green" iconName="icon_menu-square_alt2" erpText="Gérer vos poubelles"/>
                         <a href="/SignUpCenter" className="erp_btn_learn">Sign Up<i className="arrow_right"></i></a>
                     </div>
                 </div>
