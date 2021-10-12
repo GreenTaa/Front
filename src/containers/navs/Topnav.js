@@ -207,7 +207,6 @@ class TopNav extends Component {
 
         <div className="ml-auto">
           <div className="header-icons d-inline-block align-middle">
-            <TopnavNotifications />
             
             <button
               className="header-icon btn btn-empty d-none d-sm-inline-block"
@@ -227,7 +226,11 @@ class TopNav extends Component {
               <DropdownToggle className="p-0" color="empty">
                 <span className="name mr-1">{localStorage.getItem("Name")}</span>
                 <span>
-                  <img alt="Profile" src={localStorage.getItem("Picture")} />
+                {localStorage.getItem("Role")==='Team' ? (
+                  <img alt="Profile" src= {localStorage.getItem("Picture")}/>
+                  ) : (
+                <img alt="Profile" src='https://w1.pngwing.com/pngs/667/708/png-transparent-plastic-bag-waste-recycling-electronic-waste-recycling-symbol-recycling-bin-computer-recycling-waste-management.png' />
+                )}
                 </span>
               </DropdownToggle>
               <DropdownMenu className="mt-3" right>

@@ -6,6 +6,9 @@ import L from "leaflet";
 import { MapContainer, useMapEvents,Popup,TileLayer,Marker } from 'react-leaflet'
 import mylittle from './icon/myicon.png'
 import { queryServerApi } from "../../utils/queryServerApi";
+import { NotificationManager } from "../../components/common/react-notifications";
+import { Button} from "reactstrap";
+
 
 const center = {
     lat: 36.832013568901914,
@@ -70,6 +73,71 @@ function App() {
           </Marker>
         )
       }
+      const createNotification = (type, className) => {
+        let cName = className || "";
+        return () => {
+          switch (type) {
+            case "primary":
+              NotificationManager.primary(
+                "This is a notification!",
+                "Primary Notification",
+                3000,
+                null,
+                null,
+                cName
+              );
+              break;
+            case "secondary":
+              NotificationManager.secondary(
+                "This is a notification!",
+                "Secondary Notification",
+                3000,
+                null,
+                null,
+                cName
+              );
+              break;
+            case "info":
+              NotificationManager.info("Info message", "", 3000, null, null, cName);
+              break;
+            case "success":
+              NotificationManager.success(
+                "Postion: "+place.substring(0, 30)+"...",
+                "A new trash has been added succesffully",
+                3000,
+                null,
+                null,
+                cName
+              );
+              break;
+            case "warning":
+              NotificationManager.warning(
+                "Warning message",
+                "Close after 3000ms",
+                3000,
+                null,
+                null,
+                cName
+              );
+              break;
+            case "error":
+              NotificationManager.error(
+                "Error message",
+                "Click me!",
+                5000,
+                () => {
+                  alert("callback");
+                },
+                null,
+                cName
+              );
+              break;
+            default:
+              NotificationManager.info("Info message");
+              break;
+          }
+        };
+      };
     
       async function Add() {
        var values = {
@@ -93,13 +161,16 @@ function App() {
       attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
       url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
     />
-    <DraggableMarker  />
+    <DraggableMarker  /> 
   </MapContainer>
   <br></br>
-   <button style={{marginLeft:"440px"}} className="btn_six slider_btn" onClick={(e) => Add()} >Add trash-bin</button>
+   <button style={{marginLeft:"440px"}} className="btn_six slider_btn" onClick={(e) => Add().then(createNotification("success", "filled"))  } > 
+        Add Trashbin
+                </button>
+   
    </div>
-
+  
   );
 }
-
+ 
 export default App;

@@ -67,12 +67,12 @@ const ColumnsC = [
   {
     Header: "Action",
     accessor: "_id",
-    Cell: props => <button className="btn btn-outline-danger" onClick={() => dispatch(DeleteCenter(props.value))} >Delete</button>
+    Cell: props =><> <button className="btn btn-outline-danger" onClick={() => dispatch(DeleteCenter(props.value))} >Delete</button> <button className="btn btn-outline-primary"  onClick={() => (setShow(true), setVal("Update") , centersData.centers.filter( e => props.value === e._id)).map((data) => {setCenter(data) })}>Update</button> </>
   },
   {
-    Header: "Action",
-    accessor: "_id",
-    Cell: props => <button className="btn btn-outline-primary"  onClick={() => (setShow(true), setVal("Update") , centersData.centers.filter( e => props.value === e._id)).map((data) => {setCenter(data) })}>Update</button>
+    Header: "Associated Trashbins",
+    accessor: "Trashs.length",
+    Cell: props => <p>{props.value}</p>
   },
 ]; 
 return (

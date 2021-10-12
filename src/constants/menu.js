@@ -101,20 +101,14 @@ const data = {
       {
         icon: "simple-icon-grid",
         label: "My trashbins",
-        to: "/app/alltrash"
+        to: "/app/centertrashs"
       },
       {
         icon: "simple-icon-home",
-        label: "Affect trashbins",
+        label: "Manage agents",
         to: "/app/dashboards/manageCenters"
       }
     ]
-  },
-  {
-    id: "Ranking",
-    icon: "simple-icon-graph",
-    label: "menu.ranking",
-    to: "/app/dashboards/ranking",
   }
   ],
   "Other" : 

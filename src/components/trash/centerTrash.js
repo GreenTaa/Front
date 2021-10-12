@@ -94,13 +94,15 @@ function App() {
     lat: 36.832013568901914,
     lng: 10.237266420842907,
   };
-  const [trash, setTrash] = useState();
+  const [trash, setTrash] = useState({});
   const getTrash = async () => {
     try {
       const Supp = await axios
-        .get("http://localhost:3000/trash/")
+        .get("http://localhost:3000/collectcenters/"+localStorage.getItem("id"))
         .then(function (doc) {
           if (JSON.stringify(doc.data) === JSON.stringify(trash)) {
+            console.log();
+
             console.log("same");
           } else {
             setTrash(doc.data);
@@ -116,7 +118,6 @@ function App() {
 
   useEffect(() => {
     getTrash();
-    console.log(trash);
     const interval = setInterval(() => {
       getTrash();
     }, 5000);
@@ -131,7 +132,7 @@ function App() {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         <MarkerClusterGroup>
-          {trash?.map((dm, index) => (
+          {trash.Trashs?.map((dm, index) => (
             <Marker key={index} icon={icon} position={[dm.Lat, dm.Lng]}>
               <Popup>
                 <div
@@ -211,6 +212,7 @@ function App() {
             </Marker>
           ))}
         </MarkerClusterGroup>
+        
       </MapContainer>
       ,
     </div>
