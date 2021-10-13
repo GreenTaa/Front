@@ -261,7 +261,7 @@ class ThumbListPages extends Component {
         return false
       }
       else {
-      axios.get("http://localhost:3000/supporters/"+localStorage.getItem('id'))
+      axios.get("https://greentaa.herokuapp.com/supporters/"+localStorage.getItem('id'))
       .then(function(doc){
         {
             return true

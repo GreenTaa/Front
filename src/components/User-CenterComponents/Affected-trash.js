@@ -116,7 +116,7 @@ function BestSellers() {
   };
   const gettrash = async () => {
     try {
-      const doc = await axios.get("http://localhost:3000/trash/");
+      const doc = await axios.get("https://greentaa.herokuapp.com/trash/");
       setFilteredData(doc.data);
       if (JSON.stringify(doc.data) !== JSON.stringify(trash)) {
         settrash(doc.data);
@@ -129,7 +129,7 @@ function BestSellers() {
 
   const mycenters = async () => {
     try {
-      const doc = await axios.get("http://localhost:3000/collectcenters/");
+      const doc = await axios.get("https://greentaa.herokuapp.com/collectcenters/");
       setcenters(doc.data);
       if (JSON.stringify(doc.data) !== JSON.stringify(centers)) {
         setcenters(doc.data);
@@ -156,12 +156,13 @@ function BestSellers() {
   }, []);
 
   const validateit = async (id) => {
-    const [user, err] = await queryServerApi(
-      "trash/"+trash_id+"/"+center_id,
+    const [user, err] = await axios.put(
+      "https://greentaa.herokuapp.com/trash/"+trash_id+"/"+center_id,
       {},
       "PUT",
       false
     );
+    console.log(user)
     toggle(null);
   };
 
@@ -231,7 +232,7 @@ function BestSellers() {
                         <Button color="primary" outline onClick={() =>toggle(value._id)}>
                           Affect trash bin
                         </Button>
-                        <Modal isOpen={modal} toggle={toggle}>
+                        <Modal backdrop={false} isOpen={modal} toggle={toggle}>
                           <ModalHeader toggle={toggle}>
                             Affect this trashbin
                           </ModalHeader>

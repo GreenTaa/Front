@@ -97,7 +97,7 @@ function App() {
   const getTrash = async () => {
     try {
       const Supp = await axios
-        .get("http://localhost:3000/trash/")
+        .get("https://greentaa.herokuapp.com/trash/")
         .then(function (doc) {
           if (JSON.stringify(doc.data) === JSON.stringify(trash)) {
             console.log("same");

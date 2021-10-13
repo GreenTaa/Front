@@ -44,7 +44,7 @@ export const updateTeam = (teams) =>{
 export const fetchTeams = () => {
     return function(dispatch){
         dispatch(fetchTeamsRequest())
-     axios.get('http://localhost:3000/teams/')
+     axios.get('https://greentaa.herokuapp.com/teams/')
      .then(response =>{
          const teams = response.data
          dispatch(fetchTeamsSuccess(teams))
@@ -60,7 +60,7 @@ export const AddTeam = (team) =>{
    
     return function (dispatch){
         console.log("Team in redux: ",team)
-         axios.post(`http://localhost:3000/users/addteam/`,team)
+         axios.post(`https://greentaa.herokuapp.com/users/addteam/`,team)
          .then((response) => {
             dispatch(addTeam(response.data))
         }).catch((error)=>console.log("errorAddinng  : ", error));
@@ -69,7 +69,7 @@ export const AddTeam = (team) =>{
 
 export const DeleteTeam = (id) =>{
     return function (dispatch){
-         axios.delete(`http://localhost:3000/teams/${id}`)
+         axios.delete(`https://greentaa.herokuapp.com/teams/${id}`)
         .then(
             dispatch(deleteTeam(id))
         )
@@ -78,7 +78,7 @@ export const DeleteTeam = (id) =>{
 
 export const UpdateTeam = (teams) =>{
     return function (dispatch){
-         axios.put(`http://localhost:3000/teams/${teams._id}`,teams)
+         axios.put(`https://greentaa.herokuapp.com/teams/${teams._id}`,teams)
          .then(() => {
             dispatch(updateTeam(teams))
         }, (error) => {

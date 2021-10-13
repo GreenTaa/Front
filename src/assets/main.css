@@ -25113,13 +25113,11 @@ a .h_head:hover {
 }
 
 .styles_overlay__CLSq- {
-  background:  black;
+  background:  transparent;
   z-index: 999999;
 }
 .styles_overlay__CLSq- div div > div {
-  background: linear-gradient(
-    45deg, #3ba266 0%, #151f35 80%);
-}
+  background: rgba(0, 11, 40, 0.9) !important;}
 
 /*=========== tracking_banner_area css =============*/
 .tracking_banner_area {

@@ -44,7 +44,7 @@ export const UpdateWhishlist = (whishlists) =>{
 export const fetchWhishlists = () => {
     return function(dispatch){
         dispatch(fetchWhishlistsRequest())
-     axios.get('http://localhost:3000/whishlists/')
+     axios.get('https://greentaa.herokuapp.com/whishlists/')
      .then(response =>{
          const whishlists = response.data
          dispatch(fetchWhishlistsSuccess(whishlists))
@@ -60,7 +60,7 @@ export const addWhishlist = (whishlist) =>{
    
     return function (dispatch){
         console.log("Whishlist in redux: ",whishlist)
-         axios.post(`http://localhost:3000/whishlists`,whishlist)
+         axios.post(`https://greentaa.herokuapp.com/whishlists`,whishlist)
          .then((response) => {
             dispatch(AddWhishlist(response.data))
         }).catch((error)=>console.log("errorAddinng  : ", error));
@@ -69,7 +69,7 @@ export const addWhishlist = (whishlist) =>{
 
 export const deleteWhishlist = (id) =>{
     return function (dispatch){
-         axios.delete(`http://localhost:3000/whishlists/${id}`)
+         axios.delete(`https://greentaa.herokuapp.com/whishlists/${id}`)
         .then(
             dispatch(DeleteWhishlist(id))
         )
@@ -78,7 +78,7 @@ export const deleteWhishlist = (id) =>{
 
 export const updateWhishlist= (whishlists) =>{
     return function (dispatch){
-         axios.put(`http://localhost:3000/whishlists/${whishlists._id}`,whishlists)
+         axios.put(`https://greentaa.herokuapp.com/whishlists/${whishlists._id}`,whishlists)
          .then(() => {
             dispatch(UpdateWhishlist(whishlists))
         }, (error) => {

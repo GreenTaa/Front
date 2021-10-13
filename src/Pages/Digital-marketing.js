@@ -20,8 +20,8 @@ const DigitalMarketing = () => {
             <FeaturesHome></FeaturesHome>
             <AppGetstarted/>
             <Team/>
-                <div className="partner_logo" style={{backgroundColor: "white", marginBottom: "30px"}}>
-                    <img src={require ('../img/home9/partenaire.PNG')} alt="" style={{marginLeft: "4%"}}/>
+                <div style={{display: 'flex',  justifyContent:'center', alignItems:'center',backgroundColor: "white" ,marginBottom:"30px"}} className="partner_logo row" >
+                    <img src={require ('../img/home9/partenaire.PNG')} alt="" />
                 </div>
             
             <FooterTwo FooterData={FooterData}/>

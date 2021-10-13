@@ -43,7 +43,7 @@ export const AddCenter = (center) =>{
    
     return function (dispatch){
         console.log("Center in redux: ",center)
-         axios.post(`http://localhost:3000/users/addCenter/`,center)
+         axios.post(`https://greentaa.herokuapp.com/users/addCenter/`,center)
          .then((response) => {
             dispatch(addCenter(response.data))
         }).catch((error)=>console.log("errorAddinng  : ", error));
@@ -53,7 +53,7 @@ export const AddCenter = (center) =>{
 export const fetchCenters = () => {
     return function(dispatch){
         dispatch(fetchCentersRequest())
-     axios.get('http://localhost:3000/collectCenters/')
+     axios.get('https://greentaa.herokuapp.com/collectCenters/')
      .then(response =>{
          const centers = response.data
          dispatch(fetchCentersSuccess(centers))
@@ -66,7 +66,7 @@ export const fetchCenters = () => {
 }
 export const DeleteCenter = (id) =>{
     return function (dispatch){
-         axios.delete(`http://localhost:3000/collectCenters/${id}`)
+         axios.delete(`https://greentaa.herokuapp.com/collectCenters/${id}`)
         .then(
             dispatch(deleteCenter(id))
         )
@@ -75,7 +75,7 @@ export const DeleteCenter = (id) =>{
 
 export const UpdateCenter = (centers) =>{
     return function (dispatch){
-         axios.put(`http://localhost:3000/collectCenters/${centers._id}`,centers)
+         axios.put(`https://greentaa.herokuapp.com/collectCenters/${centers._id}`,centers)
          .then(() => {
             dispatch(updateCenter(centers))
         }, (error) => {

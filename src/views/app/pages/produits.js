@@ -20,7 +20,7 @@ const ImageListView = ({ product}) => {
     const getSupporter= async () => {
       try {
           const Supp = await axios.get(
-              "http://localhost:3000/supporters/"+localStorage.getItem('id')
+              "https://greentaa.herokuapp.com/supporters/"+localStorage.getItem('id')
           ).then(function(doc){
               if(JSON.stringify(doc.data) === JSON.stringify(supporter))
               {
@@ -45,7 +45,7 @@ const ImageListView = ({ product}) => {
     }, [ ]);  
     
       const onUpdate = (points) => {
-        axios.put( "http://localhost:3000/supporters/"+localStorage.getItem('id'),{...supporter, Score: supporter.Score - points}  )
+        axios.put( "https://greentaa.herokuapp.com/supporters/"+localStorage.getItem('id'),{...supporter, Score: supporter.Score - points}  )
       }
       const [supporter,setSupporter] = useState();
 
