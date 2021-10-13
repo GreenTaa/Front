@@ -92,6 +92,7 @@ const SignIn = () => {
             localStorage.setItem("id", user._id);
             localStorage.setItem("Name", user.Name);
             localStorage.setItem("Picture", user.Logo);
+            localStorage.setItem("Sname", user.Sname);
             console.log(localStorage);
              history.push("/app/dashboards/dashboard-team");
             }

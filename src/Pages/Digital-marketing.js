@@ -8,6 +8,7 @@ import FooterData from '../components/Footer/FooterData';
 import FeaturesHome from '../components/FeaturesHome';
 import AgencyAbout from '../components/About/AgencyAbout';
 import ServiceData from '../components/Service/ServiceData';
+import AppGetstarted from '../components/AppGetstarted';
 import Team from '../Pages/Team';
 
 const DigitalMarketing = () => {
@@ -17,6 +18,7 @@ const DigitalMarketing = () => {
             <AgencyBanner BannerData={BannerData}/>
             <AgencyAbout ServiceData={ServiceData}/>
             <FeaturesHome></FeaturesHome>
+            <AppGetstarted/>
             <Team/>
                 <div className="partner_logo" style={{backgroundColor: "white", marginBottom: "30px"}}>
                     <img src={require ('../img/home9/partenaire.PNG')} alt="" style={{marginLeft: "4%"}}/>

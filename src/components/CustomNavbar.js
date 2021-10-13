@@ -139,7 +139,7 @@ export default function CustomNavbar(props) {
             <div className="user d-inline-block container" >
             <UncontrolledDropdown className="dropdown-menu-right">
               <DropdownToggle className="p-0" color="empty">
-                <span className="name mr-1">Welcome {username}</span>
+                <span className="name mr-1">Bienvenue {username}</span>
                 <span>
                   <img alt="Profile" src={img} />
                 </span>

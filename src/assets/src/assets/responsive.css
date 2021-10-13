@@ -1847,10 +1847,10 @@
         background: #3d64f4;
     }
     .menu_seven .menu > .nav-item:hover .nav-link,.menu_seven .menu > .nav-item.active .nav-link{
-        color: #4069eb;
+        color: #151f35;
     }
     .menu_seven > .menu > .nav-item:hover .nav-link:before,.menu_seven .menu > .nav-item.active .nav-link:before{
-        background: #4069eb;
+        background: #151f35;
     }
     .menu_four >.menu > .nav-item:hover .nav-link,.menu_four .menu > .nav-item.active .nav-link{
         color: #3ba266;

@@ -113,7 +113,7 @@ export default function EcommerceDashboard()  {
             </CardTitle>
             </Row>
             <ReactTable
-              data={productsData.products}
+              data={productsData.products.filter(product => product.Team == localStorage.getItem('Sname'))} 
               TbodyComponent={CustomTbodyComponent}
               columns={Columns}
               defaultPageSize={20}
