@@ -39,7 +39,7 @@ export default function AgencyBanner(props) {
             padding: "unset"
           },
           overlay: {
-            background: "linear-gradient(90deg, rgba(30,36,0,1) 11%, rgba(14,56,22,1) 20%, rgba(7,66,32,0.7906512946975666) 100%, rgba(0,212,255,1) 100%);"
+            background: '#00000000'
           },
           closeButton: {
             background: 'green'
