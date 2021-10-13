@@ -106,7 +106,7 @@ const data = {
       {
         icon: "simple-icon-home",
         label: "Manage agents",
-        to: "/app/dashboards/manageCenters"
+        to: "/app/agents"
       }
     ]
   }

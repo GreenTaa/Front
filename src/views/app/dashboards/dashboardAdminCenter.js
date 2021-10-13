@@ -1,6 +1,6 @@
-import React, { useEffect, Component, Fragment, useState } from "react";
+import React, { useEffect, Fragment, useState } from "react";
 import { Colxx } from "../../../components/common/CustomBootstrap";
-import { Row, Card, CardBody, CardTitle, Table, Button } from "reactstrap";
+import { Row, Card, CardBody, CardTitle,Button } from "reactstrap";
 import IntlMessages from "../../../helpers/IntlMessages";
 import {fetchCenters, AddCenter, DeleteCenter, UpdateCenter} from '../../../components/redux/collectCenters/centerActions'
 import { useDispatch, useSelector } from 'react-redux';
@@ -65,15 +65,16 @@ const ColumnsC = [
     Cell: props => <p className="text-muted">{props.value}</p>
   },
   {
-    Header: "Action",
-    accessor: "_id",
-    Cell: props =><> <button className="btn btn-outline-danger" onClick={() => dispatch(DeleteCenter(props.value))} >Delete</button> <button className="btn btn-outline-primary"  onClick={() => (setShow(true), setVal("Update") , centersData.centers.filter( e => props.value === e._id)).map((data) => {setCenter(data) })}>Update</button> </>
-  },
-  {
     Header: "Associated Trashbins",
     accessor: "Trashs.length",
     Cell: props => <p>{props.value}</p>
   },
+  {
+    Header: "Action",
+    accessor: "_id",
+    Cell: props =><> <button className="btn btn-outline-danger" onClick={() => dispatch(DeleteCenter(props.value))} >Delete</button> <button className="btn btn-outline-primary"  onClick={() => (setShow(true), setVal("Update") , centersData.centers.filter( e => props.value === e._id)).map((data) => {setCenter(data) })}>Update</button> </>
+  },
+ 
 ]; 
 return (
   <Card className="mb-4">

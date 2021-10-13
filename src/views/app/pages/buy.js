@@ -1,12 +1,11 @@
-import React, {useEffect, Component, Fragment, useState} from "react";
+import React, {useEffect} from "react";
 import {
     Row
   } from "reactstrap";
-import axios from "axios";
 import { useDispatch, useSelector } from 'react-redux';
 import CustomNavbar from '../../../components/CustomNavbar'
 import Card from './Card';
-import {fetchProducts, fetchProduct} from '../../../components/redux/products/productActions'
+import {fetchProducts} from '../../../components/redux/products/productActions'
 import { fetchWhishlists } from "../../../components/redux/whishlist/whishlistActions";
 
 const ImageListView = ({ }) => {

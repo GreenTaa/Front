@@ -1,13 +1,12 @@
-import React, {useEffect, Component, Fragment, useState} from "react";
+import React, {useEffect, useState} from "react";
 import {
   Row,
   Card,
   CardBody,
   CardSubtitle,
   CardImg,
-  CardText,
-  CustomInput,
-  Badge
+  CardText
+
 } from "reactstrap";
 import axios from "axios";
 import { useDispatch, useSelector } from 'react-redux';

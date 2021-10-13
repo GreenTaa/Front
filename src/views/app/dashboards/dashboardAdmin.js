@@ -1,32 +1,14 @@
-import React, { useEffect, Component, Fragment, useState } from "react";
-import { injectIntl } from "react-intl";
-import IconCards from "../../../containers/ui/IconCards";
-import { Colxx, Separator } from "../../../components/common/CustomBootstrap";
-import Breadcrumb from "../../../containers/navs/Breadcrumb";
-import ThumbListView from "../../../views/app/pages/thumb";
-import IconCardsCarousel from "../../../containers/dashboards/IconCardsCarousel";
-import Ranking2 from "../../../containers/dashboards/RankingBoard2";
-import Tickets from "../../../containers/dashboards/Tickets";
-import Calendar from "../../../containers/dashboards/Calendar";
-import Ranking from "../../../containers/dashboards/RankingBoard1";
+import React, { useEffect, Fragment, useState } from "react";
+import { Colxx} from "../../../components/common/CustomBootstrap";
+
 import {AddSupporter, fetchSupporters, DeleteSupporter, UpdateSupporter} from '../../../components/redux/supporters/suppActions'
-import {fetchTeams, DeleteTeam, UpdateTeam} from '../../../components/redux/teams/teamActions'
-import {fetchCenters, DeleteCenter, UpdateCenter} from '../../../components/redux/collectCenters/centerActions'
-/* import {
-  ReactTableWithScrollableCard,
-  ReactTableWithScrollableCardTeams,
-  ReactTableWithScrollableCardCenters
-} from "../../../containers/ui/ReactTableCardsAdmin"; */
-import {Link} from 'react-router-dom';
+import {fetchTeams} from '../../../components/redux/teams/teamActions'
+
 import IntlMessages from "../../../helpers/IntlMessages";
-import Cakes from "../../../containers/dashboards/Cakes";
-import SalesChartCard from "../../../containers/dashboards/SalesChartCard";
-import ProductCategoriesDoughnut from "../../../containers/dashboards/ProductCategoriesDoughnut";
+
 import { useDispatch, useSelector } from 'react-redux';
-import SignUp from "../../../Pages/SignUp";
-import SignUpForm from "../../../components/SignUpForm";
-import FormSupporter from './formSupporter'
-import { Card, CardBody, CardTitle, Button, Row, Input, FormGroup, Col } from "reactstrap";
+
+import { Card, CardBody, CardTitle, Button, Row } from "reactstrap";
 import PerfectScrollbar from "react-perfect-scrollbar";
 import ReactTable from "react-table";
 import classnames from "classnames";

@@ -4,9 +4,8 @@ import React, { useState, useEffect } from "react";
 import L from "leaflet";
 import { MapContainer, Popup, TileLayer, Marker } from "react-leaflet";
 import axios from "axios";
-import { CardText, CardSubtitle, CardBody, CardImg, Badge } from "reactstrap";
+import { CardText, CardSubtitle, CardBody } from "reactstrap";
 import MarkerClusterGroup from "react-leaflet-markercluster";
-import img1 from "./icon/greenta2.png";
 import {
   buildStyles,
   CircularProgressbarWithChildren,

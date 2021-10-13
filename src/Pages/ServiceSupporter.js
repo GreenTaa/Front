@@ -4,7 +4,6 @@ import Breadcrumb from '../components/Breadcrumb';
 import Featuresitems from '../components/Features/Featuresitems';
 import FooterTwo from '../components/Footer/FooterTwo';
 import FooterData from '../components/Footer/FooterData';
-import CloudServiceTab from '../components/Service/Sservice/CloudServiceTabSupporter';
 
 const Process = () => {
     return(

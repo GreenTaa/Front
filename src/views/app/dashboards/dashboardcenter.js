@@ -1,36 +1,16 @@
-import React, { useEffect, Component, Fragment, useState } from "react";
-import { injectIntl } from "react-intl";
-import IconCards from "../../../containers/ui/IconCards";
-import { Colxx, Separator } from "../../../components/common/CustomBootstrap";
-import Breadcrumb from "../../../containers/navs/Breadcrumb";
-import ThumbListView from "../../../views/app/pages/thumb";
-import IconCardsCarousel from "../../../containers/dashboards/IconCardsCarousel";
-import Ranking2 from "../../../containers/dashboards/RankingBoard2";
-import Tickets from "../../../containers/dashboards/Tickets";
-import Calendar from "../../../containers/dashboards/Calendar";
-import Ranking from "../../../containers/dashboards/RankingBoard1";
-import {AddSupporter} from '../../../components/redux/supporters/suppActions'
-import {
-  ReactTableWithScrollableCard,
-  ReactTableWithScrollableCardTeams,
-  ReactTableWithScrollableCardCenters
-} from "../../../containers/ui/ReactTableCardsAdmin";
+import React, { useEffect, Fragment, useState } from "react";
+
+import { Colxx} from "../../../components/common/CustomBootstrap";
+
+
 import { Row, Card, CardBody, CardTitle, Table, Button } from "reactstrap";
-import {Link} from 'react-router-dom';
 import IntlMessages from "../../../helpers/IntlMessages";
-import Cakes from "../../../containers/dashboards/Cakes";
-import SalesChartCard from "../../../containers/dashboards/SalesChartCard";
-import ProductCategoriesDoughnut from "../../../containers/dashboards/ProductCategoriesDoughnut";
+
 import { useDispatch, useSelector } from 'react-redux';
-import SignUp from "../../../Pages/SignUp";
-import SignUpForm from "../../../components/SignUpForm";
-import FormSupporter from './formSupporter'
-import TopNav from '../../../containers/navs/Topnav'
-import SideNav from '../../../containers/navs/Sidebar'
+
 import PerfectScrollbar from "react-perfect-scrollbar";
 import ReactTable from "react-table";
 import classnames from "classnames";
-import Products from "../../../views/app/pages/image-list"
 import {fetchProducts, addProduct, deleteProduct, updateProduct} from '../../../components/redux/products/productActions'
 
 
@@ -158,7 +138,7 @@ export default function EcommerceDashboard()  {
                     <IntlMessages id="button.add.product" />
           </Button>
           {show? 
-            <form action="#" className="login-form sign-in-form" onSubmit={(e) => { val=="Add" ? onAdd(e) : onUpdate(e, product) }}>
+            <form action="#" className="login-form sign-in-form" onSubmit={(e) => { val==="Add" ? onAdd(e) : onUpdate(e, product) }}>
             <div className="form-group text_box">
                 <label className="f_p text_c f_400">Name</label>
                 <input type="text" placeholder="Name"

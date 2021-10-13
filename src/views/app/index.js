@@ -13,7 +13,7 @@ import blankPage from "./blank-page";
 import maptest from "../../components/trash/addtrash";
 import alltrash from "../../components/trash/Alltrash";
 import centertrash from "../../components/trash/centerTrash";
-
+import agents from "../../components/User-CenterComponents/Agents";
 import affectedtrash from "../../components/User-CenterComponents/Affected-trash";
 
 class App extends Component {
@@ -32,6 +32,7 @@ class App extends Component {
           <Route path={`${match.url}/addtrash`} component={maptest} />
           <Route path={`${match.url}/alltrash`} component={alltrash} />
           <Route path={`${match.url}/centertrashs`} component={centertrash} />
+          <Route path={`${match.url}/agents`} component={agents} />
 
           <Route path={`${match.url}/affected-trash`} component={affectedtrash} />
           <Route path={`${match.url}/blank-page`} component={blankPage} />
