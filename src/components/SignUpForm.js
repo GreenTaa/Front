@@ -145,7 +145,7 @@ const SignUpForm =()=>{
                                         <label className="f_p text_c f_400">Email</label>
                                         <input type="text" placeholder="saasland@gmail.com"
                                         onChange={e => {
-                                            const newUserObj = { ...user, Email: e.target.value }
+                                            const newUserObj = {  ...user, Email: e.target.value }
                                             setUser(newUserObj);
                                         }
                                         }/>
