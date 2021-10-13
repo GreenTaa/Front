@@ -1,9 +1,16 @@
-import React, {Component} from 'react';
+import React, {Component,useState} from 'react';
+import Modal from "react-responsive-modal";
+import ReactPlayer from "react-player";
+
 import Reveal from 'react-reveal/Reveal';
-import Player from "./videobtn";
-class AgencyBanner extends Component {
-    render(){
-        let BannerData = this.props.BannerData;
+import ModalVideo from 'react-modal-video'
+export default function AgencyBanner(props) {
+        let BannerData = props.BannerData;
+        const [isOpen, setOpen] = useState(false)
+        function aman(){
+            setOpen(false);
+        }
+
         return(
             <section className="agency_banner_area bg_color">
                
@@ -22,8 +29,32 @@ class AgencyBanner extends Component {
                                         )
                                     })
                                 }
+   <Modal
+        open={isOpen}
+        onClose={(aman)}
+        styles={{
+          modal: {
+            maxWidth: "unset",
+            width: "80%",
+            padding: "unset"
+          },
+          overlay: {
+            background: "linear-gradient(90deg, rgba(30,36,0,1) 11%, rgba(14,56,22,1) 20%, rgba(7,66,32,0.7906512946975666) 100%, rgba(0,212,255,1) 100%);"
+          },
+          closeButton: {
+            background: 'green'
+          }
+        }}
+        center
+      >
+        <ReactPlayer
+          url="https://www.youtube.com/watch?v=gz7AU4E_MBo"
+          width="100%"
+          height="calc(100vh - 100px)"
+        />
+      </Modal>
                                 
-                                <a href="https://www.youtube.com/watch?v=sU3FkzUKHXU" className="popup-youtube btn_six slider_btn" style={{marginTop:"20px", marginLeft: "100px"}}><i className="fa fa-play-circle" ></i> Regarder la vidéo</a>
+                                <button  onClick={()=> setOpen(true)} className="popup-youtube btn_six slider_btn" style={{marginTop:"20px", marginLeft: "100px"}}><i className="fa fa-play-circle" ></i> Regarder la vidéo</button>
                                 </Reveal>
                             </div>
                         </div>
@@ -39,6 +70,5 @@ class AgencyBanner extends Component {
                 </div>
             </section>
         )
-    }
+    
 }
-export default AgencyBanner;
