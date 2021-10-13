@@ -12,8 +12,8 @@ class AboutWidget extends Component {
                         <ul className="list-unstyled f_list">
                             
                                 
-                                   <li ><a href="/About">Concept</a></li>
-                                        <li ><a href="/About">Notre équipe</a></li>
+                                   <li ><a href="/home">Concept</a></li>
+                                        <li ><a href="/home">Notre équipe</a></li>
                                         
                                     
                                 

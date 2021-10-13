@@ -29,7 +29,7 @@ class FooterTwo extends Component {
                                     )
                                 })
                             }
-                            <AboutWidget ftitle="A propos de nous"  FooterData={FooterData}/>
+                            <AboutWidget ftitle="À propos de nous"  FooterData={FooterData}/>
                             <SolutionWidget ftitle="Services" FooterData={FooterData}/>
                             <TeamWidget ftitle="Contact" FooterData={FooterData}/>
                         </div>

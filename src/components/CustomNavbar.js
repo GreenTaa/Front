@@ -177,9 +177,9 @@ export default function CustomNavbar(props) {
                   Sign Up
                 </button>
                 <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a className="dropdown-item" href="SignUpTeam">Team</a>
+                  <a className="dropdown-item" href="SignUpTeam">Club sportif</a>
                   <a className="dropdown-item" href="/SignUp">Supporter</a>
-                  <a className="dropdown-item" href="SignUpCenter">Collect Center</a>
+                  <a className="dropdown-item" href="SignUpCenter">Centre de collecte</a>
                 </div>
               </div>
               </Row>
