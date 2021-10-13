@@ -59,7 +59,7 @@ export default function AgencyBanner(props) {
                             </div>
                         </div>
                         <div className="col-lg-7 text-right">
-                            <Reveal effect="fadeInRight"><img className="protype_img wow fadeInRight" data-wow-delay="0.3s" src={require('../../img/home4/banner_img.png')} alt=""/></Reveal>
+                            <Reveal effect="fadeInRight"><img className="protype_img wow fadeInRight" data-wow-delay="0.3s" src={require('../../img/home4/banner_img.png')} alt="" width="100%" height="100%" /></Reveal>
                         </div>
                     </div>
                     <div className="partner_logo">

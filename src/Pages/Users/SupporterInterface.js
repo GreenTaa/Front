@@ -26,7 +26,7 @@ const SupporterInterface = () => {
     const getSupporter= async () => {
         try {
             const Supp = await axios.get(
-                "http://localhost:3000/supporters/"+renderId()
+                "https://greentaa.herokuapp.com/supporters/"+renderId()
             ).then(function(doc){
                 if(JSON.stringify(doc.data) !== JSON.stringify(supporter))
                 {
@@ -43,7 +43,7 @@ const SupporterInterface = () => {
     const getHistory= async () => {
         try {
             const Supp = await axios.get(
-                "http://localhost:3000/trash/history/"+renderId()
+                "https://greentaa.herokuapp.com/trash/history/"+renderId()
             ).then(function(doc){
                 if(JSON.stringify(doc.data) !== JSON.stringify(supporter))
                 {

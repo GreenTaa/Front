@@ -51,7 +51,7 @@ export const UpdateProduct = (products) =>{
 export const fetchProducts = () => {
     return function(dispatch){
         dispatch(fetchProductsRequest())
-     axios.get('http://localhost:3000/products/')
+     axios.get('https://greentaa.herokuapp.com/products/')
      .then(response =>{
          const products = response.data
          dispatch(fetchProductsSuccess(products))
@@ -67,7 +67,7 @@ export const addProduct = (product) =>{
    
     return function (dispatch){
         console.log("Product in redux: ",product)
-         axios.post(`http://localhost:3000/products`,product)
+         axios.post(`https://greentaa.herokuapp.com/products`,product)
          .then((response) => {
             dispatch(AddProduct(response.data))
         }).catch((error)=>console.log("errorAddinng  : ", error));
@@ -76,7 +76,7 @@ export const addProduct = (product) =>{
 
 export const deleteProduct = (id) =>{
     return function (dispatch){
-         axios.delete(`http://localhost:3000/products/${id}`)
+         axios.delete(`https://greentaa.herokuapp.com/products/${id}`)
         .then(
             dispatch(DeleteProduct(id))
         )
@@ -85,7 +85,7 @@ export const deleteProduct = (id) =>{
 
 export const fetchProduct = (id) =>{
     return function (dispatch){
-         axios.get(`http://localhost:3000/products/${id}`)
+         axios.get(`https://greentaa.herokuapp.com/products/${id}`)
         .then(
             dispatch(FetchProduct(id))
         )
@@ -94,7 +94,7 @@ export const fetchProduct = (id) =>{
 
 export const updateProduct = (products) =>{
     return function (dispatch){
-         axios.put(`http://localhost:3000/products/${products._id}`,products)
+         axios.put(`https://greentaa.herokuapp.com/products/${products._id}`,products)
          .then(() => {
             dispatch(UpdateProduct(products))
         }, (error) => {

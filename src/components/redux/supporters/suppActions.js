@@ -54,7 +54,7 @@ export const AddSupporter = (supp) =>{
    
     return function (dispatch){
         console.log("supporter in redux: ",supp)
-         axios.post(`http://localhost:3000/users/addsupp/`,supp)
+         axios.post(`https://greentaa.herokuapp.com/users/addsupp/`,supp)
          .then((response) => {
             dispatch(addSupporter(response.data))
             /* fetchSupporters() */
@@ -64,7 +64,7 @@ export const AddSupporter = (supp) =>{
 
 export const DeleteSupporter = (id) =>{
     return function (dispatch){
-         axios.delete(`http://localhost:3000/supporters/${id}`)
+         axios.delete(`https://greentaa.herokuapp.com/supporters/${id}`)
         .then(
             dispatch(deleteSupporter(id))
         )
@@ -73,7 +73,7 @@ export const DeleteSupporter = (id) =>{
 
 export const UpdateSupporter = (supporters) =>{
     return function (dispatch){
-         axios.put(`http://localhost:3000/supporters/${supporters._id}`,supporters)
+         axios.put(`https://greentaa.herokuapp.com/supporters/${supporters._id}`,supporters)
          .then(() => {
             dispatch(updateSupporter(supporters))
             fetchSupporters()
@@ -86,7 +86,7 @@ export const UpdateSupporter = (supporters) =>{
 export const fetchSupporters = () => {
     return function(dispatch){
         dispatch(fetchSupportersRequest())
-     axios.get('http://localhost:3000/supporters/')
+     axios.get('https://greentaa.herokuapp.com/supporters/')
      .then(response =>{
          const supporters = response.data
          dispatch(fetchSupportersSuccess(supporters))
@@ -100,7 +100,7 @@ export const fetchSupporters = () => {
 
 export const FetchSupporter = (id) =>{
     return function (dispatch){
-         axios.get(`http://localhost:3000/supporters/${id}`)
+         axios.get(`https://greentaa.herokuapp.com/supporters/${id}`)
         .then(
             dispatch(fetchSupporter(id))
         )

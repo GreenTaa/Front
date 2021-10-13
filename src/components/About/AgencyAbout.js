@@ -1,5 +1,9 @@
 import React, {Component} from 'react';
 import Slider from 'react-slick';
+import VideoPlayer from "react-background-video-player";
+import ReactPlayer from 'react-player'
+import { Player } from 'video-react';
+
 class AgencyAbout extends Component {
     render(){
         const settings = {
@@ -32,16 +36,21 @@ Elles sont également équipées d’un système de monitoring basé sur des cap
                 </div>
                 <div className="col-lg-12 about_img">
                     <Slider className="about_img_slider" {...settings}>
-                        <div className="item">
-                            <div className="about_item w45">
-                                <img src={require('../../img/home4/team1.jpg')} alt="" style={{marginTop:"50px"}}/>
-                                <div className="about_text">
-                                    <span className="br"></span>
-                                    <h5 className="f_size_18 l_height28 mb-0">La poubelle Greenta</h5>
-                                </div>
-                            </div>
-                        </div>
+                    <VideoPlayer
+        className="video"
+        src={
+          "https://player.vimeo.com/external/435674703.sd.mp4?s=01ad1ba21dc72c1d34728e1b77983805b34daad7&profile_id=165&oauth2_token_id=57447761"
+        }
+        autoPlay={true}
+        muted={true}
+      />
                     </Slider>
+                    <div >
+    <Player autoPlay loop  fluid={false} width={700} height={600}>
+      <source src="/demo.mp4" />
+    </Player>
+     
+    </div>
                 </div>
             </section>
         )
