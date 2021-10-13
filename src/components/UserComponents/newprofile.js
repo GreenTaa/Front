@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import useForm from "react-hook-form";
 import "react-step-progress-bar/styles.css";
-import { Button } from "reactstrap";
 import "./profile.css";
 import CustomNavbar from "../CustomNavbar";
 import back from "../../img/breadcrumb/banner_bg.png";
@@ -9,7 +8,26 @@ import { queryServerApi } from "../../utils/queryServerApi";
 import Mile from "./Milestones";
 import Coin from "./mycoin.png";
 import Timeline from "./timeline";
-
+import L from "leaflet";
+import MarkerClusterGroup from "react-leaflet-markercluster";
+import { MapContainer, Popup, TileLayer, Marker } from "react-leaflet";
+import axios from "axios";
+import {
+  Card,
+  Table,
+  CardBody,
+  CardTitle,
+  CardText, CardSubtitle,
+  Button,
+  Modal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+} from "reactstrap";
+import {
+  buildStyles,
+  CircularProgressbarWithChildren,
+} from "react-circular-progressbar";
 export default function StepProgressBar(props) {
   const [username, setusername] = useState(props.supporter.Firstname);
   const [email, setemail] = useState(localStorage.Email);
@@ -22,7 +40,36 @@ export default function StepProgressBar(props) {
   const [images, setImages] = useState(null);
   const { register, errors, handleSubmit, watch } = useForm({});
   const password = useRef({});
+  const [trash, setTrash] = useState();
   password.current = watch("password", "");
+
+  const [modal, setmodal] = useState(false);
+  const center = {
+    lat: 36.832013568901914,
+    lng: 10.237266420842907,
+  };
+  const [mycenter, setcenter] = useState( {
+    lat: 36.832013568901914,
+    lng: 10.237266420842907,
+  });
+  const icon = L.icon({
+    iconSize: [20, 38],
+    iconAnchor: [10, 41],
+    popupAnchor: [2, -40],
+    iconUrl: "https://i.imgur.com/5VLvgPx.png",
+  });
+
+  const icon2 = L.icon({
+    iconSize: [20, 20],
+    iconAnchor: [10, 41],
+    popupAnchor: [2, -40],
+    iconUrl: "https://play-lh.googleusercontent.com/9AsXyZ6sAzwQqrMeEmSlTxDVYn65tPgO6SPWL-cZJVomKjzjl3u5c8RUEq1F2DN6g5o",
+  });
+  const toggle = (id) => {
+    setmodal(!modal);
+
+  };
+
   const onSubmit = async (data) => {
     const [user, err] = await queryServerApi(
       "supporters/changepass/" + localStorage.id,
@@ -46,9 +93,35 @@ export default function StepProgressBar(props) {
     };
   };
 
+  const getTrash = async () => {
+    try {
+      const Supp = await axios
+        .get("https://greentaa.herokuapp.com/trash/")
+        .then(function (doc) {
+          if (JSON.stringify(doc.data) === JSON.stringify(trash)) {
+            console.log("same");
+          } else {
+            setTrash(doc.data);
+            console.log("elseeee");
+          }
+        });
+
+      // set State
+    } catch (err) {
+      console.error(err.message);
+    }
+  };
   useEffect(() => {
+    getTrash();
+   navigator.geolocation.getCurrentPosition(function(position) {
+      setcenter({lat : position.coords.latitude, lng: position.coords.longitude});
+    });
+    const interval = setInterval(() => {
+      getTrash();
+    }, 5000);
     if (fileInputRef) fileInputRef.current.value = null;
-  }, [images]);
+    return () => clearInterval(interval);
+  }, [getTrash(), images]);
 
   function getBase64(file) {
     return new Promise((resolve, reject) => {
@@ -156,15 +229,19 @@ export default function StepProgressBar(props) {
                       <div
                         style={{
                           width: "200px",
-                          marginLeft:"100px"
+                          marginLeft: "100px",
                         }}
                         class="middle-container d-flex justify-content-between align-items-center mt-3 p-2"
                       >
                         <div class="dollar-div px-3">
                           <div class="round-div">
-                            <img style={{
-                          width: "130%",height:"130%"
-                        }} src={Coin}></img>
+                            <img
+                              style={{
+                                width: "130%",
+                                height: "130%",
+                              }}
+                              src={Coin}
+                            ></img>
                           </div>
                         </div>
                         <div class="d-flex flex-column text-right mr-2">
@@ -173,7 +250,8 @@ export default function StepProgressBar(props) {
                             Current Balance
                           </span>{" "}
                           <span class="amount">
-                            <span class="dollar-sign">GC </span> {props.supporter.Score}
+                            <span class="dollar-sign">GC </span>{" "}
+                            {props.supporter.Score}
                           </span>{" "}
                         </div>
                       </div>
@@ -190,12 +268,9 @@ export default function StepProgressBar(props) {
                       Tunis
                     </div>
                     <div className="h5 mt-4">
-                      <i className="ni business_briefcase-24 mr-2" />
-                      Solution Manager - Creative Tim Officer
-                    </div>
-                    <div>
-                      <i className="ni education_hat mr-2" />
-                      University of Computer Science
+                      <button onClick={() =>toggle()} className="btn_hover agency_banner_btn wow fadeInLeft">
+                        The closest Trashbin
+                      </button>
                     </div>
                     <hr className="my-4" />
                     <h2>Progress</h2>
@@ -453,6 +528,110 @@ export default function StepProgressBar(props) {
             </div>
           </div>
         </div>
+                      <Modal centered  size="lg"
+  aria-labelledby="contained-modal-title-vcenter"   isOpen={modal} toggle={toggle}>
+                          <ModalHeader toggle={toggle}>
+                            Trashbins
+                          </ModalHeader>
+                          <ModalBody >
+                          <div className="center">
+      <MapContainer center={mycenter} zoom={13} scrollWheelZoom={true}>
+        <TileLayer
+          attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+      
+        <Marker icon={icon2} position={mycenter}>
+      <Popup>You are here</Popup>
+    </Marker>
+    <MarkerClusterGroup>
+          {trash?.map((dm, index) => (
+            <Marker key={index} icon={icon} position={[dm.Lat, dm.Lng]}>
+              <Popup>
+                <div
+                  className="position-relative"
+                  style={{ alignItems: "center", marginLeft: -55 }}
+                >
+                  <div
+                    style={{
+                      width: 200,
+                      height: 200,
+                      marginTop: 55,
+                      marginLeft: 50,
+                    }}
+                  >
+                    <CircularProgressbarWithChildren
+                      value={(dm.Bottles * 20) / 100}
+                      background
+                      backgroundPadding={6}
+                      styles={buildStyles({
+                        backgroundColor: "#fff",
+                        textColor: "#fff",
+                        pathColor: "#3ba266",
+                      })}
+                    >
+                      {/* Put any JSX content in here that you'd like. It'll be vertically and horizonally centered. */}
+                      <img
+                        style={{ width: 110, marginTop: -100 }}
+                        src="https://i.pinimg.com/originals/5b/88/8d/5b888d541f62ee8c3f4ff905ce2c0ce7.png"
+                        alt="bottle"
+                      />
+
+                      <div style={{ fontSize: 12, marginTop: -5 }}>
+                        <strong>{(dm.Bottles * 20) / 100}</strong> %
+                      </div>
+                    </CircularProgressbarWithChildren>
+                  </div>
+                  <div>
+                    {(dm.State && (
+                      <span
+                        style={{
+                          backgroundColor: "#3ba266",
+                          fontSize: 12,
+                          marginLeft: 45,
+                        }}
+                        color="#3ba266"
+                        pill
+                        className="badge badge-success"
+                      >
+                        {dm.State.Name}
+                      </span>
+                    )) || (
+                      <>
+                        <br></br>{" "}
+                        <span
+                          style={{ fontSize: 12, marginLeft: 45 }}
+                          pill
+                          className="badge-danger"
+                        >
+                          Not yet affected
+                        </span>
+                      </>
+                    )}
+                  </div>
+                </div>
+                <CardBody>
+                  <CardSubtitle
+                    style={{ alignItems: "center", width: "150px" }}
+                    className="mb-1"
+                  >
+                    {dm.Location}
+                  </CardSubtitle>
+                  <CardText className="text-muted text-small mb-0 font-weight-light">
+                    Bottle : {dm.Bottles}
+                  </CardText>
+                </CardBody>
+              </Popup>
+            </Marker>
+          ))}
+        </MarkerClusterGroup>
+      </MapContainer>
+      
+    </div>                          </ModalBody>
+                          <ModalFooter>
+                            
+                          </ModalFooter>
+                        </Modal>
       </div>
       <footer className="footer">
         <div className="row align-items-center justify-content-xl-between">
