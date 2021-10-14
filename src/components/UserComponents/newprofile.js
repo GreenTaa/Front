@@ -8,6 +8,8 @@ import { queryServerApi } from "../../utils/queryServerApi";
 import Mile from "./Milestones";
 import Coin from "./mycoin.png";
 import Timeline from "./timeline";
+//import Modal2 from 'react-modal';
+
 import L from "leaflet";
 import MarkerClusterGroup from "react-leaflet-markercluster";
 import { MapContainer, Popup, TileLayer, Marker } from "react-leaflet";
@@ -530,9 +532,7 @@ export default function StepProgressBar(props) {
         </div>
                       <Modal centered  size="lg"
   aria-labelledby="contained-modal-title-vcenter"   isOpen={modal} toggle={toggle}>
-                          <ModalHeader toggle={toggle}>
-                            Trashbins
-                          </ModalHeader>
+                         
                           <ModalBody >
                           <div className="center">
       <MapContainer center={mycenter} zoom={13} scrollWheelZoom={true}>
@@ -628,9 +628,7 @@ export default function StepProgressBar(props) {
       </MapContainer>
       
     </div>                          </ModalBody>
-                          <ModalFooter>
-                            
-                          </ModalFooter>
+                        
                         </Modal>
       </div>
       <footer className="footer">
